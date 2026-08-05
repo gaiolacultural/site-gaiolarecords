@@ -29,6 +29,12 @@
             transform: scale(1.03);
             filter: grayscale(0%) contrast(1.1);
         }
+        @media (max-width: 767px) {
+            .artist-card.is-visible { border-color: #4D4D4D; }
+            .artist-card.is-visible img { transform: scale(1.03); filter: grayscale(0%) contrast(1.1); }
+            .artist-card.is-visible .group-hover\:bg-primary { background-color: #cccbcb !important; }
+            .artist-card.is-visible .group-hover\:text-black { color: #000000 !important; text-shadow: none !important; }
+        }
 </style>
 <script id="tailwind-config">
         tailwind.config = {
@@ -239,5 +245,23 @@
 <div class="font-body-md text-body-md text-secondary dark:text-secondary text-xs text-center md:text-right">© 2023 GAIOLA RECORDS. TODOS OS DIREITOS RESERVADOS.</div>
 </div>
 </footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth < 768) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            document.querySelectorAll('.artist-card').forEach(card => observer.observe(card));
+        }
+    });
+</script>
 
 </body></html>
