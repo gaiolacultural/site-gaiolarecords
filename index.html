@@ -1,0 +1,217 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>GAIOLA RECORDS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#494949",
+                        "on-error": "#690005",
+                        "secondary": "#c8c6c6",
+                        "primary-fixed-dim": "#c7c6c6",
+                        "surface-variant": "#353535",
+                        "background": "#131313",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "surface-container-highest": "#353535",
+                        "tertiary-container": "#b2b0b0",
+                        "outline": "#8e9192",
+                        "surface-tint": "#c7c6c6",
+                        "surface-container": "#1f1f1f",
+                        "on-secondary-container": "#b9b8b8",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-fixed-variant": "#464747",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#444343",
+                        "inverse-surface": "#e2e2e2",
+                        "on-background": "#e2e2e2",
+                        "on-secondary": "#303030",
+                        "on-tertiary": "#313030",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "on-primary-container": "#424343",
+                        "surface-bright": "#393939",
+                        "error": "#ffb4ab",
+                        "inverse-on-surface": "#303030",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed": "#e4e2e2",
+                        "primary-fixed": "#e3e2e2",
+                        "surface-dim": "#131313",
+                        "inverse-primary": "#5e5e5f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface": "#131313",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "outline-variant": "#444748",
+                        "tertiary": "#cecbcb",
+                        "on-surface-variant": "#c4c7c7",
+                        "primary": "#cccbcb",
+                        "surface-container-low": "#1b1b1b",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-primary": "#2f3131",
+                        "primary-container": "#b0b0b0",
+                        "on-tertiary-fixed-variant": "#474746"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-desktop": "64px",
+                        "container-max": "1440px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Manrope"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    },
+                    "animation": {
+                        "marquee-glow": "marquee-glow 3s ease-in-out infinite alternate"
+                    },
+                    "keyframes": {
+                        "marquee-glow": {
+                            "0%": { textShadow: "0 0 2px rgba(204, 203, 203, 0.2), 0 0 4px rgba(204, 203, 203, 0.1)" },
+                            "100%": { textShadow: "0 0 4px rgba(204, 203, 203, 0.6), 0 0 8px rgba(204, 203, 203, 0.4), 0 0 12px rgba(204, 203, 203, 0.2)" }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+        }
+        .artist-card {
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+        }
+        .artist-card:hover {
+            border-color: #4D4D4D;
+        }
+        .artist-card img {
+            transition: transform 0.6s ease, filter 0.4s ease;
+            filter: grayscale(100%) contrast(1.2);
+        }
+        .artist-card:hover img {
+            transform: scale(1.03);
+            filter: grayscale(0%) contrast(1.1);
+        }
+    </style>
+</head>
+<body class="text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col h-screen overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b border-surface-variant w-full z-50 fixed top-0 h-10 flex items-center">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 w-full">
+<div class="flex items-center gap-4 cursor-pointer hover:opacity-70 transition-opacity">
+<img alt="Gaiola Records Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbigr38NArINDUZy80i0HrJh3YCtNGgS2ggqkSwlLvSV7JLr_18-scOrh5Fpr_xY4JpFYSi9EcrguApULlvA0qmfgAqX5spVcgBnlYtjRvbq0xu8fMlPPL_bunRa729zp0-x5hH1pk90GlXmV0qKdD7DhFIoAnuPRi3DoxWXz0_jVhyFScWDpUE4c85C33V0degGREuhODQba-DiVZdu45oMwF5fMcsLOKJzR9QXPIvi7fEHx9rUUCBzyRPscw3Hk8ak">
+<span class="font-headline-lg text-2xl font-semibold tracking-tighter text-primary dark:text-primary leading-none">GAIOLA RECORDS</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<!-- Simplified nav for landing page intent, highlighting Artists -->
+<a class="font-label-md text-label-md uppercase text-primary border-b border-primary pb-1 cursor-pointer active:opacity-70" href="#">ARTISTAS</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">SOBRE</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">CONTATO</a>
+</nav>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col md:pt-6">
+<!-- Hero Section -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex flex-col items-center justify-center text-center"><div class="w-full flex flex-col items-center">
+<div class="flex flex-col md:flex-row items-center gap-6 md:gap-8 mb-1 mt-8">
+<h1 class="font-headline-lg text-[48px] leading-[1.1] text-primary tracking-tighter mix-blend-lighten uppercase mt-1 mb-0 text-center whitespace-nowrap md:text-[56px] md:leading-[56px]">DA GAIOLA <span class="text-secondary opacity-70">AO PALCO</span></h1>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant text-center mx-auto max-w-7xl">Somos um selo e agência independente que conecta novos artistas a festivais e casas de show.<br class="">Aqui você encontra o som ideal para o seu evento.</p>
+</div>
+</section>
+<!-- Artists Grid Section -->
+<section class="w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop" id="artists">
+<div class="flex flex-col md:flex-row justify-between items-end border-b border-[#1A1A1A] pb-2">
+<h2 class="font-headline-lg text-primary uppercase tracking-tight text-2xl">ARTISTAS</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter h-[45vh]">
+<!-- Artist 4: Diego Chorão -->
+<a class="artist-card group relative block bg-[#0A0A0A] overflow-hidden mt-0 h-full" href="#"><div class="w-full h-full overflow-hidden bg-surface-container-highest">
+<img alt="Diego Chorão" class="w-full h-full object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4cOeRPHOzvriSeM7n3_RQ8E_uqMceDUZI7uZ4A1QZ26Dr9E9Sf1ZXuLyVWJgCn_ccLhXwZDSunCNLFQbZnSgnXzPkcV9YEOTdJCTvKainC8cosrrkheZfe4e7KWGgcuFNp4u53HwfDvPgtJgVmAOWxMHuDSTUY3rcCDi4AXdgzZYbbHoqtQUn7YK2hNDqGEsLvvdvEPUnCFx9k-Fmd0O1TQ1B11vl-2QR7zivJJgCS-GwJQp2umb4c0_dluehfO5_8ns">
+</div>
+<div class="bg-gradient-to-t from-[#000000] via-[#000000]/90 to-transparent absolute bottom-0 left-0 w-full z-10 transition-colors p-3 pt-12 flex flex-col items-start gap-2 right-0 pb-3">
+<div class="inline-block px-3 py-1 border border-[#1A1A1A] bg-[#000000]/60 backdrop-blur-md transition-colors duration-300 group-hover:bg-primary"><h3 class="artist-name font-headline-md text-xl text-white m-0 animate-marquee-glow group-hover:text-black">Diego Chorão</h3></div>
+<span class="inline-block px-2 py-0.5 border border-[#1A1A1A] font-label-sm text-[10px] text-secondary uppercase tracking-widest bg-[#000000]/60 backdrop-blur-md transition-colors duration-300">Rap / Boom Bap</span>
+</div></a>
+<!-- Artist 1: Édson Santana -->
+<a class="artist-card group relative block bg-[#0A0A0A] overflow-hidden mt-0 h-full" href="#"><div class="w-full h-full overflow-hidden bg-surface-container-highest">
+<img alt="Édson Santana" class="w-full h-full object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTqCXou9Dgl-2cZjtSab6ZpGnEOEH1VSvmxBNBTmNmSi340ZAz0pbcfMVXHYgEgRFhPgjoviHp4OzjdPn_9lbDV5L3XCR-GhukSzHShzYQYum9UDWlFZj4rHbBYc6Fp0U7NvrzS19WQ067dimCVJ_Jcp6lPs7YIWI4Ub478hYGEcKiLkqgGmvGO9BIcn_FAa_RleJ5IlVtXebmEfudM3t7F0u-hvX89Sz_bipKeVQXwUJu6cQq5pMmWqnNZtq9yy4XMIo">
+</div>
+<div class="bg-gradient-to-t from-[#000000] via-[#000000]/90 to-transparent absolute bottom-0 left-0 w-full z-10 transition-colors p-3 pt-12 flex flex-col items-start gap-2 right-0 pb-3">
+<div class="inline-block px-3 py-1 border border-[#1A1A1A] bg-[#000000]/60 backdrop-blur-md transition-colors duration-300 group-hover:bg-primary"><h3 class="artist-name font-headline-md text-xl text-white m-0 animate-marquee-glow group-hover:text-black">Édson Santana</h3></div>
+<span class="inline-block px-2 py-0.5 border border-[#1A1A1A] font-label-sm text-[10px] text-secondary uppercase tracking-widest bg-[#000000]/60 backdrop-blur-md transition-colors duration-300">Pop Rock</span>
+</div></a>
+<!-- Artist 3: João Pelegrini -->
+<a class="artist-card group relative block bg-[#0A0A0A] overflow-hidden mt-0 h-full" href="#"><div class="w-full h-full overflow-hidden bg-surface-container-highest">
+<img alt="João Pelegrini" class="w-full h-full object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1OYaPlh8YDMMMSzchwwZnRte3Br4ApgnpKGCacRy4oX_QVxN1DDBKa6JR73tvCaOMm74cov2cb0a4h1sjI6bQLlUw6uqfmIZ9O4fBwraQJW5_zjbawelMZXUslil1HrqPoTJCSUGjTa2jNBP05LwsMLzxdT1RX13lxfEo3vgJHybCtJGot1sLGI88dfpUQMGJZaxxup76S9qZryH56b42zVcqeVoxogNs1hOUvIpjtyt2b-or87CVoEIvgJs1sHcoSOM">
+</div>
+<div class="bg-gradient-to-t from-[#000000] via-[#000000]/90 to-transparent absolute bottom-0 left-0 w-full z-10 transition-colors p-3 pt-12 flex flex-col items-start gap-2 right-0 pb-3">
+<div class="inline-block px-3 py-1 border border-[#1A1A1A] bg-[#000000]/60 backdrop-blur-md transition-colors duration-300 group-hover:bg-primary"><h3 class="artist-name font-headline-md text-xl text-white m-0 animate-marquee-glow group-hover:text-black">João Pelegrini</h3></div>
+<span class="inline-block px-2 py-0.5 border border-[#1A1A1A] font-label-sm text-[10px] text-secondary uppercase tracking-widest bg-[#000000]/60 backdrop-blur-md transition-colors duration-300">MPB</span>
+</div></a>
+<!-- Artist 2: Suricatos -->
+<a class="artist-card group relative block bg-[#0A0A0A] overflow-hidden mt-0 h-full" href="#"><div class="w-full h-full overflow-hidden bg-surface-container-highest">
+<img alt="Suricatos" class="w-full h-full object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABWT44EnluvfF50N9hEkeEIUMEvV_5w4Yj-6sSX_VOXRr5B9gV5HIEOLcXRlWucy9C4TCP8bt-usJcXi1SAlChnHjTPGKe5aLV58KquVtAe9tcy39ccLc0Os58fRGKs0c1DuEhDIQhcVj3E4KpyOVHPpaOZJzeFWjzvjA7FHMzdlr3wBL4_2WHkbql61DOuLRUskuyJU5-SSWeiRRk_U41WYP62ddVznQTQir9KTU5-YGMXmAHcUzfdR1T1M_35-PKoy4">
+</div>
+<div class="bg-gradient-to-t from-[#000000] via-[#000000]/90 to-transparent absolute bottom-0 left-0 w-full z-10 transition-colors p-3 pt-12 flex flex-col items-start gap-2 right-0 pb-3">
+<div class="inline-block px-3 py-1 border border-[#1A1A1A] bg-[#000000]/60 backdrop-blur-md transition-colors duration-300 group-hover:bg-primary"><h3 class="artist-name font-headline-md text-xl text-white m-0 animate-marquee-glow group-hover:text-black">Suricatos</h3></div>
+<span class="inline-block px-2 py-0.5 border border-[#1A1A1A] font-label-sm text-[10px] text-secondary uppercase tracking-widest bg-[#000000]/60 backdrop-blur-md transition-colors duration-300">MPB / REGGAE</span>
+</div></a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant w-full mt-auto shrink-0 h-10 flex items-center">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 w-full">
+<div class="font-headline-lg text-2xl font-semibold tracking-tighter text-primary dark:text-primary leading-none hidden md:block">
+            GAIOLA RECORDS
+        </div>
+<nav class="hidden lg:flex flex-wrap justify-center gap-6">
+<a class="font-label-md text-label-md uppercase text-primary transition-colors duration-200 hover:text-primary" href="#">ARTISTAS</a>
+<a class="font-label-md text-label-md uppercase text-on-secondary-container hover:text-primary transition-colors duration-200" href="#">SOBRE</a>
+<a class="font-label-md text-label-md uppercase text-on-secondary-container hover:text-primary transition-colors duration-200" href="#">CONTATO</a>
+</nav>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary text-xs">© 2023 GAIOLA RECORDS. TODOS OS DIREITOS RESERVADOS.</div>
+</div>
+</footer>
+
+
+</body></html>
