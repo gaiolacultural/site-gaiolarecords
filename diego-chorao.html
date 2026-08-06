@@ -113,7 +113,10 @@
 <!-- Background Layer -->
 <div class="fixed inset-0 z-0 pointer-events-none">
 <div class="absolute inset-0 bg-black/80 z-10"></div>
-<img alt="" class="w-full h-full object-cover object-top" src="assets/bg-diego-chorao.png"/>
+<picture>
+  <source media="(max-width: 767px)" srcset="assets/bg-diego-mobile.png">
+  <img alt="" class="w-full h-full object-cover object-top" src="assets/bg-diego-pc.png"/>
+</picture>
 </div>
 
 <!-- TopAppBar -->
