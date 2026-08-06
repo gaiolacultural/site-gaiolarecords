@@ -259,33 +259,31 @@
     <!-- Caixa Única para Shows e Logos -->
     <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 md:px-12 rounded-2xl shadow-2xl w-full flex flex-col items-center mt-8">
         
-        <h2 class="font-headline-lg text-headline-lg-mobile md:text-[2.5rem] md:leading-[2.5rem] text-primary text-glow uppercase text-center w-full m-0 mb-6 md:mb-10 border-b border-surface-variant/30 pb-4 md:pb-6">Histórico de Apresentações</h2>
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-[2.5rem] md:leading-[2.5rem] text-primary text-glow uppercase text-center w-full m-0 mb-2 md:mb-4 border-b border-surface-variant/30 pb-4">Histórico de Apresentações</h2>
 
         <!-- 2 Colunas Container -->
-        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full mt-4">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full mt-2">
             
             <!-- Coluna Esquerda: Eventos (Carrossel) -->
-            <div class="w-full lg:w-2/3 flex flex-col gap-6 lg:border-r border-surface-variant/30 lg:pr-12">
+            <div class="w-full lg:w-2/3 flex flex-col gap-4 lg:border-r border-surface-variant/30 lg:pr-12">
                 
                 <!-- Event Section Carousel -->
                 <div class="relative overflow-hidden w-full" id="shows-carousel">
                     
-                    <div class="mb-4 text-center w-full">
-                        <div class="flex items-center justify-between md:justify-center md:gap-8 w-full px-2 h-[64px]">
+                    <div class="mb-2 text-center w-full">
+                        <div class="flex items-center justify-between md:justify-center md:gap-8 w-full px-2 h-[48px] md:h-[64px]">
                             <button onclick="prevSlide()" class="group flex items-center gap-1 md:gap-2 cursor-pointer transition-all shrink-0">
-                                <span class="text-[10px] font-bold tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-primary transition-all uppercase hidden md:block">ANTERIOR</span>
                                 <div class="text-primary rounded-full p-1 md:p-2 flex items-center justify-center transition-all duration-300 group-hover:bg-surface-variant group-hover:text-white border border-transparent group-hover:border-surface-variant">
                                     <span class="material-symbols-outlined text-2xl md:text-4xl">chevron_left</span>
                                 </div>
                             </button>
-                            <div class="w-full max-w-[200px] md:max-w-none md:min-w-[400px] h-full flex items-center justify-center">
-                                <h3 id="carousel-title" class="font-headline-lg text-lg md:text-[2rem] md:leading-[2.2rem] text-primary uppercase transition-all duration-300 flex-shrink line-clamp-2 md:line-clamp-none leading-tight m-0">LANÇAMENTO POESIA DE BOTECO</h3>
+                            <div class="w-full max-w-[200px] md:max-w-none md:min-w-[400px] h-full flex items-center justify-center overflow-hidden">
+                                <h3 id="carousel-title" class="font-headline-lg text-base md:text-xl text-primary uppercase transition-all duration-300 flex-shrink whitespace-nowrap overflow-hidden text-ellipsis leading-tight m-0">LANÇAMENTO POESIA DE BOTECO</h3>
                             </div>
                             <button onclick="nextSlide()" class="group flex items-center gap-1 md:gap-2 cursor-pointer transition-all shrink-0">
                                 <div class="text-primary rounded-full p-1 md:p-2 flex items-center justify-center transition-all duration-300 group-hover:bg-surface-variant group-hover:text-white border border-transparent group-hover:border-surface-variant">
                                     <span class="material-symbols-outlined text-2xl md:text-4xl">chevron_right</span>
                                 </div>
-                                <span class="text-[10px] font-bold tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-primary transition-all uppercase hidden md:block">PRÓXIMO</span>
                             </button>
                         </div>
                     </div>
@@ -314,8 +312,8 @@
             </div>
 
             <!-- Coluna Direita: Palcos e Logos -->
-            <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start justify-center gap-8 py-8 lg:py-0">
-                <h3 class="font-headline-md text-secondary uppercase tracking-widest text-center lg:text-left text-2xl md:text-3xl font-bold w-full">PALCOS E FESTIVAIS</h3>
+            <div class="w-full lg:w-1/3 flex flex-col items-center lg:items-start justify-start gap-6 py-4 lg:py-2">
+                <h3 class="font-headline-md text-secondary uppercase tracking-widest text-center lg:text-left text-2xl md:text-3xl font-bold w-full m-0">PALCOS E FESTIVAIS</h3>
                 <div class="flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-8 opacity-80 hover:opacity-100 transition-opacity w-full">
                     <div class="w-20 h-20 md:w-24 md:h-24 bg-black rounded-full shadow-xl border-2 border-surface-variant/50 overflow-hidden flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300"><img src="assets/logo-alien.png" alt="Local/Festival" class="w-full h-full object-contain filter invert" /></div>
                     <div class="w-20 h-20 md:w-24 md:h-24 bg-black rounded-full shadow-xl border-2 border-surface-variant/50 overflow-hidden flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300"><img src="assets/logo-face.png" alt="Local/Festival" class="w-full h-full object-contain" /></div>
