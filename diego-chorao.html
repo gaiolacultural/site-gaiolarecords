@@ -294,22 +294,22 @@
                         <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out w-full" style="transform: translateX(0%);">
                             
                             <!-- Slide 1: Lançamento Poesia de Boteco -->
-                            <div class="min-w-full flex flex-col gap-4 shrink-0">
-                                <img alt="Lançamento Poesia 1" class="w-full aspect-video md:aspect-[21/9] object-cover rounded-xl border border-surface-variant/30 shadow-md" src="assets/lancamentopoesia-foto1.jpeg"/>
+                            <div class="min-w-full flex flex-col items-center gap-6 shrink-0">
+                                <img alt="Lançamento Poesia 1" class="w-full max-w-[320px] md:max-w-[400px] aspect-[4/5] object-cover rounded-xl border border-surface-variant/30 shadow-md" src="assets/lancamentopoesia-foto1.jpeg"/>
                                 <div class="w-full aspect-video bg-black relative overflow-hidden rounded-xl border border-surface-variant/30 shadow-xl z-10 glow-hover">
                                     <video class="w-full h-full object-cover absolute inset-0 block md:hidden" controls playsinline poster="assets/lancamentopoesia-thumb.png?v=2"><source src="assets/lancamentopoesia-video-mobile.mp4?v=2" type="video/mp4"></video>
                                     <video class="w-full h-full object-cover absolute inset-0 hidden md:block" controls playsinline poster="assets/lancamentopoesia-thumb.png?v=2"><source src="assets/lancamentopoesia-video.mp4?v=2" type="video/mp4"></video>
                                 </div>
-                                <img alt="Lançamento Poesia 2" class="w-full aspect-video md:aspect-[21/9] object-cover rounded-xl border border-surface-variant/30 shadow-md object-[50%_20%]" src="assets/lancamentopoesia-foto2.jpeg"/>
+                                <img alt="Lançamento Poesia 2" class="w-full max-w-[320px] md:max-w-[400px] aspect-[4/5] object-cover rounded-xl border border-surface-variant/30 shadow-md" src="assets/lancamentopoesia-foto2.jpeg"/>
                             </div>
 
                             <!-- Slide 2: Baile Brazuka -->
-                            <div class="min-w-full flex flex-col gap-4 shrink-0">
-                                <img alt="Baile Brazuka 1" class="w-full aspect-video md:aspect-[21/9] object-cover rounded-xl border border-surface-variant/30 shadow-md" src="assets/bailebrazuka-foto1.jpeg"/>
+                            <div class="min-w-full flex flex-col items-center gap-6 shrink-0">
+                                <img alt="Baile Brazuka 1" class="w-full max-w-[320px] md:max-w-[400px] aspect-[4/5] object-cover rounded-xl border border-surface-variant/30 shadow-md" src="assets/bailebrazuka-foto1.jpeg"/>
                                 <div class="w-full aspect-video bg-black relative overflow-hidden rounded-xl border border-surface-variant/30 shadow-xl z-10 glow-hover">
                                     <video class="w-full h-full object-cover absolute inset-0" controls playsinline poster="assets/bailebrazuka-thumb.png"><source src="assets/bailebrazuka-video.mp4" type="video/mp4"></video>
                                 </div>
-                                <img alt="Baile Brazuka 2" class="w-full aspect-video md:aspect-[21/9] object-cover rounded-xl border border-surface-variant/30 shadow-md object-[50%_20%]" src="assets/bailebrazuka-foto2.jpeg"/>
+                                <img alt="Baile Brazuka 2" class="w-full max-w-[320px] md:max-w-[400px] aspect-[4/5] object-cover rounded-xl border border-surface-variant/30 shadow-md" src="assets/bailebrazuka-foto2.jpeg"/>
                             </div>
 
                         </div>
@@ -330,8 +330,91 @@
         </div>
 
 <script>
+    let currentSlide = 0;
+    const slidesCount = 2;
+    const titles = ["LANÇAMENTO POESIA DE BOTECO", "BAILE BRAZUKA"];
+    
+    let slideInterval;
+    let isHovered = false;
+    let isPlayingVideo = false;
 
-    </div>
+    function updateCarousel() {
+        document.getElementById('carousel-track').style.transform = `translateX(-${currentSlide * 100}%)`;
+        document.getElementById('carousel-title').innerText = titles[currentSlide];
+        
+        // Pause all videos when sliding
+        document.querySelectorAll('#carousel-track video').forEach(v => v.pause());
+        isPlayingVideo = false;
+        resetInterval();
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slidesCount;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+        updateCarousel();
+    }
+
+    function startInterval() {
+        if (!slideInterval && !isHovered && !isPlayingVideo) {
+            slideInterval = setInterval(nextSlide, 8000);
+        }
+    }
+
+    function stopInterval() {
+        if (slideInterval) {
+            clearInterval(slideInterval);
+            slideInterval = null;
+        }
+    }
+
+    function resetInterval() {
+        stopInterval();
+        startInterval();
+    }
+
+    // Monitora hover no carrossel
+    const carouselContainer = document.getElementById('shows-carousel');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+            isHovered = true;
+            stopInterval();
+        });
+        carouselContainer.addEventListener('mouseleave', () => {
+            isHovered = false;
+            startInterval();
+        });
+    }
+
+    // Monitora eventos dos videos (play, pause, fim)
+    document.querySelectorAll('#carousel-track video').forEach(video => {
+        video.addEventListener('play', () => {
+            isPlayingVideo = true;
+            stopInterval();
+            if (window.innerWidth < 768) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen().catch(err => console.log(err));
+                } else if (video.webkitEnterFullscreen) {
+                    video.webkitEnterFullscreen();
+                }
+            }
+        });
+        video.addEventListener('pause', () => {
+            isPlayingVideo = false;
+            startInterval();
+        });
+        video.addEventListener('ended', () => {
+            isPlayingVideo = false;
+            startInterval();
+        });
+    });
+
+    // Inicia o timer na primeira vez
+    startInterval();
+</script>    </div>
 </div>
 </section>
 
