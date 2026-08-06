@@ -254,13 +254,13 @@
 
 <!-- 5. Shows / Portfólio de Palcos (Carrossel) -->
 <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16" id="shows">
-<div class="flex flex-col gap-4 md:gap-8 items-center w-full">
+<div class="flex flex-col items-center w-full">
     
-    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-2xl w-full md:w-auto mt-8">
-        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-glow uppercase text-center w-full m-0">Histórico de Apresentações</h2>
-    </div>
+    <!-- Caixa Única para Shows e Logos -->
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 md:px-12 rounded-2xl shadow-2xl w-full flex flex-col items-center mt-8">
+        
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-[2.5rem] md:leading-[2.5rem] text-primary text-glow uppercase text-center w-full m-0 mb-6 md:mb-10 border-b border-surface-variant/30 pb-4 md:pb-6">Histórico de Apresentações</h2>
 
-    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl w-full">
         <!-- Event Section Carousel -->
         <div class="relative overflow-hidden" id="shows-carousel">
 <div class="mb-0 md:mb-12 text-center w-full">
@@ -403,7 +403,21 @@
     // Inicia o timer na primeira vez
     startInterval();
 </script>
+
+        <!-- Divisória -->
+        <div class="w-full border-t border-surface-variant/30 mt-8 mb-6"></div>
+
+        <!-- Logos dos Palcos -->
+        <div class="w-full mb-4">
+            <h3 class="font-label-md text-secondary uppercase tracking-widest text-center mb-6 text-sm">Palcos e Festivais por onde já passou</h3>
+            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-80 hover:opacity-100 transition-opacity">
+                <!-- Logos Uploaded -->
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-black rounded-full shadow-lg border border-surface-variant/30 overflow-hidden flex items-center justify-center p-2"><img src="assets/logo1.jpg" alt="Local/Festival" class="w-full h-full object-contain" /></div>
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-black rounded-full shadow-lg border border-surface-variant/30 overflow-hidden flex items-center justify-center p-2"><img src="assets/logo2.jpg" alt="Local/Festival" class="w-full h-full object-contain" /></div>
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-black rounded-full shadow-lg border border-surface-variant/30 overflow-hidden flex items-center justify-center p-2"><img src="assets/logo3.png" alt="Local/Festival" class="w-full h-full object-contain" /></div>
+            </div>
         </div>
+
     </div>
 </div>
 </section>
