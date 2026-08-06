@@ -2,6 +2,12 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Gaiola Records</title>
+<meta name="description" content="Gaiola Records - Produtora e Agência Cultural. Descubra nossos artistas e projetos.">
+<meta property="og:title" content="Gaiola Records">
+<meta property="og:description" content="Gaiola Records - Produtora e Agência Cultural. Descubra nossos artistas e projetos.">
+<meta property="og:image" content="https://gaiolacultural.github.io/site-gaiolarecords/assets/Favicons.png">
+<meta property="og:url" content="https://gaiolacultural.github.io/site-gaiolarecords/">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="assets/Favicons.png?v=4">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
@@ -17,17 +23,19 @@
             transition: all 0.4s ease;
             border: 1px solid transparent;
         }
-        .artist-card:hover {
-            border-color: #4D4D4D;
-        }
         .artist-card img {
             transition: transform 0.6s ease, filter 0.4s ease;
             filter: grayscale(100%) contrast(1.2);
             will-change: transform;
         }
-        .artist-card:hover img {
-            transform: scale(1.03);
-            filter: grayscale(0%) contrast(1.1);
+        @media (hover: hover) {
+            .artist-card:hover {
+                border-color: #4D4D4D;
+            }
+            .artist-card:hover img {
+                transform: scale(1.03);
+                filter: grayscale(0%) contrast(1.1);
+            }
         }
         @media (max-width: 767px) {
             .artist-card.is-visible { border-color: #4D4D4D; }
@@ -248,7 +256,7 @@
 <a class="font-label-md text-label-md uppercase text-on-secondary-container hover:text-primary transition-colors duration-200" href="#">SOBRE</a>
 <a class="font-label-md text-label-md uppercase text-on-secondary-container hover:text-primary transition-colors duration-200" href="#">CONTATO</a>
 </nav>
-<div class="font-body-md text-body-md text-secondary dark:text-secondary text-xs text-center md:text-right">© 2023 GAIOLA RECORDS. TODOS OS DIREITOS RESERVADOS.</div>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary text-xs text-center md:text-right">© 2026 GAIOLA RECORDS. TODOS OS DIREITOS RESERVADOS.</div>
 </div>
 </footer>
 
