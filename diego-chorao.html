@@ -206,9 +206,9 @@
         <div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 hover:opacity-100 transition-opacity overflow-hidden"><img alt="Lançamento Poesia Left" class="absolute inset-0 w-full h-full object-cover object-center block" src="assets/lancamentopoesia-foto1.jpeg"/></div>
         <div class="w-full lg:w-1/2 aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden glow-hover transition-all duration-300 z-10 md:scale-105 shadow-2xl rounded-xl">
             <!-- Mobile Video -->
-            <video class="w-full h-full object-cover absolute inset-0 block md:hidden" controls playsinline poster="assets/lancamentopoesia-thumb.png"><source src="assets/lancamentopoesia-video-mobile.mp4" type="video/mp4"></video>
+            <video class="w-full h-full object-cover absolute inset-0 block md:hidden" controls playsinline poster="assets/lancamentopoesia-thumb.png?v=2"><source src="assets/lancamentopoesia-video-mobile.mp4?v=2" type="video/mp4"></video>
             <!-- Desktop Video -->
-            <video class="w-full h-full object-cover absolute inset-0 hidden md:block" controls playsinline poster="assets/lancamentopoesia-thumb.png"><source src="assets/lancamentopoesia-video.mp4?v=2" type="video/mp4"></video>
+            <video class="w-full h-full object-cover absolute inset-0 hidden md:block" controls playsinline poster="assets/lancamentopoesia-thumb.png?v=2"><source src="assets/lancamentopoesia-video.mp4?v=2" type="video/mp4"></video>
         </div>
         <div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 hover:opacity-100 transition-opacity overflow-hidden"><img alt="Lançamento Poesia Right" class="absolute inset-0 w-full h-full object-cover object-center block" src="assets/lancamentopoesia-foto2.jpeg"/></div>
     </div>
@@ -293,6 +293,13 @@
         video.addEventListener('play', () => {
             isPlayingVideo = true;
             stopInterval();
+            if (window.innerWidth < 768) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen().catch(err => console.log(err));
+                } else if (video.webkitEnterFullscreen) {
+                    video.webkitEnterFullscreen();
+                }
+            }
         });
         video.addEventListener('pause', () => {
             isPlayingVideo = false;

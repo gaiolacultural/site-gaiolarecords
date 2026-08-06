@@ -295,6 +295,13 @@
         video.addEventListener('play', () => {
             isPlayingVideo = true;
             stopInterval();
+            if (window.innerWidth < 768) {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen().catch(err => console.log(err));
+                } else if (video.webkitEnterFullscreen) {
+                    video.webkitEnterFullscreen();
+                }
+            }
         });
         video.addEventListener('pause', () => {
             isPlayingVideo = false;
