@@ -153,9 +153,19 @@
     </div>
 </div>
 </section>
-<!-- Event Section Carousel -->
-<section class="mb-12 relative overflow-hidden" id="shows-carousel">
-<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12 text-center">
+<!-- Shows Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-32">
+<div class="flex flex-col gap-4 md:gap-8 items-center w-full">
+    <!-- Caixa do Título -->
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-2xl w-full md:w-auto mt-8">
+        <h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-glow uppercase text-center w-full m-0">Shows do Artista</h2>
+    </div>
+
+    <!-- Caixa do Conteúdo Principal -->
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl w-full">
+        <!-- Event Section Carousel -->
+        <div class="relative overflow-hidden" id="shows-carousel">
+<div class="mb-12 text-center">
 <div class="flex items-center justify-center gap-6">
 <button onclick="prevSlide()" class="group flex items-center gap-2 cursor-pointer transition-all">
 <span class="text-[10px] font-bold tracking-widest opacity-40 group-hover:opacity-100 group-hover:text-primary transition-all uppercase hidden md:block">ANTERIOR</span>
@@ -163,7 +173,7 @@
 <span class="material-symbols-outlined text-4xl">chevron_left</span>
 </div>
 </button>
-<h2 id="carousel-title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase transition-all duration-300 min-w-[250px] md:min-w-[600px]">FESTIVAL DE INVERNO PEIRÓPOLIS 2026</h2>
+<h3 id="carousel-title" class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase transition-all duration-300 min-w-[250px] md:min-w-[600px]">FESTIVAL DE INVERNO PEIRÓPOLIS 2026</h3>
 <button onclick="nextSlide()" class="group flex items-center gap-2 cursor-pointer transition-all">
 <div class="text-primary rounded-full p-2 flex items-center justify-center transition-all duration-300 group-hover:bg-surface-variant group-hover:text-white border border-transparent group-hover:border-surface-variant">
 <span class="material-symbols-outlined text-4xl">chevron_right</span>
@@ -172,9 +182,9 @@
 </button>
 </div>
 </div>
-<div class="relative max-w-container-max mx-auto px-margin-mobile md:px-12 flex items-center justify-center">
+<div class="relative max-w-container-max mx-auto px-0 md:px-12 flex items-center justify-center">
 <!-- Left Arrow -->
-<button onclick="prevSlide()" class="absolute left-4 md:left-12 z-20 w-12 h-12 bg-black/50 border border-outline flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-full hidden md:flex">
+<button onclick="prevSlide()" class="absolute left-0 md:left-4 z-20 w-12 h-12 bg-black/50 border border-outline flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-full hidden md:flex">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
 
@@ -200,14 +210,14 @@
 </div>
 
 <!-- Right Arrow -->
-<button onclick="nextSlide()" class="absolute right-4 md:right-12 z-20 w-12 h-12 bg-black/50 border border-outline flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-full hidden md:flex">
+<button onclick="nextSlide()" class="absolute right-0 md:right-4 z-20 w-12 h-12 bg-black/50 border border-outline flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-full hidden md:flex">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </div>
 <script>
     let currentSlide = 0;
     const slidesCount = 2;
-    const titles = ["FESTIVAL DE INVERNO PEIRÓPOLIS", "MOTO CLUBE ROTA 555"];
+    const titles = ["FESTIVAL DE INVERNO PEIRÓPOLIS 2026", "MOTO CLUBE ROTA 555"];
     
     function updateCarousel() {
         document.getElementById('carousel-track').style.transform = `translateX(-${currentSlide * 100}%)`;
@@ -227,7 +237,22 @@
         updateCarousel();
     }
 </script>
-</section><section class="mb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"><div class="mb-12 text-center"><h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">SHOW EDSON SANTANA</h2></div><div class="w-full max-w-4xl mx-auto aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl"><iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/ZWCDqfTQXwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></section>
+        </div>
+        
+        <!-- Divider -->
+        <hr class="border-surface-variant w-full my-12 opacity-50">
+
+        <!-- Youtube Video Section -->
+        <div class="w-full max-w-4xl mx-auto px-4 md:px-0">
+            <div class="mb-8 text-center"><h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary uppercase">SHOW COMPLETO NO YOUTUBE</h3></div>
+            <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
+                <iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/ZWCDqfTQXwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
 </main>
 
 <!-- Footer -->
