@@ -159,60 +159,80 @@
     <!-- Título do Artista -->
     <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant px-4 py-2 md:px-6 md:py-3 rounded-xl shadow-2xl w-full text-center">
         <h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-glow uppercase m-0 tracking-tight">Diego Chorão</h1>
-        <p class="font-label-md text-label-md text-secondary uppercase tracking-widest mt-1">Rap • Boom Bap • Hardcore • Uberaba/MG</p>
+        <p class="font-label-md text-label-md text-secondary uppercase tracking-widest mt-1">Rap • Boom Bap • Uberaba/MG</p>
     </div>
 
-    <!-- Bloco Principal: Foto + Botão Contratar -->
-    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl w-full">
-        <div class="flex flex-col md:flex-row gap-8 items-center justify-center">
+    <!-- Bloco Principal -->
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 rounded-2xl shadow-2xl w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             
-            <!-- Foto e Botão -->
-            <div class="w-full md:w-1/3 flex flex-col items-center">
-                <div class="w-full aspect-[4/5] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
-                    <img alt="Diego Chorão" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/artist2.jpg"/>
+            <!-- Coluna 1: Foto + Texto (Bio) -->
+            <div class="flex flex-col gap-6 justify-between">
+                <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+                    <!-- Foto -->
+                    <div class="w-1/2 sm:w-1/3 aspect-[4/5] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl shrink-0">
+                        <img alt="Diego Chorão" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/artist2.jpg"/>
+                    </div>
+                    <!-- Texto -->
+                    <div class="w-full sm:w-2/3 space-y-4 text-on-surface-variant font-body-md text-body-md sm:text-sm text-center sm:text-justify leading-relaxed">
+                        <p>Com 18 anos de estrada e mais de 30 lançamentos, o rapper, MC e poeta Diego Chorão é uma das principais vozes da cena independente de Uberaba (MG).</p>
+                        <p>Com raízes fincadas no underground mineiro, ele construiu uma trajetória sólida que passa por grupos como o Alkateia Rap e projetos de peso.</p>
+                    </div>
                 </div>
                 <!-- Botão de Contratação Imediata -->
-                <a href="https://wa.me/5534992839811?text=Olá,%20gostaria%20de%20orçamento%20para%20contratar%20o%20show%20do%20Diego%20Chorão." target="_blank" class="w-full mt-6 bg-primary text-on-primary font-bold text-center py-4 px-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity shadow-lg flex items-center justify-center gap-2">
+                <a href="https://wa.me/5534992839811?text=Olá,%20gostaria%20de%20orçamento%20para%20contratar%20o%20show%20do%20Diego%20Chorão." target="_blank" class="w-full bg-primary text-on-primary font-bold text-center py-4 px-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity shadow-lg flex items-center justify-center gap-2">
                     <span class="material-symbols-outlined text-xl">perm_phone_msg</span> Contratar Show
                 </a>
             </div>
 
-            <!-- 2. Pitch de Autoridade (Sobre) -->
-            <div class="w-full md:w-2/3 flex flex-col gap-6 self-start">
-                <div class="space-y-4 text-on-surface-variant font-body-md text-body-md text-justify leading-relaxed">
-                    <p>Com 18 anos de estrada e mais de 30 lançamentos, o rapper, MC e poeta Diego Chorão é uma das principais vozes da cena independente de Uberaba (MG).</p>
-                    <p>Com raízes fincadas no underground mineiro, ele construiu uma trajetória sólida que passa por grupos como o Alkateia Rap e projetos de peso, como o recém-lançado álbum Poesia de Boteco — produzido pela Gaiola Records via Edital PNAB.</p>
+            <!-- Coluna 2: Destaque Lançamento -->
+            <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start p-6 bg-surface-container-low/30 rounded-xl border border-surface-variant/50">
+                <div class="w-2/3 sm:w-1/2 aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl flex items-center justify-center shrink-0">
+                    <img alt="Poesia de Boteco" class="w-full h-full object-cover" src="assets/poesia-de-boteco-capa.jpg"/>
+                </div>
+                <div class="w-full sm:w-1/2 flex flex-col gap-3 justify-center text-center sm:text-left h-full">
+                    <span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Lançamento Recente</span>
+                    <h2 class="font-headline-md text-headline-md text-primary uppercase leading-tight">Álbum: Poesia de Boteco</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-sm">
+                        O trabalho reúne vivências de conversas de bar e colaborações com Black Pantera, Lucas Grilo, Malato e Eremita Roots.
+                    </p>
+                    <a href="https://open.spotify.com/intl-pt/album/443kRoL7N0zM8otsdM0iMW?si=tqNWL7ZiSIivt3V3Zislcw" target="_blank" class="mt-auto border border-primary text-primary hover:bg-primary hover:text-on-primary px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 w-full">
+                        <img alt="Spotify" class="w-4 h-4 object-contain invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/> Ouvir no Spotify
+                    </a>
                 </div>
             </div>
+
         </div>
     </div>
 </div>
 </section>
 
-<!-- 3. Destaque do Lançamento: Poesia de Boteco -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
-<div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl">
-    <div class="flex flex-col md:flex-row gap-8 items-center">
-        <div class="w-full md:w-1/3 aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl flex items-center justify-center">
-            <img alt="Poesia de Boteco" class="w-full h-full object-cover" src="assets/lancamentopoesia-thumb.png?v=2"/>
+<!-- 4. A Logística do Negócio (Formato do Show) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
+<div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl w-full">
+    <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+        <div class="flex flex-col gap-2 text-center md:text-left">
+            <div class="font-headline-md text-headline-md text-white uppercase tracking-wider">FORMATO SHOW</div>
+            <div class="font-body-md text-body-md text-primary font-bold uppercase">TRIO (3 PESSOAS)</div>
+            <div class="font-label-md text-label-md text-on-surface-variant uppercase">VOZ / APOIO / DJ • Duração: 50 min</div>
+            
+            <a href="#" class="mt-4 border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center md:justify-start gap-2 w-fit mx-auto md:mx-0">
+                <span class="material-symbols-outlined text-sm">download</span> Rider Técnico e Mapa de Palco
+            </a>
         </div>
-        <div class="w-full md:w-2/3 flex flex-col gap-4">
-            <span class="font-label-md text-label-md text-secondary uppercase tracking-widest">Lançamento Recente • Edital PNAB</span>
-            <h2 class="font-headline-md text-headline-md text-primary uppercase">Álbum: Poesia de Boteco</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                Com nove faixas inéditas, o trabalho reúne histórias, vivências de conversas de bar e colaborações de peso com artistas da cena independente, trazendo participações marcantes como <strong>Black Pantera</strong>, <strong>Lucas Grilo</strong>, <strong>Malato</strong> e <strong>Eremita Roots</strong>.
-            </p>
-            <div class="pt-2 flex flex-wrap gap-4">
-                <a href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L" target="_blank" class="border border-primary text-primary hover:bg-primary hover:text-on-primary px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors flex items-center gap-2">
-                    <img alt="Spotify" class="w-4 h-4 object-contain invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/> Ouvir no Spotify
-                </a>
-            </div>
+        
+        <!-- Redes Sociais -->
+        <div class="flex flex-wrap justify-center w-full md:w-auto gap-4 md:gap-6 items-center">
+            <a class="group flex flex-col items-center gap-2" href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L?si=zGFFczlaRhO6DGeQmPedWg" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><img alt="Spotify" class="w-7 h-7 md:w-8 md:h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">Spotify</span></a>
+            <a class="group flex flex-col items-center gap-2" href="https://www.youtube.com/channel/UClvZhqILe7J_MGCZJbpNTIA" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><img alt="YouTube" class="w-7 h-7 md:w-8 md:h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OCWKa2_-zIkUGs6QbBrUrVPmsxmibZJnnyBbj2dxC8v-RqTj33uT_Zr1_o1teFNIjvdWxK9f-UdE4nggkZ7TPAqhvIrZ7pfOKlikpofsWJ0QNz55aFGY2w3U8Jk5Dh11TLqAmmFQfokev3fgDByIQUIg2Wn4UJeuMX9zvDeNrfCxjRzLgQPVr9jnBlckBOClNUVgUUxUOnsem0Cd0riwwfUB_A-s9vGv1bvKe1IEnxWGk1Y8kAos1mb_a5vNchL_YG0"/></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">YouTube</span></a>
+            <a class="group flex flex-col items-center gap-2" href="https://www.instagram.com/chorao13/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><img alt="Instagram" class="w-7 h-7 md:w-8 md:h-8 object-contain rounded-[6px]" src="assets/instagram.png"/></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">Instagram</span></a>
+            <a class="group flex flex-col items-center gap-2" href="https://diegochorao.gaiolarecords.com.br/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><span class="material-symbols-outlined text-[28px] md:text-[32px]">language</span></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">Website</span></a>
         </div>
     </div>
 </div>
 </section>
 
-<!-- 4. Shows / Portfólio de Palcos (Carrossel) -->
+<!-- 5. Shows / Portfólio de Palcos (Carrossel) -->
 <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16" id="shows">
 <div class="flex flex-col gap-4 md:gap-8 items-center w-full">
     
@@ -363,31 +383,6 @@
     // Inicia o timer na primeira vez
     startInterval();
 </script>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- 5. A Logística do Negócio (Formato do Show) -->
-<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
-<div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl w-full">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
-        <div class="flex flex-col gap-2 text-center md:text-left">
-            <div class="font-headline-md text-headline-md text-white uppercase tracking-wider">FORMATO SHOW</div>
-            <div class="font-body-md text-body-md text-primary font-bold uppercase">TRIO (3 PESSOAS)</div>
-            <div class="font-label-md text-label-md text-on-surface-variant uppercase">VOZ / APOIO / DJ • Duração: 50 min</div>
-            
-            <a href="#" class="mt-4 border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-white px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center md:justify-start gap-2 w-fit mx-auto md:mx-0">
-                <span class="material-symbols-outlined text-sm">download</span> Rider Técnico e Mapa de Palco
-            </a>
-        </div>
-        
-        <!-- Redes Sociais -->
-        <div class="flex flex-wrap justify-center w-full md:w-auto gap-4 md:gap-6 items-center">
-            <a class="group flex flex-col items-center gap-2" href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L?si=zGFFczlaRhO6DGeQmPedWg" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><img alt="Spotify" class="w-7 h-7 md:w-8 md:h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">Spotify</span></a>
-            <a class="group flex flex-col items-center gap-2" href="https://www.youtube.com/channel/UClvZhqILe7J_MGCZJbpNTIA" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><img alt="YouTube" class="w-7 h-7 md:w-8 md:h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OCWKa2_-zIkUGs6QbBrUrVPmsxmibZJnnyBbj2dxC8v-RqTj33uT_Zr1_o1teFNIjvdWxK9f-UdE4nggkZ7TPAqhvIrZ7pfOKlikpofsWJ0QNz55aFGY2w3U8Jk5Dh11TLqAmmFQfokev3fgDByIQUIg2Wn4UJeuMX9zvDeNrfCxjRzLgQPVr9jnBlckBOClNUVgUUxUOnsem0Cd0riwwfUB_A-s9vGv1bvKe1IEnxWGk1Y8kAos1mb_a5vNchL_YG0"/></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">YouTube</span></a>
-            <a class="group flex flex-col items-center gap-2" href="https://www.instagram.com/chorao13/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><img alt="Instagram" class="w-7 h-7 md:w-8 md:h-8 object-contain rounded-[6px]" src="assets/instagram.png"/></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">Instagram</span></a>
-            <a class="group flex flex-col items-center gap-2" href="https://diegochorao.gaiolarecords.com.br/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-14 h-14 md:w-16 md:h-16"><span class="material-symbols-outlined text-[28px] md:text-[32px]">language</span></div><span class="font-label-md text-[9px] uppercase tracking-widest opacity-70">Website</span></a>
         </div>
     </div>
 </div>
