@@ -219,12 +219,18 @@
     const slidesCount = 2;
     const titles = ["FESTIVAL DE INVERNO PEIRÓPOLIS 2026", "MOTO CLUBE ROTA 555"];
     
+    let slideInterval;
+    let isHovered = false;
+    let isPlayingVideo = false;
+
     function updateCarousel() {
         document.getElementById('carousel-track').style.transform = `translateX(-${currentSlide * 100}%)`;
         document.getElementById('carousel-title').innerText = titles[currentSlide];
         
         // Pause all videos when sliding
         document.querySelectorAll('#carousel-track video').forEach(v => v.pause());
+        isPlayingVideo = false;
+        resetInterval();
     }
 
     function nextSlide() {
@@ -236,6 +242,56 @@
         currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
         updateCarousel();
     }
+
+    function startInterval() {
+        if (!slideInterval && !isHovered && !isPlayingVideo) {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+    }
+
+    function stopInterval() {
+        if (slideInterval) {
+            clearInterval(slideInterval);
+            slideInterval = null;
+        }
+    }
+
+    function resetInterval() {
+        stopInterval();
+        startInterval();
+    }
+
+    // Monitora hover no carrossel
+    const carouselContainer = document.getElementById('shows-carousel');
+    if (carouselContainer) {
+        carouselContainer.addEventListener('mouseenter', () => {
+            isHovered = true;
+            stopInterval();
+        });
+        carouselContainer.addEventListener('mouseleave', () => {
+            isHovered = false;
+            startInterval();
+        });
+    }
+
+    // Monitora eventos dos videos (play, pause, fim)
+    document.querySelectorAll('#carousel-track video').forEach(video => {
+        video.addEventListener('play', () => {
+            isPlayingVideo = true;
+            stopInterval();
+        });
+        video.addEventListener('pause', () => {
+            isPlayingVideo = false;
+            startInterval();
+        });
+        video.addEventListener('ended', () => {
+            isPlayingVideo = false;
+            startInterval();
+        });
+    });
+
+    // Inicia o timer na primeira vez
+    startInterval();
 </script>
         </div>
         
