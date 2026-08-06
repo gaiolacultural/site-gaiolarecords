@@ -156,17 +156,19 @@
 <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
 <div class="flex flex-col gap-6 items-center w-full">
     
-    <!-- Título do Artista -->
-    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant px-6 py-3 rounded-xl shadow-2xl w-fit text-center mx-auto">
-        <h1 class="font-headline-lg text-headline-lg-mobile md:text-[3rem] md:leading-[3rem] text-primary text-glow uppercase m-0 tracking-tight">Diego Chorão</h1>
-        <div class="font-label-md text-label-md text-secondary uppercase tracking-widest mt-2 flex flex-col gap-1">
-            <span>Rap • Boom Bap</span>
-            <span class="text-[10px] opacity-70">Uberaba / MG</span>
-        </div>
-    </div>
-
     <!-- Bloco Principal -->
-    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 rounded-2xl shadow-2xl w-full">
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 rounded-2xl shadow-2xl w-full flex flex-col gap-6 md:gap-8">
+        
+        <!-- Título do Artista (Movido para dentro) -->
+        <div class="w-full text-center lg:text-left flex flex-col justify-center lg:justify-start border-b border-surface-variant/50 pb-6">
+            <h1 class="font-headline-lg text-headline-lg-mobile md:text-[3rem] md:leading-[3rem] text-primary text-glow uppercase m-0 tracking-tight">Diego Chorão</h1>
+            <div class="font-label-md text-label-md text-secondary uppercase tracking-widest mt-2 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-1 sm:gap-2">
+                <span>Rap • Boom Bap</span>
+                <span class="hidden sm:block opacity-50">•</span>
+                <span class="text-[10px] sm:text-[11px] opacity-70">Uberaba / MG</span>
+            </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             
             <!-- Coluna 1: Foto + Texto (Bio) + Formato -->
@@ -183,15 +185,26 @@
                             <p>Com raízes fincadas no underground mineiro, ele construiu uma trajetória sólida que passa por grupos como o Alkateia Rap e projetos de peso.</p>
                         </div>
                         
-                        <!-- Formato Show (Movido para cá) -->
-                        <div class="bg-surface-container-low/30 border border-surface-variant/50 p-4 rounded-xl mt-2 flex flex-col gap-2 text-center sm:text-left">
-                            <div class="font-headline-md text-[10px] text-white uppercase tracking-wider opacity-70">Formato de Show</div>
-                            <div class="font-body-md text-sm text-primary font-bold uppercase">TRIO (3 PESSOAS)</div>
-                            <div class="font-label-md text-[10px] text-on-surface-variant uppercase">VOZ / APOIO / DJ • 50 min</div>
+                        <!-- Formato Show -->
+                        <div class="bg-surface-container-low/50 border border-surface-variant p-5 rounded-xl mt-2 flex flex-col gap-1 text-center sm:text-left shadow-lg">
+                            <div class="font-headline-md text-xs text-secondary uppercase tracking-widest mb-1">Formato de Show</div>
+                            <div class="font-body-lg text-xl text-white font-bold uppercase tracking-tight">TRIO (3 PESSOAS)</div>
+                            <div class="font-label-md text-xs text-on-surface-variant uppercase mt-1 flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                                <span>VOZ / APOIO / DJ</span>
+                                <span class="text-primary font-bold bg-primary/10 border border-primary/20 px-2 py-0.5 rounded text-[11px]">50 MINUTOS</span>
+                            </div>
                             
-                            <a href="#" class="mt-2 border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-white px-3 py-1.5 rounded-lg text-[10px] font-bold uppercase tracking-widest transition-colors flex items-center justify-center sm:justify-start gap-1.5 w-fit mx-auto sm:mx-0">
-                                <span class="material-symbols-outlined text-[14px]">download</span> Rider e Mapa de Palco
+                            <a href="#" class="mt-4 border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-widest transition-colors flex items-center justify-center sm:justify-start gap-2 w-fit mx-auto sm:mx-0">
+                                <span class="material-symbols-outlined text-[16px]">download</span> Rider e Mapa de Palco
                             </a>
+                        </div>
+
+                        <!-- Redes Sociais -->
+                        <div class="flex justify-center sm:justify-start gap-3 items-center pt-2">
+                            <a class="group flex flex-col items-center gap-1" href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L?si=zGFFczlaRhO6DGeQmPedWg" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><img alt="Spotify" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/></div></a>
+                            <a class="group flex flex-col items-center gap-1" href="https://www.youtube.com/channel/UClvZhqILe7J_MGCZJbpNTIA" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><img alt="YouTube" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OCWKa2_-zIkUGs6QbBrUrVPmsxmibZJnnyBbj2dxC8v-RqTj33uT_Zr1_o1teFNIjvdWxK9f-UdE4nggkZ7TPAqhvIrZ7pfOKlikpofsWJ0QNz55aFGY2w3U8Jk5Dh11TLqAmmFQfokev3fgDByIQUIg2Wn4UJeuMX9zvDeNrfCxjRzLgQPVr9jnBlckBOClNUVgUUxUOnsem0Cd0riwwfUB_A-s9vGv1bvKe1IEnxWGk1Y8kAos1mb_a5vNchL_YG0"/></div></a>
+                            <a class="group flex flex-col items-center gap-1" href="https://www.instagram.com/chorao13/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><img alt="Instagram" class="w-5 h-5 object-contain rounded-[4px]" src="assets/instagram.png"/></div></a>
+                            <a class="group flex flex-col items-center gap-1" href="https://diegochorao.gaiolarecords.com.br/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><span class="material-symbols-outlined text-[20px]">language</span></div></a>
                         </div>
                     </div>
                 </div>
@@ -207,13 +220,6 @@
                 <div class="w-2/3 sm:w-1/2 flex flex-col gap-4">
                     <div class="w-full aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl flex items-center justify-center shrink-0">
                         <img alt="Poesia de Boteco" class="w-full h-full object-cover" src="assets/poesia-de-boteco-capa.jpg"/>
-                    </div>
-                    <!-- Redes Sociais movidas para cá para balancear -->
-                    <div class="flex justify-center gap-3 items-center pt-2">
-                        <a class="group flex flex-col items-center gap-1" href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L?si=zGFFczlaRhO6DGeQmPedWg" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><img alt="Spotify" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/></div></a>
-                        <a class="group flex flex-col items-center gap-1" href="https://www.youtube.com/channel/UClvZhqILe7J_MGCZJbpNTIA" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><img alt="YouTube" class="w-5 h-5 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OCWKa2_-zIkUGs6QbBrUrVPmsxmibZJnnyBbj2dxC8v-RqTj33uT_Zr1_o1teFNIjvdWxK9f-UdE4nggkZ7TPAqhvIrZ7pfOKlikpofsWJ0QNz55aFGY2w3U8Jk5Dh11TLqAmmFQfokev3fgDByIQUIg2Wn4UJeuMX9zvDeNrfCxjRzLgQPVr9jnBlckBOClNUVgUUxUOnsem0Cd0riwwfUB_A-s9vGv1bvKe1IEnxWGk1Y8kAos1mb_a5vNchL_YG0"/></div></a>
-                        <a class="group flex flex-col items-center gap-1" href="https://www.instagram.com/chorao13/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><img alt="Instagram" class="w-5 h-5 object-contain rounded-[4px]" src="assets/instagram.png"/></div></a>
-                        <a class="group flex flex-col items-center gap-1" href="https://diegochorao.gaiolarecords.com.br/" target="_blank"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-10 h-10"><span class="material-symbols-outlined text-[20px]">language</span></div></a>
                     </div>
                 </div>
                 <div class="w-full sm:w-1/2 flex flex-col gap-3 justify-center text-center sm:text-left h-full">
