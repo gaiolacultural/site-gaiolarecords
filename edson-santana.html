@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Édson Santana - Gaiola Records</title>
+<link rel="icon" type="image/png" href="assets/Favicons.png?v=4">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;family=Manrope:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#303030",
+                        "surface-variant": "#353535",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-tertiary-container": "#444343",
+                        "surface-container-low": "#1b1b1b",
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-tint": "#c7c6c6",
+                        "surface-container-highest": "#353535",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-surface": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "on-tertiary": "#313030",
+                        "inverse-primary": "#5e5e5f",
+                        "error": "#ffb4ab",
+                        "primary-container": "#b0b0b0",
+                        "on-background": "#e2e2e2",
+                        "on-primary-container": "#424343",
+                        "on-error": "#690005",
+                        "tertiary-container": "#b2b0b0",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary": "#2f3131",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-fixed": "#e3e2e2",
+                        "inverse-surface": "#e2e2e2",
+                        "secondary": "#c8c6c6",
+                        "outline-variant": "#444748",
+                        "on-secondary-fixed-variant": "#474747",
+                        "surface-container": "#1f1f1f",
+                        "surface": "#131313",
+                        "surface-dim": "#131313",
+                        "on-surface-variant": "#c4c7c7",
+                        "on-secondary-container": "#b9b8b8",
+                        "primary-fixed-dim": "#c7c6c6",
+                        "error-container": "#93000a",
+                        "outline": "#8e9192",
+                        "tertiary": "#cecbcb",
+                        "on-error-container": "#ffdad6",
+                        "primary": "#cccbcb",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-bright": "#393939",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-primary-fixed-variant": "#464747",
+                        "secondary-container": "#494949",
+                        "on-primary-fixed": "#1a1c1c",
+                        "background": "#131313",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "on-secondary": "#303030",
+                        "brand": "#b0b0b0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Manrope"],
+                        "sans": ["Hanken Grotesk", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "display-lg": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-hover:hover {
+            box-shadow: 0 0 20px 0 rgba(204, 203, 203, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(204, 203, 203, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container flex flex-col">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-black/80 z-10"></div>
+<img alt="" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbgcFZzFJ6gtHM0U65CVhi_YmW1oGT8QMrisWPBXPlZjSwHDNPhjlZ2_MnElCMc2lNmsywRKIqz4-mzLiyvo5vjCx1RN3nJLkw5dZM2YlHsKj9QmZcqMKuEPaNUKD4E96f0zo9buaPRmf9RdxKPowWAz60lo9EkTAWaA-D0IKVAdg8AmO0xTbxTcnbJSfowPu6uct9dubIO_91b4yBY_JvwsJV1MpLhgbin4BJtweiCC0YbG1iEIjWZXRejcv1cfSoEtg"/>
+</div>
+
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-background border-b border-surface-variant w-full z-50 sticky top-0 h-10 flex items-center">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 w-full">
+<div class="flex items-center gap-4 cursor-pointer hover:opacity-70 transition-opacity" onclick="window.location.href='index.html'">
+<img alt="Gaiola Records Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbigr38NArINDUZy80i0HrJh3YCtNGgS2ggqkSwlLvSV7JLr_18-scOrh5Fpr_xY4JpFYSi9EcrguApULlvA0qmfgAqX5spVcgBnlYtjRvbq0xu8fMlPPL_bunRa729zp0-x5hH1pk90GlXmV0qKdD7DhFIoAnuPRi3DoxWXz0_jVhyFScWDpUE4c85C33V0degGREuhODQba-DiVZdu45oMwF5fMcsLOKJzR9QXPIvi7fEHx9rUUCBzyRPscw3Hk8ak">
+<span class="font-headline-lg text-2xl font-semibold tracking-tighter text-primary dark:text-primary leading-none">GAIOLA RECORDS</span>
+</div>
+<div class="md:hidden flex items-center cursor-pointer">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md uppercase text-primary border-b border-primary pb-1 cursor-pointer active:opacity-70" href="index.html#artists">ARTISTAS</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">SOBRE</a>
+<a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-primary transition-colors duration-300 cursor-pointer active:opacity-70" href="#">CONTATO</a>
+</nav>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="relative z-10 pt-8 pb-24 flex-grow">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12"><div class="flex flex-col gap-8 items-start"><h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary text-glow uppercase text-center w-full" data-stitch-orig-opacity="1">Edson Santana</h1><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start w-full"><div class="md:col-span-3 flex flex-col items-start"><div class="w-full aspect-[4/5] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl"><img alt="Édson Santana" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3Fkoo_GDX8KD_bTMHQm7msgauIsG7cU0wT0dnV-KtNttpcvTuXvKPMdwdjXmd726J0_qISDxMuBnCkjk4IAdYSTC2CzOGEwN_zRLD-qstegwShz8jV_BEb85okNdURXm_LttN-Kuz_rwhkHDm0_sCJ6VSNdro5C0GV8iC7-NE7nZIu-rPTCpA83KSFwdBT38QNvNkX0B1YOZf8eV1QyeO1Uvdn9LQHlYaXcp2pZiwAxLMHBaUTOgbCFWZMOnthW_wQwA"/></div></div><div class="md:col-span-9 flex flex-col gap-6 self-start"><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-justify">Com mais de 20 anos de estrada, o cantor e compositor Edson Santana apresenta o show "Caminhos" acompanhado por um trio (guitarra, baixo e bateria). Com uma trajetória que inclui passagens por festas, casas noturnas e grandes públicos — como na final da Copa de 2002 em Uberaba —, ele traz uma performance marcante e interativa.<br class=""/><br class=""/>Seu repertório une canções autorais já disponíveis nas plataformas digitais (como Caminhos e Clara) e releituras de clássicos do rock nacional e pop, homenageando nomes como Raul Seixas (de quem foi cover por 15 anos), Legião Urbana, Titãs, Barão Vermelho, Paralamas do Sucesso, entre outros. Recentemente, seu trabalho autoral foi selecionado para o projeto Energia Me Ouve, da Rádio Energia de São Paulo.</p><div class="mt-8 flex flex-col md:flex-row items-start md:items-center justify-start gap-12 md:gap-24"><div class="flex flex-col gap-1"><div class="font-headline-md text-headline-md text-outline uppercase">FORMATO SHOW</div><div class="font-body-md text-body-md text-primary uppercase">TRIO (3 PESSOAS)</div><div class="font-body-md text-body-md text-primary uppercase">VOZ &amp; GUITARRA / BAIXO / BATERIA</div></div><div class="flex gap-8 items-center"><a class="group flex flex-col items-center gap-2" href="#"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-20 h-20"><img alt="Spotify" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/></div><span class="font-label-md text-[10px] uppercase tracking-widest opacity-70">Spotify</span></a><a class="group flex flex-col items-center gap-2" href="#"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-20 h-20"><img alt="YouTube" class="w-10 h-10 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OCWKa2_-zIkUGs6QbBrUrVPmsxmibZJnnyBbj2dxC8v-RqTj33uT_Zr1_o1teFNIjvdWxK9f-UdE4nggkZ7TPAqhvIrZ7pfOKlikpofsWJ0QNz55aFGY2w3U8Jk5Dh11TLqAmmFQfokev3fgDByIQUIg2Wn4UJeuMX9zvDeNrfCxjRzLgQPVr9jnBlckBOClNUVgUUxUOnsem0Cd0riwwfUB_A-s9vGv1bvKe1IEnxWGk1Y8kAos1mb_a5vNchL_YG0"/></div><span class="font-label-md text-[10px] uppercase tracking-widest opacity-70">YouTube</span></a><a class="group flex flex-col items-center gap-2" href="#"><div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-20 h-20"><span class="material-symbols-outlined text-[40px]">language</span></div><span class="font-label-md text-[10px] uppercase tracking-widest opacity-70">Website</span></a></div></div></div></div></div></section>
+<!-- Event Section (Festival de Inverno) Carousel -->
+<section class="mb-32">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12 text-center">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">FESTIVAL DE INVERNO PEIRÓPOLIS 2026</h2>
+</div>
+<div class="relative max-w-container-max mx-auto px-margin-mobile md:px-12 flex items-center justify-center">
+<!-- Left Arrow -->
+<button class="absolute left-4 md:left-12 z-20 w-12 h-12 bg-black/50 border border-outline flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-full hidden md:flex">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<!-- Carousel Content -->
+<div class="flex items-center justify-center gap-6 w-full overflow-hidden"><div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 group hover:opacity-100 transition-opacity"><img alt="Festival Left" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtA5arM1W4vRolvYQvscwmNeewsRdmbyHp2VkSJkXTqjEeqMX8oYngDTav9OiPCZ6yJgD0B92VkjmHKjZY_iWjNdeR52LTqY9eJ1w8UErYCG4wB9SHiI_edEzELNc9EGP5p4I-wlqL1_pnuu6KwaWDkiCmgvewnpHeDeU1WXWSlhUK2kgA68zify0t0YqXzI2Ng7qYRJohh7hvtO6ZOOWdhJdgis-MVQxQkMQMH8N1fHtziFTkUK6ORMeDXTMFvBF1aK0"/></div><div class="w-full lg:w-1/2 aspect-video bg-surface-container-low border border-surface-variant relative group cursor-pointer overflow-hidden glow-hover transition-all duration-300 z-10 scale-105 shadow-2xl"><img alt="Video Thumbnail" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAREjV07M62FQPeCMBQPFBln3IfN2ru3Fa78ewG3tjPzIYp0z0-DEwqCJgKjQyTqw714uB1Faczes6_chG6n5Tncb-8e3GVjIYlquXr7IAvAkG9dQHjvt-8Q6KGWL9Da6A1nQZ-sjcifeKxf1ub9sPNre99Z881BBALhAIkcDmHzkK9-3T1r_hnN-sWmNlQDoWKNo-GqziZBLKylDVIcaYRajB6dhOXJECb7Zj_ap5TlFpaRBYNZWcQcaK5et2OsBQxsWs"/><div class="absolute inset-0 flex items-center justify-center"><div class="w-20 h-20 bg-background/70 backdrop-blur-md rounded-full flex items-center justify-center border border-outline/30 group-hover:scale-110 group-hover:bg-primary-container transition-all duration-300"><span class="material-symbols-outlined text-[40px] text-primary group-hover:text-on-primary-container">play_arrow</span></div></div></div><div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 group hover:opacity-100 transition-opacity"><img alt="Festival Right" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBsLtsOC8nXn6Y5Z-9cWCNxx-SseeLAUY7QTCopDz2HS0oackY_7nuyocPJrZDc2vN3Enng6tvGYxV2pIf-DN_5nVqqY7Ldndv7lOG3WcnMyBcXI2A8QeKZM7syISdC1KaQvqcaXP97T2tsHez1UFBS0MZcX-6XR5RJNZSaKhd358lxbcQJ_kfY__A26Nf3EbYeie2ESNf--TZtDimYqgXe4-psYCgjn8vAYz5_qVkjdwSwvNx_QyUXgNPOaBN5vGiNy0"/></div></div>
+<!-- Right Arrow -->
+<button class="absolute right-4 md:right-12 z-20 w-12 h-12 bg-black/50 border border-outline flex items-center justify-center hover:bg-primary-container hover:text-on-primary-container transition-colors rounded-full hidden md:flex">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section><section class="mb-32 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto"><div class="mb-12 text-center"><h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">SHOW EDSON SANTANA</h2></div><div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative group cursor-pointer overflow-hidden glow-hover transition-all duration-300"><img alt="Show Video" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCF0dnggZPEiR1UjlQAPDY70SivlJHM7YQaIYXzhG_c7eKE5v8pkJYopcptnfW9-NTDgBWGT3Ji33dcfvzSTn3tHy0VZZ7dz5R0NbBAoAKugruKPbjBDg0_P9Fq7ejp_t_Sd4NmmwS9JpSAXA2PajjSBe1N_2BZKM0CvVio7M3bay3RbAEm197HArSF8tG05MsBcTsrKuWUYUf216p6NKsx4KuF6FvPPQ3N6h35ImLyTRCSBtqzbzzvFPbDEFta3TbiVSs"/><div class="absolute inset-0 flex items-center justify-center"><div class="w-24 h-24 bg-background/70 backdrop-blur-md rounded-full flex items-center justify-center border border-outline/30 group-hover:scale-110 group-hover:bg-primary-container transition-all duration-300"><span class="material-symbols-outlined text-[56px] text-primary group-hover:text-on-primary-container">play_arrow</span></div></div></div></section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-surface-variant w-full mt-auto shrink-0 py-6 md:py-0 md:h-10 flex items-center">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-center md:justify-between items-center px-4 md:px-8 w-full gap-6 md:gap-0">
+<div class="font-headline-lg text-2xl font-semibold tracking-tighter text-primary dark:text-primary leading-none text-center md:text-left">
+            GAIOLA RECORDS
+        </div>
+<nav class="flex flex-wrap justify-center gap-4 md:gap-6">
+<a class="font-label-md text-label-md uppercase text-primary transition-colors duration-200 hover:text-primary" href="index.html#artists">ARTISTAS</a>
+<a class="font-label-md text-label-md uppercase text-on-secondary-container hover:text-primary transition-colors duration-200" href="#">SOBRE</a>
+<a class="font-label-md text-label-md uppercase text-on-secondary-container hover:text-primary transition-colors duration-200" href="#">CONTATO</a>
+</nav>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary text-xs text-center md:text-right">© 2023 GAIOLA RECORDS. TODOS OS DIREITOS RESERVADOS.</div>
+</div>
+</footer>
+<style>
+        /* Hide scrollbar for gallery */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>
