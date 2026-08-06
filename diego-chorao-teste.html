@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diego Chorão - Gaiola Records</title>
+<meta name="description" content="Diego Chorão - Contrate o artista pela Gaiola Records. Rap, Boom Bap e Hardcore para festivais e casas de show.">
+<meta property="og:title" content="Diego Chorão - Gaiola Records">
+<meta property="og:description" content="Diego Chorão - Contrate o artista pela Gaiola Records.">
+<meta property="og:image" content="https://gaiolacultural.github.io/site-gaiolarecords/assets/Diego_Chorao.png">
+<meta property="og:url" content="https://gaiolacultural.github.io/site-gaiolarecords/diego-chorao.html">
+<meta property="og:type" content="profile">
+<link rel="icon" type="image/png" href="assets/Favicons.png?v=4">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@400&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1b1b1b",
+                        "on-surface": "#e2e2e2",
+                        "secondary": "#c8c6c6",
+                        "primary": "#cccbcb",
+                        "surface-container-lowest": "#0e0e0e",
+                        "background": "#131313",
+                        "on-primary": "#2f3131"
+                    },
+                    spacing: {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-hover:hover {
+            box-shadow: 0 0 20px 0 rgba(204, 203, 203, 0.15);
+        }
+        .text-glow {
+            text-shadow: 0 0 10px rgba(204, 203, 203, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-sans antialiased min-h-screen selection:bg-primary selection:text-on-primary flex flex-col">
+
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute inset-0 bg-black/85 z-10"></div>
+<picture>
+  <source media="(max-width: 767px)" srcset="assets/bg-diego-mobile.png?v=2">
+  <img alt="" class="w-full h-full object-cover object-top" src="assets/bg-diego-pc.png"/>
+</picture>
+</div>
+
+<!-- TopAppBar -->
+<header class="bg-background border-b border-surface-variant w-full z-50 sticky top-0 h-10 flex items-center">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-4 md:px-8 w-full">
+<div class="flex items-center gap-4 cursor-pointer hover:opacity-70 transition-opacity" onclick="window.location.href='index.html'">
+<img alt="Gaiola Records Logo" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxbigr38NArINDUZy80i0HrJh3YCtNGgS2ggqkSwlLvSV7JLr_18-scOrh5Fpr_xY4JpFYSi9EcrguApULlvA0qmfgAqX5spVcgBnlYtjRvbq0xu8fMlPPL_bunRa729zp0-x5hH1pk90GlXmV0qKdD7DhFIoAnuPRi3DoxWXz0_jVhyFScWDpUE4c85C33V0degGREuhODQba-DiVZdu45oMwF5fMcsLOKJzR9QXPIvi7fEHx9rUUCBzyRPscw3Hk8ak">
+<span class="text-2xl font-semibold tracking-tighter text-primary leading-none">GAIOLA RECORDS</span>
+</div>
+<div class="md:hidden flex items-center cursor-pointer" onclick="const m = document.getElementById('mobile-menu'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex';">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-xs uppercase text-primary border-b border-primary pb-1 cursor-pointer" href="index.html#artists">ARTISTAS</a>
+<a class="text-xs uppercase text-secondary hover:text-primary transition-colors cursor-pointer" href="#">SOBRE</a>
+<a class="text-xs uppercase text-secondary hover:text-primary transition-colors cursor-pointer" href="#">CONTATO</a>
+</nav>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden absolute top-10 left-0 w-full bg-background border-b border-surface-variant flex-col items-center py-4 gap-4 shadow-xl z-50" style="display: none;">
+<a class="text-xs uppercase text-primary border-b border-primary pb-1 cursor-pointer" href="index.html#artists">ARTISTAS</a>
+<a class="text-xs uppercase text-secondary transition-colors" href="#">SOBRE</a>
+<a class="text-xs uppercase text-secondary transition-colors" href="#">CONTATO</a>
+</div>
+</header>
+
+<!-- Main Content -->
+<main class="relative z-10 pt-8 pb-24 flex-grow">
+    
+<!-- Hero Section & Sobre -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="flex flex-col gap-6 items-center w-full">
+    
+    <!-- Título do Artista -->
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant px-6 py-3 rounded-xl shadow-2xl w-full text-center">
+        <h1 class="text-3xl md:text-5xl font-bold text-primary text-glow uppercase m-0 tracking-tight">Diego Chorão</h1>
+        <p class="text-xs md:text-sm text-secondary uppercase tracking-widest mt-1">Rap • Boom Bap • Hardcore • Uberaba/MG</p>
+    </div>
+
+    <!-- Bloco Principal: Foto + Bio + Botão Contratar -->
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-6 md:p-8 rounded-2xl shadow-2xl w-full">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            
+            <!-- Foto -->
+            <div class="md:col-span-4 flex flex-col items-center">
+                <div class="w-full aspect-[4/5] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
+                    <img alt="Diego Chorão" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/artist2.jpg"/>
+                </div>
+                <!-- Botão de Contratação Imediata -->
+                <a href="https://wa.me/5534992839811?text=Olá,%20gostaria%20de%20orçamento%20para%20contratar%20o%20show%20do%20Diego%20Chorão." target="_blank" class="w-full mt-4 bg-primary text-on-primary font-bold text-center py-3 px-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 transition-opacity shadow-lg flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-xl">perm_phone_msg</span> Contratar Show
+                </a>
+            </div>
+
+            <!-- Bio + Formato do Show + Redes -->
+            <div class="md:col-span-8 flex flex-col gap-6">
+                <div class="space-y-4 text-on-surface text-justify leading-relaxed">
+                    <p>Com 18 anos de estrada, Diego Chorão é uma das vozes mais autênticas da cena independente de Uberaba (MG). Com raízes fincadas no underground mineiro, ele construiu uma trajetória sólida que passa por grupos como o Alkateia Rap.</p>
+                    <p>Unindo Rap, Boom Bap e Hardcore para despertar a consciência de classe, Chorão entrega uma performance visceral que traduz o cotidiano da quebrada em poesia e conexão direta com o público.</p>
+                </div>
+
+                <div class="border-t border-surface-variant pt-6 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div>
+                        <h4 class="text-xs uppercase text-secondary tracking-widest font-bold mb-1">Especificações do Show</h4>
+                        <p class="text-primary font-bold uppercase text-sm">Formato: Trio (3 Pessoas)</p>
+                        <p class="text-xs text-on-surface opacity-80 uppercase">Voz / Apoio / DJ • Duração: 50 min</p>
+                    </div>
+                    <div class="flex gap-4 justify-start md:justify-end">
+                        <a class="group flex flex-col items-center gap-1" href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L" target="_blank">
+                            <div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-12 h-12">
+                                <img alt="Spotify" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/>
+                            </div>
+                        </a>
+                        <a class="group flex flex-col items-center gap-1" href="https://www.youtube.com/channel/UClvZhqILe7J_MGCZJbpNTIA" target="_blank">
+                            <div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-12 h-12">
+                                <img alt="YouTube" class="w-6 h-6 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3OCWKa2_-zIkUGs6QbBrUrVPmsxmibZJnnyBbj2dxC8v-RqTj33uT_Zr1_o1teFNIjvdWxK9f-UdE4nggkZ7TPAqhvIrZ7pfOKlikpofsWJ0QNz55aFGY2w3U8Jk5Dh11TLqAmmFQfokev3fgDByIQUIg2Wn4UJeuMX9zvDeNrfCxjRzLgQPVr9jnBlckBOClNUVgUUxUOnsem0Cd0riwwfUB_A-s9vGv1bvKe1IEnxWGk1Y8kAos1mb_a5vNchL_YG0"/>
+                            </div>
+                        </a>
+                        <a class="group flex flex-col items-center gap-1" href="https://www.instagram.com/chorao13/" target="_blank">
+                            <div class="border border-primary flex items-center justify-center rounded-full group-hover:bg-primary group-hover:text-on-primary transition-all duration-300 w-12 h-12">
+                                <img alt="Instagram" class="w-6 h-6 object-contain rounded-[4px]" src="assets/instagram.png"/>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Destaque do Álbum: Poesia de Boteco -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-6 md:p-8 rounded-2xl shadow-2xl">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+        <div class="w-full md:w-1/3 aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl flex items-center justify-center">
+            <!-- Coloque a imagem da capa do álbum em assets/capa-poesia.jpg ou use a foto de divulgação -->
+            <img alt="Poesia de Boteco" class="w-full h-full object-cover" src="assets/lancamentopoesia-thumb.png?v=2"/>
+        </div>
+        <div class="w-full md:w-2/3 flex flex-col gap-4">
+            <span class="text-xs font-bold text-secondary uppercase tracking-widest">Lançamento Recente • Edital PNAB</span>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary uppercase">Álbum: Poesia de Boteco</h2>
+            <p class="text-on-surface leading-relaxed text-sm md:text-base">
+                Com nove faixas inéditas, o trabalho reúne histórias, vivências de conversas de bar e colaborações de peso com artistas da cena independente, trazendo participações marcantes como <strong>Black Pantera</strong>, <strong>Lucas Grilo</strong>, <strong>Malato</strong> e <strong>Eremita Roots</strong>.
+            </p>
+            <div class="pt-2 flex flex-wrap gap-4">
+                <a href="https://open.spotify.com/artist/53BXHON3LcNZ2Bow35hz8L" target="_blank" class="border border-primary text-primary hover:bg-primary hover:text-on-primary px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors">
+                    Ouvir no Spotify
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Shows / Portfólio de Palcos (Carrossel) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16" id="shows">
+<div class="flex flex-col gap-4 items-center w-full">
+    
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant px-6 py-3 rounded-xl shadow-2xl w-full text-center">
+        <h2 class="text-xl md:text-2xl font-bold text-primary uppercase tracking-tight">Histórico de Apresentações</h2>
+    </div>
+
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-6 rounded-2xl shadow-2xl w-full">
+        <!-- Event Section Carousel -->
+        <div class="relative overflow-hidden" id="shows-carousel">
+            <div class="mb-6 text-center w-full">
+                <div class="flex items-center justify-center gap-4 w-full">
+                    <button onclick="prevSlide()" class="group flex items-center cursor-pointer p-2">
+                        <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">chevron_left</span>
+                    </button>
+                    <h3 id="carousel-title" class="text-lg md:text-xl font-bold text-primary uppercase tracking-wide min-w-[280px] text-center">LANÇAMENTO POESIA DE BOTECO</h3>
+                    <button onclick="nextSlide()" class="group flex items-center cursor-pointer p-2">
+                        <span class="material-symbols-outlined text-primary text-3xl group-hover:scale-110 transition-transform">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="relative max-w-container-max mx-auto flex items-center justify-center">
+                <div class="w-full overflow-hidden pb-4">
+                    <div id="carousel-track" class="flex transition-transform duration-500 ease-in-out w-full" style="transform: translateX(0%);">
+                        
+                        <!-- Slide 1 -->
+                        <div class="min-w-full flex items-center justify-center gap-6 shrink-0">
+                            <div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 hover:opacity-100 transition-opacity overflow-hidden rounded-xl">
+                                <img alt="Foto Lateral" class="absolute inset-0 w-full h-full object-cover" src="assets/lancamentopoesia-foto1.jpeg"/>
+                            </div>
+                            <div class="w-full lg:w-1/2 aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden glow-hover transition-all duration-300 z-10 shadow-2xl rounded-xl">
+                                <video class="w-full h-full object-cover absolute inset-0 block md:hidden" controls playsinline poster="assets/lancamentopoesia-thumb.png?v=2">
+                                    <source src="assets/lancamentopoesia-video-mobile.mp4?v=2" type="video/mp4">
+                                </video>
+                                <video class="w-full h-full object-cover absolute inset-0 hidden md:block" controls playsinline poster="assets/lancamentopoesia-thumb.png?v=2">
+                                    <source src="assets/lancamentopoesia-video.mp4?v=2" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 hover:opacity-100 transition-opacity overflow-hidden rounded-xl">
+                                <img alt="Foto Lateral" class="absolute inset-0 w-full h-full object-cover" src="assets/lancamentopoesia-foto2.jpeg"/>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="min-w-full flex items-center justify-center gap-6 shrink-0">
+                            <div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 hover:opacity-100 transition-opacity overflow-hidden rounded-xl">
+                                <img alt="Foto Lateral" class="absolute inset-0 w-full h-full object-cover" src="assets/bailebrazuka-foto1.jpeg"/>
+                            </div>
+                            <div class="w-full lg:w-1/2 aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden glow-hover transition-all duration-300 z-10 shadow-2xl rounded-xl">
+                                <video class="w-full h-full object-cover absolute inset-0" controls playsinline poster="assets/bailebrazuka-thumb.png">
+                                    <source src="assets/bailebrazuka-video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="hidden lg:block w-1/4 aspect-[4/5] bg-surface-container-low border border-surface-variant relative opacity-50 hover:opacity-100 transition-opacity overflow-hidden rounded-xl">
+                                <img alt="Foto Lateral" class="absolute inset-0 w-full h-full object-cover" src="assets/bailebrazuka-foto2.jpeg"/>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Vídeo em Destaque (Show Completo / Apoio) -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto mb-16">
+<div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-6 rounded-2xl shadow-2xl text-center">
+    <div class="mb-6"><h3 class="text-xl font-bold text-primary uppercase tracking-wide">Veja o Diego Chorão em Cena</h3></div>
+    <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
+        <iframe class="w-full h-full absolute inset-0" src="https://www.youtube.com/embed/r0i3lyR4_xA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-surface-variant w-full py-6 flex items-center mt-auto">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-4 md:px-8 w-full gap-4">
+<div class="text-primary font-semibold tracking-tighter text-lg">GAIOLA RECORDS</div>
+<nav class="flex gap-6">
+<a class="text-xs uppercase text-primary hover:text-primary transition-colors" href="index.html#artists">ARTISTAS</a>
+<a class="text-xs uppercase text-secondary hover:text-primary transition-colors" href="#">SOBRE</a>
+<a class="text-xs uppercase text-secondary hover:text-primary transition-colors" href="#">CONTATO</a>
+</nav>
+<div class="text-secondary text-xs">© 2026 GAIOLA RECORDS. TODOS OS DIREITOS RESERVADOS.</div>
+</div>
+</footer>
+
+<script>
+    let currentSlide = 0;
+    const slidesCount = 2;
+    const titles = ["LANÇAMENTO POESIA DE BOTECO", "BAILE BRAZUKA"];
+    
+    function updateCarousel() {
+        document.getElementById('carousel-track').style.transform = `translateX(-${currentSlide * 100}%)`;
+        document.getElementById('carousel-title').innerText = titles[currentSlide];
+        document.querySelectorAll('#carousel-track video').forEach(v => v.pause());
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slidesCount;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slidesCount) % slidesCount;
+        updateCarousel();
+    }
+</script>
+
+</body>
+</html>
