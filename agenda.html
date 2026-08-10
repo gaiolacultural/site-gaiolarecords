@@ -157,16 +157,16 @@
 
 
 
-<main class="pb-24 pt-12 md:pt-32 px-grid-margin max-w-5xl mx-auto min-h-screen">
+<main class="pb-24 pt-4 md:pt-8 px-grid-margin max-w-5xl mx-auto min-h-screen">
     
     <!-- Header Agendamento -->
-    <div class="flex flex-col items-center text-center mb-16 gap-6 relative z-10">
+    <div class="flex flex-col items-center text-center mb-8 gap-4 relative z-10">
         <img alt="Logo Máquina Voadora" class="h-40 md:h-56 w-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIgzcOewCm-n2Ht1WoS7vqV6qMKf_yQvkSmSZbdCafqwBi_HNYDjLDBv8ZjM4QNVJuv2OPyyJSLI4VhZ7oYWbi7lEsJQjWIO5glIncyIbmziFTWoENzJceG1A-ZVzq1FbucQ0gP36rUwpoGySCIYz-rNUYTMoediRcQzfju_PXdwHtHaM5I8xHp_P9pulmJ5ACusOCQy18gvuQUHRGE9yU-FzhK533OSAfSldTauSd6CYe-X84-T1ilJO9yk_yFGr">
         <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary uppercase leading-tight">
             Agendamento<br>de Ensaios
         </h1>
-        <p class="text-body-lg text-on-surface-variant max-w-2xl">
-            Selecione uma data e horário abaixo para pré-agendar o ensaio da sua banda no Máquina Voadora Estúdio.
+        <p class="text-body-lg text-on-surface-variant max-w-2xl uppercase tracking-wider">
+            SELECIONE UMA DATA E HORÁRIO E FAÇA SUA RESERVA
         </p>
     </div>
 
@@ -241,18 +241,42 @@
     </div>
 </footer>
 
-<script>
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // COLE AQUI SUAS CREDENCIAIS DO FIREBASE
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const isFirebaseConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+    let db = null;
+    if (isFirebaseConfigured) {
+        try {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+        } catch (e) {
+            console.error("Erro ao inicializar Firebase", e);
+        }
+    }
+
     // Configurações e Estado
     const now = new Date();
     let currentMonth = now.getMonth();
     let currentYear = now.getFullYear();
     
-    let selectedDate = null; // Instância Date
-    let selectedTimes = []; // Array de Strings
+    let selectedDate = null; 
+    let selectedTimes = []; 
+    let occupiedTimes = []; // Horarios bloqueados carregados do banco
 
     const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
-    // Elementos DOM
     const monthDisplay = document.getElementById('monthDisplay');
     const calendarGrid = document.getElementById('calendarGrid');
     const timeSelectionArea = document.getElementById('timeSelectionArea');
@@ -261,12 +285,10 @@
     const formArea = document.getElementById('formArea');
     const bookingForm = document.getElementById('bookingForm');
 
-    // Inicialização
     function initCalendar() {
         document.getElementById('prevMonth').addEventListener('click', () => changeMonth(-1));
         document.getElementById('nextMonth').addEventListener('click', () => changeMonth(1));
         bookingForm.addEventListener('submit', handleFormSubmit);
-        
         renderCalendar();
     }
 
@@ -288,17 +310,13 @@
         
         const firstDay = new Date(currentYear, currentMonth, 1).getDay();
         const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-        
         const today = new Date();
         today.setHours(0,0,0,0);
 
-        // Espaços vazios iniciais
         for (let i = 0; i < firstDay; i++) {
-            const emptyDiv = document.createElement('div');
-            calendarGrid.appendChild(emptyDiv);
+            calendarGrid.appendChild(document.createElement('div'));
         }
 
-        // Dias do mês
         for (let day = 1; day <= daysInMonth; day++) {
             const dateObj = new Date(currentYear, currentMonth, day);
             const dayDiv = document.createElement('div');
@@ -306,42 +324,54 @@
             dayDiv.textContent = day;
             dayDiv.className = 'calendar-day border border-outline-variant/30 py-3 text-lg font-bold';
             
-            // Passado = desabilitado
             if (dateObj < today) {
                 dayDiv.classList.add('disabled');
             } else {
                 dayDiv.addEventListener('click', () => selectDate(dateObj, dayDiv));
             }
 
-            // Selecionado anteriormente?
-            if (selectedDate && 
-                selectedDate.getDate() === day && 
-                selectedDate.getMonth() === currentMonth && 
-                selectedDate.getFullYear() === currentYear) {
+            if (selectedDate && selectedDate.getDate() === day && selectedDate.getMonth() === currentMonth && selectedDate.getFullYear() === currentYear) {
                 dayDiv.classList.add('selected');
             }
-
             calendarGrid.appendChild(dayDiv);
         }
     }
 
-    function selectDate(dateObj, element) {
-        // Atualiza UI Calendario
+    async function selectDate(dateObj, element) {
         document.querySelectorAll('.calendar-day.selected').forEach(el => el.classList.remove('selected'));
         element.classList.add('selected');
         
         selectedDate = dateObj;
-        selectedTimes = []; // Reseta horarios
+        selectedTimes = []; 
+        occupiedTimes = [];
         
-        // Atualiza Passo 2
         timeSelectionArea.classList.remove('opacity-50', 'pointer-events-none');
-        formArea.classList.add('opacity-50', 'pointer-events-none'); // Esconde form ate escolher hora
+        formArea.classList.add('opacity-50', 'pointer-events-none'); 
         
         const dayOfWeek = dateObj.getDay();
         let isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+        const dateStr = `${dateObj.getDate().toString().padStart(2,'0')}/${(dateObj.getMonth()+1).toString().padStart(2,'0')}/${dateObj.getFullYear()}`;
+        
+        selectedDateDisplay.textContent = `Carregando horários para ${dateStr}...`;
+        timeGrid.innerHTML = ''; // Clear times while loading
+
+        // Buscar horários ocupados no Firebase
+        if (db) {
+            try {
+                const q = query(collection(db, "agendamentos"), where("data", "==", dateStr));
+                const querySnapshot = await getDocs(q);
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    if(data.horarios && Array.isArray(data.horarios)) {
+                        occupiedTimes.push(...data.horarios);
+                    }
+                });
+            } catch (error) {
+                console.error("Erro ao buscar horários", error);
+            }
+        }
         
         selectedDateDisplay.textContent = `${dateObj.getDate()} de ${monthNames[dateObj.getMonth()]} de ${dateObj.getFullYear()}`;
-        
         generateTimeSlots(isWeekend);
     }
 
@@ -357,12 +387,21 @@
             slot.textContent = timeStr;
             slot.className = 'time-slot border border-outline-variant/30 py-3 text-center font-label-mono text-sm uppercase tracking-widest';
             
-            slot.addEventListener('click', () => selectTime(timeStr, slot));
+            if (occupiedTimes.includes(timeStr)) {
+                slot.classList.add('disabled', 'opacity-30', 'cursor-not-allowed');
+                slot.style.textDecoration = 'line-through';
+                slot.title = 'Horário Indisponível';
+            } else {
+                slot.addEventListener('click', () => selectTime(timeStr, slot));
+            }
+            
             timeGrid.appendChild(slot);
         }
     }
 
     function selectTime(timeStr, element) {
+        if (element.classList.contains('disabled')) return;
+
         if (selectedTimes.includes(timeStr)) {
             selectedTimes = selectedTimes.filter(t => t !== timeStr);
             element.classList.remove('selected');
@@ -371,7 +410,6 @@
             element.classList.add('selected');
         }
         
-        // Libera Passo 3 se tiver pelo menos 1 horario
         if (selectedTimes.length > 0) {
             formArea.classList.remove('opacity-50', 'pointer-events-none');
         } else {
@@ -379,9 +417,8 @@
         }
     }
 
-    function handleFormSubmit(e) {
+    async function handleFormSubmit(e) {
         e.preventDefault();
-        
         if (!selectedDate || selectedTimes.length === 0) return;
 
         const band = document.getElementById('bandName').value.trim();
@@ -391,18 +428,51 @@
         selectedTimes.sort();
         const timesStr = selectedTimes.join(', ');
         
+        const submitBtn = e.target.querySelector('button[type="submit"]');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Processando...';
+        submitBtn.disabled = true;
+
+        // Salvar no Firebase
+        if (db) {
+            try {
+                await addDoc(collection(db, "agendamentos"), {
+                    data: dateStr,
+                    horarios: selectedTimes,
+                    banda: band,
+                    telefone: phone,
+                    status: "PRE_AGENDADO",
+                    timestamp: new Date()
+                });
+            } catch (error) {
+                console.error("Erro ao salvar no Firebase:", error);
+                alert("Houve um erro ao processar o agendamento. Tente novamente.");
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                return;
+            }
+        } else {
+            console.warn("Firebase não configurado. Redirecionando direto para WhatsApp.");
+        }
+
         const message = `Olá Máquina Voadora! Gostaria de agendar um ensaio para a banda *${band}* no dia *${dateStr}* nos horários: *${timesStr}*. Meu contato é ${phone}. Podem confirmar a disponibilidade?`;
-        
         const encodedMessage = encodeURIComponent(message);
         const whatsappNumber = "5534992839811";
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
         
         window.open(whatsappUrl, '_blank');
+        
+        // Limpar form e atualizar blocos
+        setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+            document.getElementById('bandName').value = '';
+            document.getElementById('bandPhone').value = '';
+            selectDate(selectedDate, document.querySelector('.calendar-day.selected')); // reload
+        }, 1000);
     }
 
-    // Run
     initCalendar();
-
 </script>
 
 </body></html>

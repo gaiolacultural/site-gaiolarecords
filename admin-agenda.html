@@ -1,0 +1,229 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Painel Admin - Agenda | Máquina Voadora</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#2f3131",
+                        "surface-tint": "#c6c6c7",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#2f3131",
+                        "primary-container": "#e2e2e2",
+                        "surface-dim": "#131313",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary": "#313030",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#636465",
+                        "outline-variant": "#444748",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary-container": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "surface": "#131313",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#636565",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c8",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "outline": "#8e9192",
+                        "tertiary": "#ffffff",
+                        "secondary": "#c8c6c5",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534",
+                        "error-container": "#93000a",
+                        "secondary-container": "#474746",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Anybody"],
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #0D0D0D; color: #e5e2e1; }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased overflow-x-hidden p-8">
+
+    <!-- Login Area -->
+    <div id="loginArea" class="max-w-md mx-auto mt-20 bg-surface-container border border-outline-variant/30 p-8 shadow-xl text-center">
+        <h1 class="text-2xl font-headline-md uppercase text-primary mb-6">Acesso Restrito</h1>
+        <p class="text-on-surface-variant mb-4">Insira a senha de administrador da Máquina Voadora.</p>
+        <input type="password" id="adminPassword" class="w-full bg-background border border-outline-variant/50 p-3 text-primary focus:border-primary focus:outline-none transition-colors mb-4" placeholder="Senha">
+        <button id="loginBtn" class="w-full bg-primary text-black font-bold py-3 uppercase hover:bg-primary-fixed-dim transition-colors">Entrar</button>
+        <p id="loginError" class="text-red-500 mt-4 hidden">Senha incorreta.</p>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminArea" class="hidden max-w-5xl mx-auto">
+        <div class="flex justify-between items-center mb-10 border-b border-outline-variant/30 pb-6">
+            <h1 class="text-3xl font-headline-md uppercase text-primary">Gestão de Ensaios</h1>
+            <a href="agenda.html" class="text-on-surface-variant hover:text-primary transition-colors underline">Ver Agenda Cliente</a>
+        </div>
+        
+        <!-- Status Firebase -->
+        <div id="firebaseWarning" class="bg-red-900/50 border border-red-500 text-red-200 p-4 mb-8 hidden">
+            <strong>Atenção:</strong> As credenciais do Firebase não foram configuradas. O sistema não está salvando no banco de dados.
+        </div>
+
+        <div class="bg-surface-container border border-outline-variant/30 shadow-xl overflow-hidden">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-surface-container-high border-b border-outline-variant/30 text-label-mono text-on-surface-variant uppercase tracking-wider">
+                        <th class="p-4">Data</th>
+                        <th class="p-4">Horários</th>
+                        <th class="p-4">Banda</th>
+                        <th class="p-4">Telefone</th>
+                        <th class="p-4">Status</th>
+                        <th class="p-4 text-right">Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="agendamentosTable">
+                    <!-- Preenchido via JS -->
+                    <tr><td colspan="6" class="p-8 text-center text-on-surface-variant">Carregando agendamentos...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // COLE AQUI SUAS CREDENCIAIS DO FIREBASE (AS MESMAS DO AGENDA.HTML)
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    const isFirebaseConfigured = firebaseConfig.apiKey !== "YOUR_API_KEY";
+    let db = null;
+    
+    // Login Simples Front-end
+    const adminPass = "maquina2026"; // Senha basica para acesso
+
+    document.getElementById('loginBtn').addEventListener('click', () => {
+        if(document.getElementById('adminPassword').value === adminPass) {
+            document.getElementById('loginArea').classList.add('hidden');
+            document.getElementById('adminArea').classList.remove('hidden');
+            initAdmin();
+        } else {
+            document.getElementById('loginError').classList.remove('hidden');
+        }
+    });
+
+    async function initAdmin() {
+        if (!isFirebaseConfigured) {
+            document.getElementById('firebaseWarning').classList.remove('hidden');
+            document.getElementById('agendamentosTable').innerHTML = '<tr><td colspan="6" class="p-8 text-center text-on-surface-variant">Firebase não configurado. Adicione suas chaves no código fonte.</td></tr>';
+            return;
+        }
+
+        try {
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            loadAgendamentos();
+        } catch (e) {
+            console.error(e);
+            document.getElementById('agendamentosTable').innerHTML = '<tr><td colspan="6" class="p-8 text-center text-red-500">Erro ao conectar ao Firebase. Verifique console.</td></tr>';
+        }
+    }
+
+    async function loadAgendamentos() {
+        const tbody = document.getElementById('agendamentosTable');
+        tbody.innerHTML = '<tr><td colspan="6" class="p-8 text-center text-on-surface-variant">Carregando agendamentos...</td></tr>';
+        
+        try {
+            const q = query(collection(db, "agendamentos"), orderBy("timestamp", "desc"));
+            const snapshot = await getDocs(q);
+            
+            tbody.innerHTML = '';
+            
+            if(snapshot.empty) {
+                tbody.innerHTML = '<tr><td colspan="6" class="p-8 text-center text-on-surface-variant">Nenhum agendamento encontrado.</td></tr>';
+                return;
+            }
+
+            snapshot.forEach(docSnap => {
+                const data = docSnap.data();
+                const id = docSnap.id;
+                
+                const tr = document.createElement('tr');
+                tr.className = "border-b border-outline-variant/20 hover:bg-surface-container-high transition-colors";
+                
+                const statusColor = data.status === 'CONFIRMADO' ? 'text-green-500' : 'text-yellow-500';
+                const statusText = data.status === 'CONFIRMADO' ? 'Confirmado' : 'Pré-agendado';
+                
+                const horarios = Array.isArray(data.horarios) ? data.horarios.join(', ') : '-';
+
+                tr.innerHTML = `
+                    <td class="p-4 font-bold text-primary">${data.data}</td>
+                    <td class="p-4 text-on-surface-variant font-label-mono">${horarios}</td>
+                    <td class="p-4 uppercase">${data.banda}</td>
+                    <td class="p-4 text-on-surface-variant">${data.telefone}</td>
+                    <td class="p-4 font-bold ${statusColor}">${statusText}</td>
+                    <td class="p-4 text-right flex justify-end gap-2">
+                        ${data.status !== 'CONFIRMADO' ? `<button onclick="window.confirmarEnsaio('${id}')" class="bg-green-600 hover:bg-green-500 text-white px-3 py-1 text-sm font-bold uppercase transition-colors">Confirmar</button>` : ''}
+                        <button onclick="window.excluirEnsaio('${id}')" class="border border-red-600 text-red-500 hover:bg-red-600 hover:text-white px-3 py-1 text-sm font-bold uppercase transition-colors">Excluir</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+        } catch(error) {
+            console.error(error);
+            tbody.innerHTML = '<tr><td colspan="6" class="p-8 text-center text-red-500">Erro ao ler dados. A tabela precisa ter um index criado ou o firebase_config está incorreto.</td></tr>';
+        }
+    }
+
+    // Exposing globally for inline onclick
+    window.confirmarEnsaio = async (id) => {
+        if(confirm("Deseja confirmar este ensaio?")) {
+            await updateDoc(doc(db, "agendamentos", id), { status: "CONFIRMADO" });
+            loadAgendamentos();
+        }
+    };
+
+    window.excluirEnsaio = async (id) => {
+        if(confirm("Tem certeza que deseja excluir este ensaio e liberar os horários?")) {
+            await deleteDoc(doc(db, "agendamentos", id));
+            loadAgendamentos();
+        }
+    };
+
+</script>
+</body></html>
