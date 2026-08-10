@@ -1,0 +1,420 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Agendamento de Ensaios | Máquina Voadora</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@600;700;800&amp;family=Hanken+Grotesk:wght@400&amp;family=JetBrains+Mono:wght@500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed-dim": "#c6c6c7",
+                        "on-error-container": "#ffdad6",
+                        "on-tertiary": "#2f3131",
+                        "surface-tint": "#c6c6c7",
+                        "surface-container": "#201f1f",
+                        "on-primary": "#2f3131",
+                        "primary-container": "#e2e2e2",
+                        "surface-dim": "#131313",
+                        "inverse-primary": "#5d5f5f",
+                        "secondary-fixed": "#e5e2e1",
+                        "on-secondary": "#313030",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-tertiary-container": "#636465",
+                        "outline-variant": "#444748",
+                        "on-primary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#313030",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#353534",
+                        "tertiary-fixed": "#e2e2e2",
+                        "tertiary-container": "#e2e2e2",
+                        "primary-fixed": "#e2e2e2",
+                        "surface": "#131313",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-low": "#1c1b1b",
+                        "inverse-surface": "#e5e2e1",
+                        "on-primary-container": "#636565",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-surface": "#e5e2e1",
+                        "on-surface-variant": "#c4c7c8",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "primary": "#ffffff",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-error": "#690005",
+                        "outline": "#8e9192",
+                        "tertiary": "#ffffff",
+                        "secondary": "#c8c6c5",
+                        "background": "#131313",
+                        "surface-container-highest": "#353534",
+                        "error-container": "#93000a",
+                        "secondary-container": "#474746",
+                        "surface-container-high": "#2a2a2a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "1rem",
+                        "section-gap": "8rem",
+                        "stack-lg": "2rem",
+                        "gutter": "1.5rem",
+                        "grid-margin": "2rem",
+                        "stack-sm": "0.5rem"
+                    },
+                    "fontFamily": {
+                        "label-mono": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-lg": ["Anybody"],
+                        "headline-lg-mobile": ["Anybody"],
+                        "headline-md": ["Anybody"],
+                        "display-lg": ["Anybody"],
+                        "body-lg": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "label-mono": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "display-lg": ["80px", { "lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0D0D0D;
+            color: #e5e2e1;
+        }
+        .noise-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+        }
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .calendar-day {
+            transition: all 0.2s ease;
+        }
+        .calendar-day:not(.disabled):hover {
+            background-color: #3a3939;
+            cursor: pointer;
+        }
+        .calendar-day.selected {
+            background-color: #ffffff;
+            color: #000000;
+        }
+        .calendar-day.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        .time-slot {
+            transition: all 0.2s ease;
+        }
+        .time-slot:hover {
+            background-color: #3a3939;
+            cursor: pointer;
+        }
+        .time-slot.selected {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body class="bg-background dark font-body-md text-on-surface antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<div class="noise-overlay"></div>
+
+<!-- TopAppBar -->
+<header class="docked full-width top-0 z-50 border-b border-outline-variant/30 flat no shadows flex justify-between items-center w-full px-grid-margin py-stack-md bg-background dark:bg-background transition-all duration-300 backdrop-blur-md bg-opacity-90 hidden md:flex">
+<div class="flex items-center gap-4 text-primary dark:text-primary hover:text-primary-fixed-dim transition-colors opacity-80 cursor-pointer"><span class="text-headline-md font-headline-md uppercase tracking-tighter text-primary">GAIOLA RECORDS &amp; MÁQUINA VOADORA</span></div>
+<div class="flex items-center gap-6">
+<nav class="flex gap-6">
+<a class="text-label-mono font-label-mono text-primary border-b border-primary pb-1" href="index.html">VOLTAR AO INÍCIO</a>
+</nav>
+</div>
+</header>
+
+<main class="pb-24 pt-12 md:pt-32 px-grid-margin max-w-5xl mx-auto min-h-screen">
+    
+    <!-- Header Agendamento -->
+    <div class="flex flex-col items-center text-center mb-16 gap-6 relative z-10">
+        <img alt="Logo Máquina Voadora" class="h-24 md:h-32 w-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIgzcOewCm-n2Ht1WoS7vqV6qMKf_yQvkSmSZbdCafqwBi_HNYDjLDBv8ZjM4QNVJuv2OPyyJSLI4VhZ7oYWbi7lEsJQjWIO5glIncyIbmziFTWoENzJceG1A-ZVzq1FbucQ0gP36rUwpoGySCIYz-rNUYTMoediRcQzfju_PXdwHtHaM5I8xHp_P9pulmJ5ACusOCQy18gvuQUHRGE9yU-FzhK533OSAfSldTauSd6CYe-X84-T1ilJO9yk_yFGr">
+        <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary uppercase leading-tight">
+            Agendamento<br>de Ensaios
+        </h1>
+        <p class="text-body-lg text-on-surface-variant max-w-2xl">
+            Selecione uma data e horário abaixo para pré-agendar o ensaio da sua banda no Máquina Voadora Estúdio.
+        </p>
+    </div>
+
+    <!-- Interface Principal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+        
+        <!-- Passo 1: Calendario -->
+        <div class="bg-surface-container border border-outline-variant/30 p-6 shadow-xl relative">
+            <div class="absolute -top-3 -left-3 bg-primary text-black font-label-mono px-3 py-1 text-sm font-bold uppercase">Passo 1</div>
+            
+            <div class="flex justify-between items-center mb-6 mt-4">
+                <button id="prevMonth" class="p-2 hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+                <h3 id="monthDisplay" class="text-xl font-headline-md uppercase tracking-wider text-primary">Agosto 2026</h3>
+                <button id="nextMonth" class="p-2 hover:bg-surface-variant rounded-full transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+            </div>
+
+            <div class="grid grid-cols-7 gap-2 mb-2 text-center text-label-mono text-on-surface-variant uppercase">
+                <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+            </div>
+            
+            <div id="calendarGrid" class="grid grid-cols-7 gap-2 text-center">
+                <!-- Gerado por JS -->
+            </div>
+        </div>
+
+        <!-- Passo 2 e 3: Horarios e Formulario -->
+        <div class="flex flex-col gap-8">
+            
+            <!-- Horarios -->
+            <div id="timeSelectionArea" class="bg-surface-container border border-outline-variant/30 p-6 shadow-xl relative opacity-50 pointer-events-none transition-opacity">
+                <div class="absolute -top-3 -left-3 bg-primary text-black font-label-mono px-3 py-1 text-sm font-bold uppercase">Passo 2</div>
+                
+                <h3 class="text-lg font-headline-md uppercase text-primary mb-4 mt-2">Horários Disponíveis</h3>
+                <p id="selectedDateDisplay" class="text-sm text-on-surface-variant mb-4">Selecione uma data primeiro.</p>
+                
+                <div id="timeGrid" class="grid grid-cols-3 gap-3">
+                    <!-- Gerado por JS -->
+                </div>
+            </div>
+
+            <!-- Formulario -->
+            <div id="formArea" class="bg-surface-container border border-outline-variant/30 p-6 shadow-xl relative opacity-50 pointer-events-none transition-opacity">
+                <div class="absolute -top-3 -left-3 bg-primary text-black font-label-mono px-3 py-1 text-sm font-bold uppercase">Passo 3</div>
+                
+                <h3 class="text-lg font-headline-md uppercase text-primary mb-4 mt-2">Dados da Banda</h3>
+                
+                <form id="bookingForm" class="flex flex-col gap-4">
+                    <div>
+                        <label class="block text-label-mono uppercase text-on-surface-variant mb-2">Nome da Banda</label>
+                        <input type="text" id="bandName" required class="w-full bg-background border border-outline-variant/50 p-3 text-primary focus:border-primary focus:outline-none transition-colors" placeholder="Ex: Os Suricatos">
+                    </div>
+                    <div>
+                        <label class="block text-label-mono uppercase text-on-surface-variant mb-2">Telefone (WhatsApp)</label>
+                        <input type="tel" id="bandPhone" required class="w-full bg-background border border-outline-variant/50 p-3 text-primary focus:border-primary focus:outline-none transition-colors" placeholder="(34) 99999-9999">
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-[#25D366] text-black font-bold py-4 mt-4 uppercase tracking-wider hover:bg-[#1ebd5a] transition-colors flex items-center justify-center gap-2">
+                        Solicitar via WhatsApp
+                        <span class="material-symbols-outlined text-sm">send</span>
+                    </button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="full-width border-t border-outline-variant/20 flex flex-col items-center bg-surface-container-lowest dark:bg-surface-container-lowest">
+    
+    <div class="max-w-7xl mx-auto w-full flex items-center justify-center gap-12 pt-12 pb-12">
+        <img alt="Logo Gaiola Records" class="h-20 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHip1Rut_Qrp0HvSRfqJ_9Z_QnuoHtdcc-mMlAfLwCKK9-E-DfKzk_6XZvsz6kRmHayuHoPLvTrCgzh4r-kwpTX8dyx-XVs9EPV3yAFv6zkQmP_ejb9GywuGUC1xzd28Y-uAFYCasB__n-rkzXLKPcWonPdjv9z4ndY18ZMm8TIFt1tkfP2gAW0596Mqy4nSzqpdzp6EKdy8wS3l-5znFsaycgzhEjazdx1ptsc6z2TwVH39n_rkGmtWEyV5RiClp">
+        <img alt="Logo Máquina Voadora" class="h-32 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIgzcOewCm-n2Ht1WoS7vqV6qMKf_yQvkSmSZbdCafqwBi_HNYDjLDBv8ZjM4QNVJuv2OPyyJSLI4VhZ7oYWbi7lEsJQjWIO5glIncyIbmziFTWoENzJceG1A-ZVzq1FbucQ0gP36rUwpoGySCIYz-rNUYTMoediRcQzfju_PXdwHtHaM5I8xHp_P9pulmJ5ACusOCQy18gvuQUHRGE9yU-FzhK533OSAfSldTauSd6CYe-X84-T1ilJO9yk_yFGr">
+    </div>
+
+    <div class="hidden md:flex justify-between items-center w-full px-grid-margin py-stack-md bg-background dark:bg-background border-t border-outline-variant/30">
+        <div class="flex items-center gap-4 text-primary hover:text-primary-fixed-dim transition-colors opacity-80 cursor-pointer">
+            <span class="text-headline-md font-headline-md uppercase tracking-tighter text-primary">GAIOLA RECORDS &amp; MÁQUINA VOADORA</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <nav class="flex gap-6">
+                <a class="text-label-mono font-label-mono text-primary border-b border-primary pb-1" href="index.html">VOLTAR AO INÍCIO</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Configurações e Estado
+    const now = new Date();
+    let currentMonth = now.getMonth();
+    let currentYear = now.getFullYear();
+    
+    let selectedDate = null; // Instância Date
+    let selectedTime = null; // String "18:00"
+
+    const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+    // Elementos DOM
+    const monthDisplay = document.getElementById('monthDisplay');
+    const calendarGrid = document.getElementById('calendarGrid');
+    const timeSelectionArea = document.getElementById('timeSelectionArea');
+    const timeGrid = document.getElementById('timeGrid');
+    const selectedDateDisplay = document.getElementById('selectedDateDisplay');
+    const formArea = document.getElementById('formArea');
+    const bookingForm = document.getElementById('bookingForm');
+
+    // Inicialização
+    function initCalendar() {
+        document.getElementById('prevMonth').addEventListener('click', () => changeMonth(-1));
+        document.getElementById('nextMonth').addEventListener('click', () => changeMonth(1));
+        bookingForm.addEventListener('submit', handleFormSubmit);
+        
+        renderCalendar();
+    }
+
+    function changeMonth(delta) {
+        currentMonth += delta;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        } else if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar();
+    }
+
+    function renderCalendar() {
+        calendarGrid.innerHTML = '';
+        monthDisplay.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+        
+        const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        
+        const today = new Date();
+        today.setHours(0,0,0,0);
+
+        // Espaços vazios iniciais
+        for (let i = 0; i < firstDay; i++) {
+            const emptyDiv = document.createElement('div');
+            calendarGrid.appendChild(emptyDiv);
+        }
+
+        // Dias do mês
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dateObj = new Date(currentYear, currentMonth, day);
+            const dayDiv = document.createElement('div');
+            
+            dayDiv.textContent = day;
+            dayDiv.className = 'calendar-day border border-outline-variant/30 py-3 text-lg font-bold';
+            
+            // Passado = desabilitado
+            if (dateObj < today) {
+                dayDiv.classList.add('disabled');
+            } else {
+                dayDiv.addEventListener('click', () => selectDate(dateObj, dayDiv));
+            }
+
+            // Selecionado anteriormente?
+            if (selectedDate && 
+                selectedDate.getDate() === day && 
+                selectedDate.getMonth() === currentMonth && 
+                selectedDate.getFullYear() === currentYear) {
+                dayDiv.classList.add('selected');
+            }
+
+            calendarGrid.appendChild(dayDiv);
+        }
+    }
+
+    function selectDate(dateObj, element) {
+        // Atualiza UI Calendario
+        document.querySelectorAll('.calendar-day.selected').forEach(el => el.classList.remove('selected'));
+        element.classList.add('selected');
+        
+        selectedDate = dateObj;
+        selectedTime = null; // Reseta horario
+        
+        // Atualiza Passo 2
+        timeSelectionArea.classList.remove('opacity-50', 'pointer-events-none');
+        formArea.classList.add('opacity-50', 'pointer-events-none'); // Esconde form ate escolher hora
+        
+        const dayOfWeek = dateObj.getDay();
+        let isWeekend = (dayOfWeek === 0 || dayOfWeek === 6);
+        
+        selectedDateDisplay.textContent = `${dateObj.getDate()} de ${monthNames[dateObj.getMonth()]} de ${dateObj.getFullYear()}`;
+        
+        generateTimeSlots(isWeekend);
+    }
+
+    function generateTimeSlots(isWeekend) {
+        timeGrid.innerHTML = '';
+        let startHour = isWeekend ? 14 : 18;
+        let endHour = isWeekend ? 20 : 23;
+        
+        for (let h = startHour; h <= endHour; h++) {
+            const timeStr = `${h.toString().padStart(2, '0')}:00`;
+            const slot = document.createElement('div');
+            
+            slot.textContent = timeStr;
+            slot.className = 'time-slot border border-outline-variant/30 py-3 text-center font-label-mono text-sm uppercase tracking-widest';
+            
+            slot.addEventListener('click', () => selectTime(timeStr, slot));
+            timeGrid.appendChild(slot);
+        }
+    }
+
+    function selectTime(timeStr, element) {
+        document.querySelectorAll('.time-slot.selected').forEach(el => el.classList.remove('selected'));
+        element.classList.add('selected');
+        
+        selectedTime = timeStr;
+        
+        // Libera Passo 3
+        formArea.classList.remove('opacity-50', 'pointer-events-none');
+        document.getElementById('bandName').focus();
+    }
+
+    function handleFormSubmit(e) {
+        e.preventDefault();
+        
+        if (!selectedDate || !selectedTime) return;
+
+        const band = document.getElementById('bandName').value.trim();
+        const phone = document.getElementById('bandPhone').value.trim();
+        const dateStr = `${selectedDate.getDate().toString().padStart(2,'0')}/${(selectedDate.getMonth()+1).toString().padStart(2,'0')}/${selectedDate.getFullYear()}`;
+        
+        const message = `Olá Máquina Voadora! Gostaria de agendar um ensaio para a banda *${band}* no dia *${dateStr}* às *${selectedTime}*. Meu contato é ${phone}. Podem confirmar a disponibilidade?`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "5534992839811";
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    }
+
+    // Run
+    initCalendar();
+
+</script>
+
+</body></html>
