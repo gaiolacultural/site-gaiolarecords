@@ -155,21 +155,13 @@
 <body class="bg-background dark font-body-md text-on-surface antialiased overflow-x-hidden selection:bg-primary selection:text-on-primary">
 <div class="noise-overlay"></div>
 
-<!-- TopAppBar -->
-<header class="docked full-width top-0 z-50 border-b border-outline-variant/30 flat no shadows flex justify-between items-center w-full px-grid-margin py-stack-md bg-background dark:bg-background transition-all duration-300 backdrop-blur-md bg-opacity-90 hidden md:flex">
-<div class="flex items-center gap-4 text-primary dark:text-primary hover:text-primary-fixed-dim transition-colors opacity-80 cursor-pointer"><span class="text-headline-md font-headline-md uppercase tracking-tighter text-primary">GAIOLA RECORDS &amp; MÁQUINA VOADORA</span></div>
-<div class="flex items-center gap-6">
-<nav class="flex gap-6">
-<a class="text-label-mono font-label-mono text-primary border-b border-primary pb-1" href="index.html">VOLTAR AO INÍCIO</a>
-</nav>
-</div>
-</header>
+
 
 <main class="pb-24 pt-12 md:pt-32 px-grid-margin max-w-5xl mx-auto min-h-screen">
     
     <!-- Header Agendamento -->
     <div class="flex flex-col items-center text-center mb-16 gap-6 relative z-10">
-        <img alt="Logo Máquina Voadora" class="h-24 md:h-32 w-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIgzcOewCm-n2Ht1WoS7vqV6qMKf_yQvkSmSZbdCafqwBi_HNYDjLDBv8ZjM4QNVJuv2OPyyJSLI4VhZ7oYWbi7lEsJQjWIO5glIncyIbmziFTWoENzJceG1A-ZVzq1FbucQ0gP36rUwpoGySCIYz-rNUYTMoediRcQzfju_PXdwHtHaM5I8xHp_P9pulmJ5ACusOCQy18gvuQUHRGE9yU-FzhK533OSAfSldTauSd6CYe-X84-T1ilJO9yk_yFGr">
+        <img alt="Logo Máquina Voadora" class="h-40 md:h-56 w-auto mb-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIgzcOewCm-n2Ht1WoS7vqV6qMKf_yQvkSmSZbdCafqwBi_HNYDjLDBv8ZjM4QNVJuv2OPyyJSLI4VhZ7oYWbi7lEsJQjWIO5glIncyIbmziFTWoENzJceG1A-ZVzq1FbucQ0gP36rUwpoGySCIYz-rNUYTMoediRcQzfju_PXdwHtHaM5I8xHp_P9pulmJ5ACusOCQy18gvuQUHRGE9yU-FzhK533OSAfSldTauSd6CYe-X84-T1ilJO9yk_yFGr">
         <h1 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg-mobile md:font-headline-lg text-primary uppercase leading-tight">
             Agendamento<br>de Ensaios
         </h1>
@@ -244,21 +236,8 @@
 
 <!-- Footer -->
 <footer class="full-width border-t border-outline-variant/20 flex flex-col items-center bg-surface-container-lowest dark:bg-surface-container-lowest">
-    
     <div class="max-w-7xl mx-auto w-full flex items-center justify-center gap-12 pt-12 pb-12">
-        <img alt="Logo Gaiola Records" class="h-20 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHip1Rut_Qrp0HvSRfqJ_9Z_QnuoHtdcc-mMlAfLwCKK9-E-DfKzk_6XZvsz6kRmHayuHoPLvTrCgzh4r-kwpTX8dyx-XVs9EPV3yAFv6zkQmP_ejb9GywuGUC1xzd28Y-uAFYCasB__n-rkzXLKPcWonPdjv9z4ndY18ZMm8TIFt1tkfP2gAW0596Mqy4nSzqpdzp6EKdy8wS3l-5znFsaycgzhEjazdx1ptsc6z2TwVH39n_rkGmtWEyV5RiClp">
         <img alt="Logo Máquina Voadora" class="h-32 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEIgzcOewCm-n2Ht1WoS7vqV6qMKf_yQvkSmSZbdCafqwBi_HNYDjLDBv8ZjM4QNVJuv2OPyyJSLI4VhZ7oYWbi7lEsJQjWIO5glIncyIbmziFTWoENzJceG1A-ZVzq1FbucQ0gP36rUwpoGySCIYz-rNUYTMoediRcQzfju_PXdwHtHaM5I8xHp_P9pulmJ5ACusOCQy18gvuQUHRGE9yU-FzhK533OSAfSldTauSd6CYe-X84-T1ilJO9yk_yFGr">
-    </div>
-
-    <div class="hidden md:flex justify-between items-center w-full px-grid-margin py-stack-md bg-background dark:bg-background border-t border-outline-variant/30">
-        <div class="flex items-center gap-4 text-primary hover:text-primary-fixed-dim transition-colors opacity-80 cursor-pointer">
-            <span class="text-headline-md font-headline-md uppercase tracking-tighter text-primary">GAIOLA RECORDS &amp; MÁQUINA VOADORA</span>
-        </div>
-        <div class="flex items-center gap-6">
-            <nav class="flex gap-6">
-                <a class="text-label-mono font-label-mono text-primary border-b border-primary pb-1" href="index.html">VOLTAR AO INÍCIO</a>
-            </nav>
-        </div>
     </div>
 </footer>
 
@@ -269,7 +248,7 @@
     let currentYear = now.getFullYear();
     
     let selectedDate = null; // Instância Date
-    let selectedTime = null; // String "18:00"
+    let selectedTimes = []; // Array de Strings
 
     const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
 
@@ -352,7 +331,7 @@
         element.classList.add('selected');
         
         selectedDate = dateObj;
-        selectedTime = null; // Reseta horario
+        selectedTimes = []; // Reseta horarios
         
         // Atualiza Passo 2
         timeSelectionArea.classList.remove('opacity-50', 'pointer-events-none');
@@ -384,26 +363,35 @@
     }
 
     function selectTime(timeStr, element) {
-        document.querySelectorAll('.time-slot.selected').forEach(el => el.classList.remove('selected'));
-        element.classList.add('selected');
+        if (selectedTimes.includes(timeStr)) {
+            selectedTimes = selectedTimes.filter(t => t !== timeStr);
+            element.classList.remove('selected');
+        } else {
+            selectedTimes.push(timeStr);
+            element.classList.add('selected');
+        }
         
-        selectedTime = timeStr;
-        
-        // Libera Passo 3
-        formArea.classList.remove('opacity-50', 'pointer-events-none');
-        document.getElementById('bandName').focus();
+        // Libera Passo 3 se tiver pelo menos 1 horario
+        if (selectedTimes.length > 0) {
+            formArea.classList.remove('opacity-50', 'pointer-events-none');
+        } else {
+            formArea.classList.add('opacity-50', 'pointer-events-none');
+        }
     }
 
     function handleFormSubmit(e) {
         e.preventDefault();
         
-        if (!selectedDate || !selectedTime) return;
+        if (!selectedDate || selectedTimes.length === 0) return;
 
         const band = document.getElementById('bandName').value.trim();
         const phone = document.getElementById('bandPhone').value.trim();
         const dateStr = `${selectedDate.getDate().toString().padStart(2,'0')}/${(selectedDate.getMonth()+1).toString().padStart(2,'0')}/${selectedDate.getFullYear()}`;
         
-        const message = `Olá Máquina Voadora! Gostaria de agendar um ensaio para a banda *${band}* no dia *${dateStr}* às *${selectedTime}*. Meu contato é ${phone}. Podem confirmar a disponibilidade?`;
+        selectedTimes.sort();
+        const timesStr = selectedTimes.join(', ');
+        
+        const message = `Olá Máquina Voadora! Gostaria de agendar um ensaio para a banda *${band}* no dia *${dateStr}* nos horários: *${timesStr}*. Meu contato é ${phone}. Podem confirmar a disponibilidade?`;
         
         const encodedMessage = encodeURIComponent(message);
         const whatsappNumber = "5534992839811";
