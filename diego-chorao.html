@@ -229,7 +229,7 @@
             <!-- Coluna 2: Vídeo em Ação -->
             <div class="flex flex-col gap-6 lg:border-l lg:border-surface-variant/30 lg:pl-12 h-full justify-center">
                 <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
-                    <video class="w-full h-full object-cover" controls playsinline>
+                    <video class="w-full h-full object-cover" controls playsinline poster="assets/tumb-show-principal-chorao.png">
                         <source src="assets/show-principal-chorao.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -302,8 +302,8 @@
                                     <img src="assets/bolacha-marrom.png" class="w-full h-full object-contain drop-shadow-2xl" id="vinyl-img" alt="Disco de Vinil"/>
                                     <!-- Play Button Overlay -->
                                     <div class="absolute inset-0 flex items-center justify-center">
-                                        <button onclick="togglePlay()" class="bg-primary/90 text-on-primary rounded-full w-14 h-14 flex items-center justify-center hover:scale-110 transition-transform shadow-xl z-30" id="play-btn">
-                                            <span class="material-symbols-outlined text-4xl" id="play-icon">play_arrow</span>
+                                        <button onclick="togglePlay()" class="bg-primary/90 text-on-primary rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center hover:scale-110 transition-transform shadow-xl z-30" id="play-btn">
+                                            <span class="material-symbols-outlined text-2xl md:text-4xl" id="play-icon">play_arrow</span>
                                         </button>
                                     </div>
                                 </div>
@@ -337,8 +337,6 @@
 
                         let currentTrackIdx = 0;
                         let isPlaying = false;
-                        let playTimeout;
-                        let slideInterval;
                         const player = document.getElementById('audio-player');
                         const vinylImg = document.getElementById('vinyl-img');
                         const playIcon = document.getElementById('play-icon');
@@ -362,11 +360,6 @@
                             
                             // Reseta para a posição inicial
                             vinylContainer.style.cssText = defaultVinylStyle;
-                            
-                            clearTimeout(playTimeout);
-                            
-                            clearInterval(slideInterval);
-                            slideInterval = setInterval(nextTrack, 10000);
                         }
 
                         function nextTrack() {
@@ -387,15 +380,6 @@
                                 isPlaying = true;
                                 playIcon.innerText = 'stop';
                                 vinylImg.classList.add('animate-[spin_3s_linear_infinite]');
-                                
-                                // Aqui você pode animar a bolacha ao dar play (ex: ir mais pra esquerda/direita) se quiser!
-                                // vinylContainer.style.left = '30%'; 
-
-                                clearInterval(slideInterval);
-                                
-                                playTimeout = setTimeout(() => {
-                                    nextTrack();
-                                }, 30000);
                             }
                         }
                         
