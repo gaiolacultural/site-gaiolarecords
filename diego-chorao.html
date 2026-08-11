@@ -184,10 +184,19 @@
             <!-- Coluna 1: Foto + Texto (Bio) + Formato -->
             <div class="flex flex-col gap-6 justify-between">
                 <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-                    <!-- Foto -->
-                    <div class="w-1/2 sm:w-1/3 aspect-[4/5] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl shrink-0">
-                        <img alt="Diego Chorão" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/artist2.jpg"/>
+                    <!-- Fotos Revezando -->
+                    <div class="w-1/2 sm:w-1/3 aspect-[4/5] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl shrink-0 cursor-pointer" onclick="nextMainPhoto()">
+                        <img id="main-photo" alt="Diego Chorão" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/chorao1.jpeg"/>
                     </div>
+                    <script>
+                        const mainPhotos = ['assets/chorao1.jpeg', 'assets/chorao2.jpg'];
+                        let currentMainPhoto = 0;
+                        function nextMainPhoto() {
+                            currentMainPhoto = (currentMainPhoto + 1) % mainPhotos.length;
+                            document.getElementById('main-photo').src = mainPhotos[currentMainPhoto];
+                        }
+                        setInterval(nextMainPhoto, 4000);
+                    </script>
                     <!-- Texto e Formato -->
                     <div class="w-full sm:w-2/3 flex flex-col gap-4">
                         <div class="space-y-4 text-on-surface-variant font-body-md text-body-md sm:text-sm text-justify leading-relaxed">
@@ -217,35 +226,152 @@
                 </a>
             </div>
 
-            <!-- Coluna 2: Destaque Lançamento -->
+            <!-- Coluna 2: Vídeo em Ação -->
             <div class="flex flex-col gap-6 lg:border-l lg:border-surface-variant/30 lg:pl-12 h-full justify-center">
-                <!-- Título Acima -->
-                <div class="w-full text-center sm:text-left border-b border-surface-variant/30 pb-3 mb-1">
-                    <h2 class="font-headline-md text-2xl md:text-3xl text-primary font-bold uppercase tracking-tight text-glow">Álbum: Poesia de Boteco</h2>
-                </div>
-
-                <!-- Capa e Detalhes -->
-                <div class="flex flex-col sm:flex-row gap-6 items-center sm:items-start flex-grow">
-                    <!-- Capa -->
-                    <div class="w-2/3 sm:w-1/2 flex flex-col gap-4">
-                        <a href="https://open.spotify.com/intl-pt/album/443kRoL7N0zM8otsdM0iMW?si=tqNWL7ZiSIivt3V3Zislcw" target="_blank" class="w-full aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl flex items-center justify-center shrink-0 hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
-                            <img alt="Poesia de Boteco" class="w-full h-full object-cover" src="assets/poesia-de-boteco-capa.jpg"/>
-                        </a>
-                    </div>
-                    
-                    <!-- Textos -->
-                    <div class="w-full sm:w-1/2 flex flex-col gap-4 justify-center text-center sm:text-left h-full">
-                        <div class="font-body-md text-body-md text-on-surface-variant leading-relaxed text-sm space-y-3 text-justify sm:text-left">
-                            <p>O trabalho reúne histórias e vivências de conversas de bar, em um mergulho profundo na boemia e nas batalhas da vida no interior.</p>
-                            <p>Apresentando 9 faixas inéditas, a obra conta com colaborações de peso da cena underground, como <strong>Black Pantera</strong>, <strong>Lucas Grilo</strong>, <strong>Malato</strong> e <strong>Eremita Roots</strong>.</p>
-                        </div>
-                        <a href="https://open.spotify.com/intl-pt/album/443kRoL7N0zM8otsdM0iMW?si=tqNWL7ZiSIivt3V3Zislcw" target="_blank" class="mt-4 bg-primary text-on-primary hover:bg-primary/90 px-6 py-3 rounded-xl text-sm font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2 w-full max-w-[220px] mx-auto shadow-lg">
-                            <img alt="Spotify" class="w-5 h-5 object-contain invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXwuMQiuI5VkFO1rHtdwpNwzMnUMwEDnDhJy3O3PuXoXappA22PxlT2JlMoTRQN_BO0-5UgMLC2axI32DhFRTIxUhJrLc11DzDWpAGNsvW2fuJvGeQG_OCZ8EsvqDiBFrDaQ75BYcBu2ziSwJaa-ODic-gDir0GSP6DfmVROAodq08iCh54FIgpSBAJS3eZHbBNcbKhbrlzEr5KWHug1bwpZayo5eWX6Fg9Tmkc600-NM7vzA06l8Liu0YPDkhUjbHNiI"/> Ouvir
-                        </a>
-                    </div>
+                <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
+                    <video class="w-full h-full object-cover" controls playsinline>
+                        <source src="assets/show-principal-chorao.mp4" type="video/mp4">
+                    </video>
                 </div>
             </div>
 
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 2. Álbum Poesia de Boteco -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
+<div class="flex flex-col gap-8 w-full">
+    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-6 md:p-10 rounded-2xl shadow-2xl w-full">
+        <!-- Título -->
+        <div class="w-full text-center border-b border-surface-variant/30 pb-4 mb-8">
+            <h2 class="font-headline-lg text-3xl md:text-5xl text-primary font-bold uppercase tracking-tight text-glow">DIEGO CHORÃO – POESIA DE BOTECO</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            <!-- Coluna 1: Capa e Fotos Revezando -->
+            <div class="flex flex-col gap-6">
+                <!-- Capa Principal -->
+                <div class="w-full aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl">
+                    <img alt="Poesia de Boteco" class="w-full h-full object-cover" src="assets/poesia-de-boteco-capa.jpg"/>
+                </div>
+                <!-- Mini carrossel das fotos FEED-CHORAO -->
+                <div class="w-full aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl cursor-pointer" onclick="nextAlbumPhoto()">
+                    <img id="album-photo" alt="Galeria Poesia de Boteco" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/FEED-CHORÃO-1.jpg"/>
+                </div>
+                <script>
+                    const albumPhotos = [
+                        'assets/FEED-CHORÃO-1.jpg',
+                        'assets/FEED-CHORÃO-3.jpg',
+                        'assets/FEED-CHORÃO-4.jpg',
+                        'assets/FEED-CHORÃO-5.jpg',
+                        'assets/FEED-CHORÃO-7.jpg',
+                        'assets/FEED-CHORÃO-8.jpg',
+                        'assets/FEED-CHORÃO-9.jpg',
+                        'assets/FEED-CHORÃO-10.jpg',
+                        'assets/FEED-CHORÃO-11.jpg'
+                    ];
+                    let currentAlbumPhoto = 0;
+                    function nextAlbumPhoto() {
+                        currentAlbumPhoto = (currentAlbumPhoto + 1) % albumPhotos.length;
+                        document.getElementById('album-photo').src = albumPhotos[currentAlbumPhoto];
+                    }
+                    setInterval(nextAlbumPhoto, 4000);
+                </script>
+            </div>
+
+            <!-- Coluna 2: Textos e Faixas -->
+            <div class="flex flex-col gap-8 text-on-surface-variant font-body-md text-sm md:text-base leading-relaxed text-justify">
+                
+                <div class="space-y-4">
+                    <p>No dia 27 de junho, o rapper Diego Chorão apresenta ao público <strong>Poesia de Boteco</strong>, seu novo álbum de estúdio. Com nove faixas inéditas, o trabalho representa um marco em sua trajetória artística, reunindo histórias, reflexões e vivências construídas ao longo dos anos dentro da cultura Hip Hop.</p>
+                    <p>Produzido pela <strong>Gaiola Records</strong>, o álbum transita entre o Rap, o Boom Bap e o Hardcore, mantendo a essência da rua enquanto amplia seus horizontes musicais. O projeto reúne participações de <strong>Black Pantera, Lucas Grilo, Malato e Eremita Roots</strong>, artistas que fazem parte da caminhada de Diego Chorão e da cena independente. Os beats são assinados por <strong>Eremita Roots, Quase, Jonas Pheer, Torq4Beatzz, xxjeann e Malato</strong>, cada um contribuindo com sua identidade para a construção sonora do disco.</p>
+                    <p>Mais do que um álbum, <em>Poesia de Boteco</em> é um registro de uma fase da vida. São músicas que nasceram de conversas de bar, das ruas, dos encontros e desencontros, das amizades que permaneceram e das que ficaram pelo caminho. Sem personagens e sem fórmulas, Diego Chorão transforma experiências reais em letras que dialogam com quem vive o Hip Hop para além da música.</p>
+                    <p>O lançamento oficial acontece no dia 27 de junho, no Tropicália Bar, em Uberaba (MG). O evento contará com o show de lançamento do álbum, participações especiais dos artistas envolvidos no projeto, apresentação da rapper Polly Magalhães, uma Batalha de Rimas, onde o campeão será premiado com a produção completa de uma música inédita em estúdio, incluindo gravação, mixagem, masterização e videoclipe, além de intérprete de Libras durante toda a programação, garantindo acessibilidade ao público surdo.</p>
+                    <p>As ações do projeto continuam após o lançamento do álbum. No dia 15 de julho, será lançado o videoclipe da faixa "Thiago, Tiago", com participação de Lucas Grilo e beat de Jonas Pheer. O projeto também contará com um minidocumentário, registrando os bastidores da produção do álbum, entrevistas e todo o processo criativo de <em>Poesia de Boteco</em>.</p>
+                </div>
+
+                <div class="border-t border-surface-variant/30 pt-6">
+                    <h3 class="font-headline-md text-2xl text-primary font-bold uppercase tracking-tight mb-6">FAIXA A FAIXA</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="text-white font-bold uppercase">INTRO</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Torq4Beatzz</div>
+                            <p>A introdução do álbum… escrevi esses versos no beat do Torquato como uma forma de desabafo, para minha cabeça não explodir, para que a corda me tirasse do buraco e não fosse usada como forca.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">SABOR MC</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • xxjeann</div>
+                            <p>Uma sátira em um beat do Jean sobre o atual cenário do rap, do movimento… os Sabor MC falam muito, mas nem sabem sobre o que estão falando. Se vestem como um, tentam rimar como um, mas falta vivência.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">THIAGO, TIAGO</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Lucas Grilo • Jonas Pheer</div>
+                            <p>Primeira faixa que entrou para o álbum. Beat do Jonas e participação do Lucas Grilo. Esse som fala sobre alguns amigos que se perderam... os vários Thiagos que já passaram por nossa vida.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">SER OU NÃO SER</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Torq4Beatzz</div>
+                            <p>No beat do Torquato, esse som trata sobre ser ou não ser, manter a sua verdade ou se perder. No corre das notas eu já vi vários se perder… e de boa intenção o inferno tá cheio.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">CORPOS VAZIOS</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Quase</div>
+                            <p>Música no beat do Quase, uma grande referência pra mim dentro do rap, aqui da cidade de Uberaba. Corpos Vazios é um som sobre a futilidade de ter um corpo vazio, um pensamento raso, almas vazias e sorrisos forçados.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">PELAS RUAS</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Eremita Roots</div>
+                            <p>Beat e feat do Eremita. Vouglas, minha maior referência no rap da cidade! Uma honra dividir uma letra com esse mano, a gente aborda nossas vivências no nosso próprio dialeto. Duas gerações, mas com a mesma escola: a Rua. Afinal, a rua representa e ostenta anonimato!</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">BOOMBAP KING</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Jonas Pheer</div>
+                            <p>Beat do Jonas, e assim como diz o título da faixa, nesse som eu deixo claro que o Boom Bap nunca morreu.<br>Rap a gente faz. Hip Hop a gente vive!</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">LIXOS</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Black Pantera</div>
+                            <p>A letra dessa música foi toda escrita por mim e o instrumental composto e tocado pela banda Black Pantera. Rap e Rock sempre andaram juntos e graças ao Black Pantera meu sonho se tornou realidade: tenho um HARDCORE!</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase">20 MIL MOTIVOS</h4>
+                            <div class="text-xs text-primary mb-1">Diego Chorão • Gaiola Records • Malato</div>
+                            <p>Talvez a faixa mais fora da casinha do álbum. Porém, uma música que fiz questão de ter ela aqui. Um som com beat e feat do Malato, meu melhor amigo. A música nasceu em 2014 e foi toda regravada para esse álbum.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border-t border-surface-variant/30 pt-6">
+                    <h3 class="font-headline-md text-2xl text-primary font-bold uppercase tracking-tight mb-6">FICHA TÉCNICA</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <p><strong>Artista:</strong> Diego Chorão</p>
+                            <p><strong>Álbum:</strong> Poesia de Boteco</p>
+                            <p><strong>Lançamento:</strong> 27 de junho de 2026</p>
+                            <p><strong>Produção:</strong> Gaiola Records</p>
+                        </div>
+                        <div>
+                            <p><strong>Coprodução:</strong> Java Lee, Lucas Nóbrega, Victor Vieira</p>
+                            <p><strong>Participações Especiais:</strong> Black Pantera, Lucas Grilo, Malato, Eremita Roots</p>
+                            <p><strong>Beats:</strong> Eremita Roots, Quase, Jonas Pheer, Torq4Beatzz, xxjeann, Malato</p>
+                        </div>
+                        <div>
+                            <p><strong>Back Vocal:</strong> Bárbara Novais</p>
+                            <p><strong>Arte (capa, contracapa e flyer):</strong> Tigutin</p>
+                        </div>
+                        <div>
+                            <p><strong>Direção Audiovisual:</strong> Utopia Audiovisual (Victor Hugo)</p>
+                            <p><strong>Coordenação de Marketing:</strong> Bruno Batistuta</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-xs text-primary bg-surface-container-low p-4 rounded border border-surface-variant/30">
+                        Projeto "DIEGO CHORÃO", do proponente Diego Henrique Silva, aprovado no Edital PNAB 06/2024 – Chamamento Público: Produção de Obras, categoria Produção de Álbum Musical, do Estado de Minas Gerais.
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
