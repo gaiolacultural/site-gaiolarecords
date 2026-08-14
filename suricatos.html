@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suricatos - Media Kit Oficial 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@400&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#FFD700",
+                        "secondary": "#008000",
+                        "inverse-on-surface": "#303030",
+                        "surface-variant": "#353535",
+                        "surface-container-low": "#1b1b1b",
+                        "surface-container-highest": "#353535",
+                        "on-surface": "#e2e2e2",
+                        "error": "#ffb4ab",
+                        "on-background": "#e2e2e2",
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary": "#2f3131",
+                        "inverse-surface": "#e2e2e2",
+                        "outline-variant": "#444748",
+                        "surface-container": "#1f1f1f",
+                        "surface": "#131313",
+                        "background": "#131313",
+                        "surface-container-lowest": "#0e0e0e",
+                        "brand": "#b0b0b0"
+                    },
+                    "spacing": {
+                        "margin-desktop": "64px",
+                        "margin-mobile": "20px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Manrope"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-sm": ["JetBrains Mono"],
+                        "label-md": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Manrope"],
+                        "sans": ["Hanken Grotesk", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @font-face {
+            font-family: 'TribalPlay';
+            src: url('./assets/Fonte_tribal_play%20(1).ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        .font-tribal { font-family: 'TribalPlay', sans-serif !important; }
+
+        .text-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+        .glow-hover:hover { box-shadow: 0 0 20px 0 rgba(255, 215, 0, 0.15); }
+
+        /* ---------- ESTILOS DA INTRO (HERDADOS) ---------- */
+        .intro-layer {
+            font-family: 'TribalPlay', 'Montserrat', sans-serif;
+        }
+        
+        .bg-intro {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('./assets/suricatos-bg.jpg'); 
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+            filter: blur(2px) brightness(0.6); z-index: 0; transform: scale(1.05);
+            animation: pulseBackground 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes pulseBackground { 0% { transform: scale(1.05); } 100% { transform: scale(1.1); } }
+
+        .logo-suricato { animation: lookAround 6s infinite ease-in-out; transform-origin: center center; }
+        @keyframes lookAround {
+            0% { transform: translateY(0) scaleX(1); } 15% { transform: translateY(-15px) scaleX(1); }
+            30% { transform: translateY(-15px) scaleX(-1); } 60% { transform: translateY(-15px) scaleX(-1); }
+            75% { transform: translateY(-15px) scaleX(1); } 100% { transform: translateY(0) scaleX(1); }
+        }
+
+        .logo-container { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+
+        .audio-hint { animation: pulseText 2s infinite; }
+        @keyframes pulseText {
+            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+            50% { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
+            100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
+        }
+
+        .screen-intro {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            transition: opacity 1s ease-in-out; overflow: hidden;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        @keyframes forestGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        
+        #screen-forest {
+            background: linear-gradient(270deg, #1f421b, #0f3011, #2d5a27, #0a1f0b);
+            background-size: 800% 800%; animation: forestGradient 10s ease infinite;
+        }
+
+        .forest-bird { position: absolute; color: #051406; opacity: 0.8; animation: flyRight 6s linear infinite; }
+        .bird1 { top: 20%; left: -10%; animation-duration: 8s; animation-delay: 1s; }
+        .bird2 { top: 35%; left: -10%; animation-duration: 6s; animation-delay: 3s; font-size: 1.5rem; }
+        .bird3 { top: 15%; left: -10%; animation-duration: 9s; animation-delay: 0s; font-size: 1.2rem; }
+
+        @keyframes flyRight {
+            0% { transform: translateX(0) translateY(0) scaleX(-1); }
+            50% { transform: translateX(50vw) translateY(-20px) scaleX(-1); }
+            100% { transform: translateX(110vw) translateY(10px) scaleX(-1); }
+        }
+
+        .band-reveal-container { opacity: 0; transform: scale(0.8) translateY(50px); transition: all 2s ease-out; }
+        .band-reveal-container.show { opacity: 1; transform: scale(1) translateY(0); }
+        .band-overlay-logo { margin-bottom: -50px; filter: drop-shadow(0 0 20px rgba(0,0,0,0.8)); animation: float 5s ease-in-out infinite; }
+
+        /* ---------- YOUTUBE ANIMATION CLASSES ---------- */
+        .youtube-wrapper {
+            position: absolute; z-index: 50; border-radius: 0.75rem; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: auto;
+            overflow: hidden; opacity: 0; transition: opacity 1s;
+        }
+        .youtube-container { width: 100%; height: 100%; pointer-events: none; }
+
+    </style>
+</head>
+<body class="bg-black text-on-background font-body-md antialiased min-h-screen flex flex-col overflow-hidden" id="main-body">
+
+    <!-- Background da Página Principal -->
+    <div class="fixed inset-0 z-0 pointer-events-none hidden" id="main-bg-layer">
+        <div class="absolute inset-0 bg-black/80 z-10"></div>
+        <img alt="Fundo Suricatos" class="w-full h-full object-cover object-[center_30%]" src="assets/suricatos-bg.jpg"/>
+    </div>
+
+    <!-- INTRO LAYER -->
+    <div id="intro-layer" class="fixed inset-0 z-[100] transition-opacity duration-1000 intro-layer text-white">
+        <!-- Tela Inicial -->
+        <div id="screen-landing" class="screen-intro z-10 bg-black">
+            <div class="bg-intro"></div>
+            <div class="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
+                <div class="logo-container max-w-[450px] w-full mb-[-1.5rem] relative z-[2]">
+                    <img src="assets/suricatos-logo-suricatos.png" alt="Base Logo" class="w-full block drop-shadow-2xl">
+                    <img src="assets/suricatos-logo-suricato.png" alt="Suricato Meio" class="logo-suricato absolute top-0 left-0 w-full">
+                </div>
+                
+                <h1 class="text-2xl md:text-3xl font-semibold tracking-widest uppercase mb-12 drop-shadow-lg text-white">Media Kit Oficial 2026</h1>
+
+                <div class="audio-hint flex items-center gap-2 text-lg mb-8 text-[#FFD700]">
+                    <i class="fas fa-volume-up"></i><span>Liga o áudio</span>
+                </div>
+
+                <a href="#" class="inline-block px-10 py-4 text-xl font-bold text-white uppercase tracking-wider border border-white/30 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all hover:-translate-y-1 mb-8" id="btnEnter">
+                    Entrar na Suri-experiência
+                </a>
+
+                <div class="flex items-center gap-2 text-sm text-gray-300 opacity-80 hover:opacity-100 transition-opacity">
+                    <span>Com fone é melhor</span><i class="fas fa-headphones"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tela da Floresta -->
+        <div id="screen-forest" class="screen-intro z-[5] opacity-0 pointer-events-none flex-col">
+            <i class="fas fa-crow forest-bird bird1"></i>
+            <i class="fas fa-crow forest-bird bird2"></i>
+            <i class="fas fa-crow forest-bird bird3"></i>
+            <div class="band-reveal-container flex flex-col items-center relative z-10" id="bandImage">
+                <img src="assets/suricatos-logo.png" alt="Logo" class="band-overlay-logo max-w-[300px] z-[2]">
+                <img src="assets/banda-suricatos-front.png" alt="Banda" class="max-w-[80vw] max-h-[60vh] object-contain rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.7)]">
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT (Tailwind Based) -->
+    <div id="screen-main" class="w-full flex-grow flex-col opacity-0 hidden transition-opacity duration-1000 overflow-y-auto z-10">
+        
+        <!-- TopAppBar -->
+        <header class="bg-background border-b border-surface-variant w-full z-50 sticky top-0 h-14 flex items-center">
+            <div class="max-w-7xl mx-auto flex justify-center md:justify-between items-center px-4 md:px-8 w-full">
+                <div class="flex items-center gap-4">
+                    <img alt="Gaiola Records" class="w-8 h-8 object-contain" src="assets/Favicons.png">
+                    <span class="font-headline-lg text-2xl font-semibold tracking-tighter text-[#FFD700] leading-none">GAIOLA RECORDS</span>
+                </div>
+                <nav class="hidden md:flex gap-8 items-center">
+                    <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-[#FFD700] transition-colors" href="#">ARTISTAS</a>
+                    <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-[#FFD700] transition-colors" href="#">SOBRE</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="relative z-10 pt-8 pb-24 flex-grow">
+            <!-- 1. Hero Section (Formato Banda) -->
+            <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+                <div class="flex flex-col gap-6 items-center w-full">
+                    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 rounded-2xl shadow-2xl w-full flex flex-col gap-6 md:gap-8">
+                        
+                        <!-- Header Artista -->
+                        <div class="w-full flex flex-col lg:flex-row justify-between items-center lg:items-end gap-6 border-b border-surface-variant/50 pb-6">
+                            <div class="text-center lg:text-left flex flex-col justify-center lg:justify-start shrink-0">
+                                <h1 class="font-tribal text-headline-lg-mobile md:text-[4rem] md:leading-[4rem] text-[#FFD700] text-glow uppercase m-0 tracking-tight">Suricatos</h1>
+                                <div class="font-label-md text-label-md text-white uppercase tracking-widest mt-2 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-1 sm:gap-2">
+                                    <span>Nova MPB</span><span class="hidden sm:block opacity-50">•</span><span class="text-[11px] opacity-70">Uberaba / MG</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Botão Contratar Show -->
+                            <div class="mt-2 lg:mt-0 flex items-center justify-center lg:justify-end w-full lg:w-auto flex-grow lg:pr-8">
+                                <a href="#" class="bg-[#FFD700] text-black font-bold text-center py-3 px-6 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 shadow-[0_0_15px_rgba(255,215,0,0.3)] flex items-center justify-center gap-2 transition-transform hover:-translate-y-1">
+                                    <span class="material-symbols-outlined text-[18px]">perm_phone_msg</span> Contratar Show
+                                </a>
+                            </div>
+
+                            <!-- Redes Sociais -->
+                            <div class="hidden md:flex justify-center gap-3 items-center shrink-0">
+                                <a class="group flex flex-col items-center gap-1" href="#" target="_blank"><div class="border border-[#FFD700] flex items-center justify-center rounded-full group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300 w-12 h-12"><i class="fab fa-spotify text-xl"></i></div></a>
+                                <a class="group flex flex-col items-center gap-1" href="#" target="_blank"><div class="border border-[#FFD700] flex items-center justify-center rounded-full group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300 w-12 h-12"><i class="fab fa-youtube text-xl"></i></div></a>
+                                <a class="group flex flex-col items-center gap-1" href="#" target="_blank"><div class="border border-[#FFD700] flex items-center justify-center rounded-full group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300 w-12 h-12"><i class="fab fa-instagram text-xl"></i></div></a>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+                            <!-- Coluna Esquerda: Fotos + Biografia -->
+                            <div class="flex flex-col gap-6 h-full">
+                                <div class="w-full flex-grow min-h-[300px] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl cursor-pointer" onclick="nextMainPhoto()">
+                                    <img id="main-photo" alt="Suricatos" class="absolute inset-0 w-full h-full object-cover object-[center_25%] transition-all duration-700 hover:scale-105" src="assets/suricatos-duo-frente.jpg"/>
+                                </div>
+                                <div class="w-full shrink-0 space-y-4 text-on-surface-variant font-body-md text-sm md:text-base text-justify leading-relaxed p-6 bg-white/5 rounded-xl border border-white/10 shadow-inner">
+                                    <p>Criada em 2019, a Banda Suricatos nasceu do encontro de universitários ansiosos por mostrar a música de qualidade no cenário uberabense.</p>
+                                    <p>De lá pra cá, o amadurecimento e a evolução foram naturais, conforme nossa participação em eventos culturais da cidade.</p>
+                                    <p>Com os criadores, compositores e musicistas Enzo e João, nasceram músicas autorais repletas de influências culturais como Jazz, Bossa Nova, Forró e, principalmente, o Reggae.</p>
+                                    <p>A Banda Suricatos tem ocupado os palcos de Uberaba, sempre levando o amor, a alegria e o regionalismo para todos os públicos.</p>
+                                </div>
+                            </div>
+
+                            <!-- Coluna Direita: Formatos (Banda e Duo) -->
+                            <div class="flex flex-col gap-10">
+                                
+                                <!-- Bloco Formato Banda -->
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="font-tribal text-2xl text-[#FFD700] font-bold uppercase tracking-tight">Formato Banda</div>
+                                        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-2">
+                                            <div class="font-label-md text-[10px] sm:text-[11px] text-on-surface-variant uppercase flex flex-wrap items-center gap-1">
+                                                <span>5 PESSOAS (VOZES / VIOLÃO / GUITARRA / BAIXO / BATERIA)</span>
+                                                <span class="text-[#FFD700] font-bold bg-[#FFD700]/10 border border-[#FFD700]/20 px-1 py-0.5 rounded text-[10px] whitespace-nowrap">2 HORAS</span>
+                                            </div>
+                                            <a href="#" class="border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-[#FFD700] px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-1 shrink-0 w-fit">
+                                                <span class="material-symbols-outlined text-[14px]">download</span> Rider
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl" id="band-video-slot">
+                                        <!-- O yt-wrapper será posicionado aqui em cima -->
+                                    </div>
+                                </div>
+
+                                <div class="w-full border-t border-surface-variant/30"></div>
+
+                                <!-- Bloco Formato Duo -->
+                                <div class="flex flex-col gap-4">
+                                    <div class="flex flex-col gap-2">
+                                        <div class="font-tribal text-2xl text-[#FFD700] font-bold uppercase tracking-tight">Formato Duo</div>
+                                        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-2">
+                                            <div class="font-label-md text-[10px] sm:text-[11px] text-on-surface-variant uppercase flex flex-wrap items-center gap-1">
+                                                <span>2 PESSOAS (VOZ & VIOLÃO / VOZ & PERCUSSÃO)</span>
+                                                <span class="text-[#FFD700] font-bold bg-[#FFD700]/10 border border-[#FFD700]/20 px-1 py-0.5 rounded text-[10px] whitespace-nowrap">2 HORAS</span>
+                                            </div>
+                                            <a href="#" class="border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-[#FFD700] px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-1 shrink-0 w-fit">
+                                                <span class="material-symbols-outlined text-[14px]">download</span> Rider
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
+                                        <img src="assets/poesia-de-boteco-capa.jpg" alt="Formato Duo" class="w-full h-full object-cover">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. Suri-Experiencia -->
+            <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
+                <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 md:px-12 rounded-2xl shadow-2xl w-full flex flex-col items-center">
+                    <h2 class="font-tribal text-[2.5rem] text-[#FFD700] text-glow uppercase text-center w-full m-0 mb-4 border-b border-surface-variant/30 pb-3">Suri-Experiência</h2>
+                    
+                    <div class="w-full flex flex-col items-center">
+                        <h3 class="font-tribal text-2xl text-[#008000] uppercase mb-6 tracking-widest">Apresentação Ao Vivo</h3>
+                        
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+                            <div class="w-full aspect-[4/3] bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-2xl">
+                                <img src="assets/FEED-CHORÃO-1.jpg" alt="Apresentação" class="w-full h-full object-cover">
+                            </div>
+                            <div class="w-full aspect-video lg:aspect-[4/3] bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-2xl flex items-center justify-center">
+                                <img src="assets/FEED-CHORÃO-3.jpg" alt="Video Placeholder" class="w-full h-full object-cover opacity-50">
+                                <span class="material-symbols-outlined absolute text-6xl text-white opacity-80">play_circle</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Palcos e Festivais -->
+            <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
+                <div class="w-full mb-4">
+                    <h3 class="font-tribal text-2xl md:text-3xl text-[#FFD700] text-center w-full m-0 mb-8 uppercase tracking-widest">PALCOS E FESTIVAIS</h3>
+                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-80 hover:opacity-100 transition-opacity">
+                        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"><img src="assets/logo-marca-1.png" class="w-full h-full object-contain hover:scale-105 transition-transform drop-shadow-md" /></div>
+                        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"><img src="assets/logo-marca-2.png" class="w-full h-full object-contain hover:scale-105 transition-transform drop-shadow-md" /></div>
+                        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"><img src="assets/logo-marca-3.png" class="w-full h-full object-contain hover:scale-105 transition-transform drop-shadow-md" /></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Booking & Contato -->
+            <section class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto mb-16 text-center">
+                <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-6 md:p-10 rounded-2xl shadow-2xl flex flex-col items-center gap-6">
+                    <h3 class="font-tribal text-[2rem] text-[#FFD700] uppercase m-0 text-glow">Booking & Informações</h3>
+                    <div class="text-on-surface-variant font-body-md text-sm md:text-base max-w-3xl mx-auto space-y-4">
+                        <p>Suricatos está disponível para apresentações em todo o território nacional.</p>
+                        <p>Entre em contato com a Gaiola Records para discutir propostas e disponibilidade de agenda.</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full max-w-2xl mt-4 mb-2">
+                        <a href="#" class="w-full bg-[#FFD700] text-black font-bold text-center py-4 px-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 shadow-lg flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined text-xl">perm_phone_msg</span> Contratar Show
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- O Player de Vídeo do YouTube (Sempre na raiz) -->
+    <div class="youtube-wrapper" id="yt-wrapper">
+        <div class="youtube-container" id="player"></div>
+        <div id="yt-click-overlay" class="absolute inset-0 z-20 cursor-pointer pointer-events-auto" onclick="this.classList.add('hidden'); document.getElementById('player').classList.remove('pointer-events-none');"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script>
+        // Photo Switcher Script
+        const mainPhotos = ['assets/suricatos-duo-frente.jpg', 'assets/artist3.png'];
+        let currentMainPhoto = 0;
+        function nextMainPhoto() {
+            currentMainPhoto = (currentMainPhoto + 1) % mainPhotos.length;
+            const img = document.getElementById('main-photo');
+            if(img) img.src = mainPhotos[currentMainPhoto];
+        }
+        setInterval(nextMainPhoto, 4000);
+
+        // YouTube Logic
+        let player;
+        let hasShrunk = false;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'PnBNyd0_NFU',
+                playerVars: {
+                    'controls': 0, 'start': 20, 'autoplay': 0, 'rel': 0,
+                    'modestbranding': 1, 'showinfo': 0, 'disablekb': 1, 'iv_load_policy': 3, 'fs': 0,
+                    'cc_load_policy': 0, 'cc_lang_pref': 'xyz'
+                },
+                events: {
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !hasShrunk) {
+                hasShrunk = true;
+
+                try {
+                    player.unloadModule("captions");
+                    player.unloadModule("cc");
+                } catch(e) {}
+
+                // Espera 4s escondido para dar tempo total das informações do YT sumirem.
+                // O vídeo começa aos 20s, então aos 4000ms ele estará exatamente no 24s.
+                setTimeout(() => {
+                    // Revela fundo e tira a intro
+                    const introLayer = document.getElementById('intro-layer');
+                    introLayer.style.opacity = '0';
+                    setTimeout(() => { introLayer.classList.add('hidden'); }, 1000);
+                    
+                    document.getElementById('main-bg-layer').classList.remove('hidden');
+
+                    // Revela a grade temporariamente invisível para calcular a posição
+                    const screenMain = document.getElementById('screen-main');
+                    screenMain.classList.remove('hidden');
+                    screenMain.style.display = 'flex';
+                    
+                    // Posiciona o yt-wrapper
+                    const placeholder = document.getElementById('band-video-slot');
+                    const rect = placeholder.getBoundingClientRect();
+                    const ytWrapper = document.getElementById('yt-wrapper');
+                    
+                    ytWrapper.style.width = rect.width + 'px';
+                    ytWrapper.style.height = rect.height + 'px';
+                    ytWrapper.style.top = rect.top + 'px'; 
+                    ytWrapper.style.left = rect.left + 'px';
+                    
+                    // Revela o vídeo (limpo, sem UI e já nos 24s)
+                    ytWrapper.style.opacity = '1';
+
+                    // O resto da página só aparece após 2s (ou seja, quando o vídeo bate no 26s)
+                    setTimeout(() => {
+                        screenMain.style.opacity = '1';
+                        document.getElementById('main-body').classList.remove('overflow-hidden');
+                    }, 2000);
+                }, 4000);
+            }
+        }
+
+        // Resize event for video positioning
+        window.addEventListener('resize', () => {
+            const ytWrapper = document.getElementById('yt-wrapper');
+            if(ytWrapper.style.opacity === '1') {
+                const placeholder = document.getElementById('band-video-slot');
+                if(placeholder) {
+                    const rect = placeholder.getBoundingClientRect();
+                    ytWrapper.style.width = rect.width + 'px';
+                    ytWrapper.style.height = rect.height + 'px';
+                    ytWrapper.style.top = rect.top + 'px';
+                    ytWrapper.style.left = rect.left + 'px';
+                }
+            }
+        });
+
+        document.getElementById('btnEnter').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (player && typeof player.playVideo === 'function') {
+                this.innerHTML = "CARREGANDO...";
+                this.style.opacity = "0.5";
+                this.style.pointerEvents = "none";
+
+                // O vídeo começa do segundo 22 conforme playerVars
+                player.playVideo();
+
+                // Mostramos o vídeo imediatamente, porém escondido ATRÁS do z-index 100 da intro!
+                const ytWrapper = document.getElementById('yt-wrapper');
+                ytWrapper.classList.remove('hidden');
+                ytWrapper.style.opacity = '1';
+
+                const screenForest = document.getElementById('screen-forest');
+                screenForest.style.display = 'none';
+
+                // A revelação do clipe agora é feita suavemente no onPlayerStateChange!
+
+            } else {
+                alert("O vídeo ainda está carregando, aguarde um segundo e tente novamente.");
+            }
+        });
+
+        // Toggle Play/Pause ao clicar no vídeo quando no grid
+        document.getElementById('yt-click-overlay').addEventListener('click', function() {
+            if (player && typeof player.getPlayerState === 'function') {
+                const state = player.getPlayerState();
+                if (state === YT.PlayerState.PLAYING) {
+                    player.pauseVideo();
+                } else {
+                    player.playVideo();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

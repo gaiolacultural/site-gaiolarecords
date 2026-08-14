@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>POLLY MAGALHÃES - Rapper &amp; Performer</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&amp;family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface": "#131313",
+                    "error-container": "#93000a",
+                    "primary": "#f2ca50",
+                    "secondary": "#f1bc8c",
+                    "surface-container-lowest": "#0e0e0e",
+                    "surface-container-highest": "#353534",
+                    "surface-container-low": "#1c1b1b",
+                    "on-surface": "#e5e2e1",
+                    "on-surface-variant": "#d0c5af",
+                    "outline-variant": "#4d4635"
+            },
+            "fontFamily": {
+                    "body-sm": ["Hanken Grotesk"],
+                    "label-caps": ["Space Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Anton"],
+                    "headline-lg": ["Anton"],
+                    "title-md": ["Hanken Grotesk"],
+                    "display-xl": ["Anton"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+body { background-color: #131313; color: #e5e2e1; }
+.grunge-overlay { position: relative; }
+.grunge-overlay::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDpDbJJb3cYq_UGvFTRCJNPhR18XvVEqecDe6qxUnqyWdlaO95g6IvbvjfeFflNloKtKFV7tSXM_o7Q7SjVViMsTXjOAQU9OQbdOY0hmRphSGowGLkYswFintEpx3vlmIWrTwWaRi520Z4MrkKojT3qVVt7aeg4RZclYMYyN26vwlTiy_5iijNGs3D_WvcUP92rlGkMkzxKZpBTM54z3pQsydiccqET-QDxypN6vUUYFsuqeHU9Cj1l);
+    background-size: cover; background-position: center; opacity: 0.15; mix-blend-mode: multiply; pointer-events: none; z-index: 1;
+}
+.btn-gold { background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%); color: #241a00; }
+</style>
+</head>
+<body class="font-body-lg text-body-lg text-on-surface bg-surface antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/80 backdrop-blur-md text-primary docked full-width top-0 sticky z-50 border-b border-outline-variant/30 flex justify-center items-center w-full px-4 py-2 h-12">
+<nav class="flex gap-4 font-label-caps text-[12px] font-semibold tracking-[0.1em] text-on-surface">
+<a class="hover:text-primary transition-colors" href="#">POLLY</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">SHOW</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">DISCOGRAFIA</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#crew">EQUIPE</a>
+<span class="text-outline-variant">/</span>
+<a class="hover:text-primary transition-colors" href="#">CONTATO</a>
+</nav>
+</header>
+
+<main class="w-full h-full flex flex-col relative z-0">
+<!-- 1. Hero Section -->
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-black py-20" id="hero">
+<div class="absolute inset-0 opacity-100 z-0">
+    <video src="assets/VIDEO-BG.mp4" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent z-10"></div>
+<div class="relative z-20 w-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center h-full min-h-[60vh]">
+<h2 class="font-display-xl text-[120px] md:text-[180px] uppercase tracking-tighter text-primary drop-shadow-[0_4px_24px_rgba(242,202,80,0.3)] animate-pulse leading-[0.85] mb-12">
+        POLLY<br/>MAGALHÃES
+    </h2>
+<button class="btn-gold font-label-caps text-[12px] font-semibold tracking-[0.1em] px-8 py-4 rounded-full uppercase hover:scale-105 transition-transform shadow-[0_0_20px_rgba(242,202,80,0.4)]">
+        Ouvir Agora
+    </button>
+</div>
+</section>
+
+<!-- 2. History Section -->
+<section class="pt-24 pb-12 px-4 bg-surface relative z-10 overflow-hidden min-h-screen flex flex-col justify-center" id="historia">
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-80" style="background-image: url('assets/HISTORIA-BG.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/40 to-surface z-0"></div>
+
+<div class="w-full max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row gap-8 lg:gap-12 items-center justify-between">
+    
+    <!-- Coluna Esquerda (Foto Cima, Vídeo Baixo) -->
+    <div class="hidden md:flex flex-col gap-6 items-end shrink-0 w-[270px]">
+        <div class="w-[270px] h-[270px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl rotate-1 hover:rotate-0 transition-transform">
+            <img id="hist-photo-1" class="object-cover object-center w-full h-full transition-opacity duration-1000" src="assets/historia-foto-1.jpeg"/>
+        </div>
+        <div class="w-[270px] h-[480px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl -rotate-1 hover:rotate-0 transition-transform">
+            <video id="hist-video-1" class="object-cover object-center w-full h-full transition-opacity duration-1000 pointer-events-none" src="assets/historia-video-1.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+        </div>
+    </div>
+
+    <!-- Coluna Central (Título + Textos Expansivos) -->
+    <div class="flex-1 flex flex-col gap-6 items-center w-full">
+        <h3 class="font-headline-lg-mobile text-[50px] md:text-[80px] text-primary uppercase text-center leading-none w-full">A História</h3>
+        
+        <div class="flex flex-col gap-5 text-justify font-medium font-title-md text-[16px] lg:text-[18px] text-on-surface leading-relaxed w-full">
+            <p>
+                Rapper, poetisa e produtora cultural nascida em Uberaba/MG, Polly Magalhães utiliza o rap como sua principal linguagem narrativa para traduzir o mundo ao seu redor. Sua música é um espelho de sua identidade: uma obra visceral que transita entre o amor, o desamor, a saúde mental e as profundas nuances de ser uma mulher preta no Brasil.
+            </p>
+            <p>
+                Iniciando sua trajetória em 2015, quando começou a dar forma às suas primeiras composições, Polly construiu um caminho marcado pela autenticidade. Em 2021, o single “Até Aqui” marcou sua estreia oficial, abrindo portas e consolidando sua presença ativa nos eventos culturais de sua cidade natal.
+            </p>
+            <p>
+                A evolução artística de Polly é um processo constante de autorreflexão. Em 2025, ela deu um passo importante com o EP "Ouro", um projeto que fundiu música e audiovisual para explorar o autoconhecimento, a autoestima e o fortalecimento da mulher preta, em uma narrativa potente sobre espiritualidade e autoamor.
+            </p>
+            <p>
+                Expandindo sua voz em 2026, a artista lançou o single "Fato Verídico", uma faixa corajosa que encara a violência contra a mulher e a urgência da autoproteção. Dando sequência a esse momento, apresenta seu mais recente trabalho: o EP "Tudo Sobre Desamor, Nem Tudo!". Lançado em julho de 2026, o projeto convida o ouvinte a percorrer as faces mais complexas dos afetos — das relações idealizadas ao doloroso processo de cura, da coragem de partir à capacidade de deixar o coração aberto para o novo.
+            </p>
+            <p>
+                Influenciada pelas raízes do hip-hop, do charme e da música preta, Polly Magalhães não apenas canta; ela constrói um legado de cura, resistência e verdade.
+            </p>
+        </div>
+    </div>
+
+    <!-- Coluna Direita (Vídeo Cima, Foto Baixo) -->
+    <div class="hidden md:flex flex-col gap-6 items-start shrink-0 w-[270px]">
+        <div class="w-[270px] h-[480px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl rotate-1 hover:rotate-0 transition-transform">
+            <video id="hist-video-2" class="object-cover object-center w-full h-full transition-opacity duration-1000 pointer-events-none" src="assets/historia-video-3.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+        </div>
+        <div class="w-[270px] h-[270px] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl -rotate-1 hover:rotate-0 transition-transform">
+            <img id="hist-photo-2" class="object-cover object-center w-full h-full transition-opacity duration-1000" src="assets/historia-foto-3.webp"/>
+        </div>
+    </div>
+    
+</div>
+</section>
+
+<!-- 3. Videos Section -->
+<section class="pt-20 pb-12 px-4 bg-surface relative z-10 overflow-hidden min-h-screen lg:h-screen lg:max-h-screen flex flex-col justify-start" id="videos">
+<div class="absolute inset-0 z-0">
+    <video autoplay loop muted playsinline class="object-cover w-full h-full opacity-100">
+        <source src="assets/VIDEOS-BG.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/30 to-surface z-0"></div>
+
+<div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-start h-full">
+    <!-- Título alinhado no topo -->
+    <h3 class="font-headline-lg-mobile text-[50px] md:text-[80px] text-primary uppercase text-center leading-none mb-10 w-full">VÍDEOS</h3>
+
+    <!-- Container do Layout 2 Colunas (Show na Esq, Outros na Dir) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-10 w-full max-w-[1400px] items-start justify-center flex-1">
+        
+        <!-- Coluna Esquerda: Show (Maior) -->
+        <div class="lg:col-span-2 flex flex-col gap-3 w-full">
+            <h4 class="font-title-md text-[18px] lg:text-[22px] text-secondary text-center uppercase tracking-widest font-bold">Show</h4>
+            <div class="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-surface-container">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Jl4whqoONgU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;top:0;bottom:0;margin:auto;object-fit:cover;height:100%}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black;transition:transform 0.2s}a:hover span{transform:scale(1.1)}</style><a href='https://www.youtube.com/embed/Jl4whqoONgU?autoplay=1'><img src='assets/TUMB-SHOW.jpg' alt='Show'><span>▶</span></a>"></iframe>
+            </div>
+        </div>
+
+        <!-- Coluna Direita: Clipe e Mini Doc (Empilhados) -->
+        <div class="flex flex-col gap-6 lg:gap-8 w-full">
+            <!-- Clipe -->
+            <div class="flex flex-col gap-3 w-full">
+                <h4 class="font-title-md text-[16px] text-secondary text-center uppercase tracking-widest font-bold">Ouro Pras Nega (Clipe)</h4>
+                <div class="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-surface-container">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/honiVz34344" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Mini Doc -->
+            <div class="flex flex-col gap-3 w-full">
+                <h4 class="font-title-md text-[16px] text-secondary text-center uppercase tracking-widest font-bold">Mini Doc</h4>
+                <div class="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-outline-variant/30 bg-surface-container">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/DThoA6Btg_k?start=8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- 4. EP "Tudo Sobre Desamor..." Section -->
+<section class="relative pt-20 pb-12 px-4 bg-[#0A0A0A] grunge-overlay border-t-2 border-[#5a0000] min-h-screen flex flex-col justify-start" id="ep-desamor" style="background-color: #1a0000;">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-error-container rounded-full blur-[100px] opacity-20 pointer-events-none z-0"></div>
+<div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center">
+    
+    <!-- Título Largo em Cima -->
+    <div class="w-full text-center mb-20">
+        <h3 class="font-headline-lg-mobile text-[30px] sm:text-[45px] md:text-[65px] lg:text-[80px] text-on-surface leading-none uppercase whitespace-nowrap">
+            Tudo Sobre Desamor, <span class="text-error">Nem Tudo</span>
+        </h3>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full">
+        <!-- Esquerda: Capa + Legenda -->
+        <div class="flex flex-col gap-8 items-center lg:items-start text-center lg:text-left w-full">
+            <div class="w-full max-w-md aspect-square bg-surface-container-low rounded-lg border border-error/20 overflow-hidden shadow-[0_10px_30px_rgba(147,0,10,0.3)] rotate-1 mx-auto lg:mx-0">
+                <img alt="EP Desamor Capa" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6eGlv5vDNxxVjihtQYQ1QHpz949RDQvpKvlFew3C8uoBiBK7Po0tm65Zj9mm96Geia9dKYrg1fNv8kapkhX1_Ulxc4MXZNT1Zf00ILUJ06eujh3TffZmG8Xi1pBn_08FVoaQVhXtHgFrrjvkbZuD0Lq9g5JocOwbi_LIw79n3SpLyKVK16IlNNLMpIruTRfnO3yLU2r6MvhUokIeiKgyVtxLUUxpw9byIa1pKN2uGBHbJeRIPjD0OV0FSItmf770_jg"/>
+            </div>
+            <p class="font-body-lg text-[18px] text-on-surface-variant max-w-md">
+                Um diário rasgado de sentimentos expostos. Rimas sujas, batidas pesadas e a dor transformada em combustível. Uma estética de caderno velho, caneta vermelha e coração partido.
+            </p>
+        </div>
+        
+        <!-- Direita: Spotify -->
+        <div class="flex flex-col justify-start items-center lg:items-end w-full">
+            <iframe data-testid="embed-iframe" style="border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/album/7fVPlPu6NJ0FkZqIzDBf80?utm_source=generator&si=423b9892ddf44b97" width="100%" height="440" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- 4. EP "Ouro" Section -->
+<section class="relative pt-20 pb-12 px-4 overflow-hidden min-h-screen flex flex-col justify-start" id="ep-ouro">
+<div class="absolute inset-0 z-0">
+    <video src="assets/OURO-VIDEO.mp4" autoplay loop muted playsinline class="object-cover w-full h-full opacity-100"></video>
+    <div class="absolute inset-0 bg-gradient-to-b from-[#1a0000] via-[#2d1600]/40 to-surface-container-lowest"></div>
+</div>
+<div class="absolute top-0 right-0 w-80 h-80 bg-primary/30 rounded-full blur-[120px] opacity-20 pointer-events-none z-0"></div>
+<div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center">
+    
+    <!-- Título Largo em Cima -->
+    <div class="w-full text-center mb-20">
+        <h3 class="font-headline-lg-mobile text-[50px] sm:text-[70px] md:text-[100px] text-primary leading-none uppercase whitespace-nowrap">
+            OURO
+        </h3>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start w-full">
+        <!-- Esquerda: Capa + Legenda -->
+        <div class="flex flex-col gap-8 items-center lg:items-start text-center lg:text-left w-full">
+            <div class="w-full max-w-md aspect-square bg-surface-container-low rounded-lg border border-primary/30 overflow-hidden shadow-[0_10px_40px_rgba(212,175,55,0.2)] -rotate-1 mx-auto lg:mx-0">
+                <img alt="EP Ouro Capa" class="object-cover w-full h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGNqjqn26pzuWAeJ4MwMx00gTFxu5JI7bjgyMcvRLOmRi6Xs3zH9Zuz69xH24LE_ZkO4gOCuLRCaP0tjQPM8wAKDsXVVDCfoeTqqiK6Ul3oKSYGp8BWBA6hhh7gZ7gbGWWV0TlLHHDnkTr6nq1_74Z4sF-kUuQ384IEcwMb7Qezy98TW_kE2ZZ00cpihPFhY1azLJWaLp1ACjL6hU8a0WwXiP1kpe5QKrKLyVRQov0e56OW3EQU6i25nCaEIUmH4M89Q"/>
+            </div>
+            <p class="font-body-lg text-[18px] text-on-surface-variant max-w-md">
+                A ascensão. O brilho que ofusca. Uma sonoridade luxuosa e potente que reflete a conquista do espaço. Batidas ricas, flows milionários e a coroa pesada na cabeça.
+            </p>
+        </div>
+        
+        <!-- Direita: Spotify -->
+        <div class="flex flex-col justify-start items-center lg:items-end w-full">
+            <iframe data-testid="embed-iframe" style="border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/album/2ghZQZZhHpuwYSZELKrFHu?utm_source=generator&si=4bd969612736432f" width="100%" height="550" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- 5. The Crew Section -->
+<section class="py-12 px-4 bg-surface-container-lowest relative overflow-hidden min-h-screen flex flex-col justify-center" id="crew">
+    <div class="absolute inset-0 bg-cover bg-center z-0 opacity-60" style="background-image: url('assets/EQUIPE-BG.png');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-surface via-surface/30 to-surface z-0"></div>
+
+    <div class="w-full max-w-6xl mx-auto relative z-10 flex flex-col gap-10">
+        <div class="w-full flex flex-col items-center mb-4">
+            <h3 class="font-headline-lg-mobile text-[50px] md:text-[80px] text-primary uppercase text-center leading-none">EQUIPE</h3>
+            
+            <!-- Formato Filtros -->
+            <div class="flex justify-center gap-4 mt-6">
+                <button id="btn-completo" class="font-label-caps text-[12px] font-semibold tracking-widest px-6 py-2 border border-primary text-primary rounded-full hover:bg-primary/20 transition-colors" onclick="setCrewMode('completo')">COMPLETO</button>
+                <button id="btn-trio" class="font-label-caps text-[12px] font-semibold tracking-widest px-6 py-2 border border-outline-variant text-on-surface-variant rounded-full hover:bg-outline-variant/30 transition-colors" onclick="setCrewMode('trio')">TRIO</button>
+                <button id="btn-duo" class="font-label-caps text-[12px] font-semibold tracking-widest px-6 py-2 border border-outline-variant text-on-surface-variant rounded-full hover:bg-outline-variant/30 transition-colors" onclick="setCrewMode('duo')">DUO</button>
+            </div>
+        </div>
+        
+        <div class="flex flex-col gap-4 w-full">
+            
+            <!-- Linha 1: 2 Membros (Polly, Naia) = 4 Colunas -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                
+                <!-- POLLY FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl group transition-all duration-500" data-member="polly">
+                    <img alt="Polly Magalhães" class="object-cover w-full h-full" src="assets/POLLY-EQUIPE-FOTO.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-title-md text-[20px] text-on-surface leading-tight font-bold drop-shadow-md">POLLY MAGALHÃES</p>
+                        <p class="font-label-caps text-[10px] text-primary uppercase mt-1 tracking-widest font-semibold drop-shadow-md">MC / Performer</p>
+                    </div>
+                </div>
+                <!-- POLLY VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl transition-all duration-500" data-member="polly">
+                    <video src="assets/POLLY-EQUIPE.mp4" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+                </div>
+
+                <!-- XUXU FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl group transition-all duration-500" data-member="xuxu">
+                    <img alt="DJ Xuxu" class="object-cover w-full h-full object-top" src="assets/XUXU-EQUIPE-FOTO.png"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-title-md text-[16px] text-on-surface leading-tight font-bold drop-shadow-md">DJ XUXU</p>
+                        <p class="font-label-caps text-[10px] text-secondary uppercase mt-1 tracking-widest font-semibold drop-shadow-md">DJ</p>
+                    </div>
+                </div>
+                <!-- XUXU VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl transition-all duration-500" data-member="xuxu">
+                    <video src="assets/XUXU-EQUIPE.mp4" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+                </div>
+                
+            </div>
+
+            <!-- Linha 2: 3 Membros (Xuxu, Gustavo, Raíssa) = 6 Colunas -->
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                
+                <!-- NAIA FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl group transition-all duration-500" data-member="naia">
+                    <img alt="Naia" class="object-cover w-full h-full" src="assets/NAIA-EQUIPE-FOTO.jpg"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-title-md text-[20px] text-on-surface leading-tight font-bold drop-shadow-md">NAIA</p>
+                        <p class="font-label-caps text-[10px] text-secondary uppercase mt-1 tracking-widest font-semibold drop-shadow-md">Backing Vocal</p>
+                    </div>
+                </div>
+                <!-- NAIA VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl transition-all duration-500" data-member="naia">
+                    <video src="assets/NAIA-EQUIPE.mp4" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+                </div>
+
+                <!-- GUSTAVO FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl group transition-all duration-500" data-member="gustavo">
+                    <img alt="Gustavo" class="object-cover w-full h-full object-top" src="assets/GUSTAVO-EQUIPE-FOTO.png"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-title-md text-[16px] text-on-surface leading-tight font-bold drop-shadow-md">GUSTAVO</p>
+                        <p class="font-label-caps text-[10px] text-secondary uppercase mt-1 tracking-widest font-semibold drop-shadow-md">Dançarino</p>
+                    </div>
+                </div>
+                <!-- GUSTAVO VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl transition-all duration-500" data-member="gustavo">
+                    <video src="assets/GUSTAVO-EQUIPE.mp4" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+                </div>
+
+                <!-- RAISSA FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl group transition-all duration-500" data-member="raissa">
+                    <img alt="Raíssa" class="object-cover w-full h-full object-top" src="assets/RAIISSA-EQUIPE-FOTO.png"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-title-md text-[16px] text-on-surface leading-tight font-bold drop-shadow-md">RAÍSSA</p>
+                        <p class="font-label-caps text-[10px] text-secondary uppercase mt-1 tracking-widest font-semibold drop-shadow-md">Dançarina</p>
+                    </div>
+                </div>
+                <!-- RAISSA VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-xl overflow-hidden border border-outline-variant/30 shadow-xl transition-all duration-500" data-member="raissa">
+                    <video src="assets/RAISSA-EQUIPE.mp4" autoplay loop muted playsinline class="object-cover w-full h-full"></video>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="py-20 px-4 bg-surface border-t border-outline-variant/30 flex flex-col items-center text-center pb-32">
+<h4 class="font-headline-lg-mobile text-[40px] text-primary uppercase mb-4">Contato</h4>
+<div class="flex flex-col gap-4 mb-12 w-full max-w-sm">
+<div class="p-4 border border-outline-variant/50 rounded bg-surface-container-low flex flex-col items-center justify-center">
+<span class="font-label-caps text-[12px] text-secondary uppercase mb-1 font-semibold">Shows &amp; Imprensa</span>
+<a class="font-title-md text-[18px] text-on-surface hover:text-primary transition-colors font-bold" href="mailto:booking@pollymagalhaes.com">booking@pollymagalhaes.com</a>
+</div>
+</div>
+<p class="font-body-sm text-[10px] text-outline-variant uppercase tracking-widest">
+    © 2024 Polly Magalhães. Ouro Urbano.
+</p>
+</footer>
+</main>
+
+<script>
+    // Configurando a rotação de imagens e vídeos da seção A História
+    
+    const hPhoto1 = document.getElementById('hist-photo-1');
+    const hVideo1 = document.getElementById('hist-video-1');
+    const hPhoto2 = document.getElementById('hist-photo-2');
+    const hVideo2 = document.getElementById('hist-video-2');
+
+    // Esquerdas
+    const photosLeft = ['assets/historia-foto-1.jpeg', 'assets/historia-foto-2.jpeg'];
+    const videosLeft = ['assets/historia-video-1.mp4', 'assets/historia-video-2.mp4'];
+    
+    // Direitas
+    const photosRight = ['assets/historia-foto-3.webp', 'assets/historia-foto-4.webp'];
+    const videosRight = ['assets/historia-video-3.mp4', 'assets/historia-video-4.mp4'];
+
+    let pIdx = 0;
+    let vIdx = 0;
+
+    // Função auxiliar para trocar mídia com efeito de fade
+    function swapMedia(element, newSrc) {
+        if (!element) return;
+        element.style.opacity = '0.5';
+        setTimeout(() => {
+            element.src = newSrc;
+            element.style.opacity = '1';
+            if (element.tagName === 'VIDEO') {
+                element.play().catch(e => console.log("Autoplay prevented:", e));
+            }
+        }, 500);
+    }
+
+    // A cada 4 segundos, gira para o próximo arquivo da lista
+    setInterval(() => {
+        pIdx = (pIdx + 1) % 2;
+        swapMedia(hPhoto1, photosLeft[pIdx]);
+        swapMedia(hPhoto2, photosRight[pIdx]);
+    }, 4000);
+
+    // Descompasso de tempo para não piscar tudo junto
+    setTimeout(() => {
+        setInterval(() => {
+            vIdx = (vIdx + 1) % 2;
+            swapMedia(hVideo1, videosLeft[vIdx]);
+            swapMedia(hVideo2, videosRight[vIdx]);
+        }, 4000);
+    }, 2000);
+</script>
+<script>
+    // Configurando Filtros da Equipe
+    function setCrewMode(mode) {
+        // Atualiza estilo dos botões
+        const btns = {
+            'completo': document.getElementById('btn-completo'),
+            'trio': document.getElementById('btn-trio'),
+            'duo': document.getElementById('btn-duo')
+        };
+        
+        // Reseta todos para inativo
+        for (let m in btns) {
+            btns[m].className = "font-label-caps text-[12px] font-semibold tracking-widest px-6 py-2 border border-outline-variant text-on-surface-variant rounded-full hover:bg-outline-variant/30 transition-colors";
+        }
+        // Coloca o clicado como ativo
+        btns[mode].className = "font-label-caps text-[12px] font-semibold tracking-widest px-6 py-2 border border-primary text-primary rounded-full hover:bg-primary/20 transition-colors";
+
+        // Define quem está ativo
+        let activeMembers = [];
+        if (mode === 'completo') activeMembers = ['polly', 'naia', 'xuxu', 'gustavo', 'raissa'];
+        if (mode === 'trio') activeMembers = ['polly', 'naia', 'xuxu'];
+        if (mode === 'duo') activeMembers = ['polly', 'xuxu'];
+
+        // Altera opacidade, cor e vídeos de cada item
+        document.querySelectorAll('.crew-item').forEach(item => {
+            const member = item.getAttribute('data-member');
+            const video = item.querySelector('video');
+            
+            if (activeMembers.includes(member)) {
+                // Ativo
+                item.classList.remove('grayscale', 'opacity-30');
+                item.classList.add('opacity-100');
+                if (video) video.play().catch(e => console.log(e));
+            } else {
+                // Inativo (apagado)
+                item.classList.add('grayscale', 'opacity-30');
+                item.classList.remove('opacity-100');
+                if (video) video.pause();
+            }
+        });
+    }
+</script>
+</body>
+</html>

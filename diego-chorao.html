@@ -251,11 +251,11 @@
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             
-            <!-- Coluna 1 (Esquerda): Capa e Fotos Revezando -->
-            <div class="flex flex-col items-start w-full">
+            <!-- Coluna 1 (Esquerda): Capa, Fotos Revezando e Textos -->
+            <div class="flex flex-col gap-6 h-full w-full">
                 <!-- Carrossel Único (Capa + Fotos) -->
-                <div class="w-full aspect-square bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-xl cursor-pointer" onclick="nextAlbumPhoto()">
-                    <img id="album-photo" alt="Galeria Poesia de Boteco" class="w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/poesia-de-boteco-capa.jpg"/>
+                <div class="w-full flex-grow min-h-[300px] relative overflow-hidden rounded-xl cursor-pointer" onclick="nextAlbumPhoto()">
+                    <img id="album-photo" alt="Galeria Poesia de Boteco" class="absolute inset-0 w-full h-full object-cover transition-all duration-700 hover:scale-105" src="assets/poesia-de-boteco-capa.jpg"/>
                 </div>
                 <script>
                     const albumPhotos = [
@@ -277,120 +277,17 @@
                     }
                     setInterval(nextAlbumPhoto, 4000);
                 </script>
-            </div>
-            
-            <!-- Coluna 2 (Direita): Textos e Player Faixa a Faixa -->
-            <div class="flex flex-col justify-start h-full w-full gap-4">
-                
+
                 <!-- Textos -->
-                <div class="space-y-4 text-on-surface-variant font-body-md text-[13px] md:text-[15px] leading-relaxed text-justify">
+                <div class="w-full shrink-0 space-y-4 text-on-surface-variant font-body-md text-sm md:text-base text-justify leading-relaxed">
                     <p>O rapper Diego Chorão lança seu novo álbum de estúdio, Poesia de Boteco, um marco em sua trajetória que reúne nove faixas inéditas produzidas pela Gaiola Records. Transitando entre o Rap, o Boom Bap e o Hardcore, o projeto conta com beats assinados por Eremita Roots, Quase, Jonas Pheer, Torq4Beatzz, xxjeann e Malato, além de participações especiais de Black Pantera, Lucas Grilo, Malato e Eremita Roots.</p>
                     <p>Mais do que um disco, o trabalho funciona como um registro fiel de vivências reais nascidas nas ruas e em conversas de bar. Sem fórmulas ou personagens, Diego Chorão traduz amizades, encontros e reflexões da cultura Hip Hop em letras autênticas que dialogam profundamente com quem vive essa cena para além da música.</p>
                 </div>
-                
-                <!-- FAIXA A FAIXA Player -->
-                <div class="w-full">
-                    <div class="relative w-full flex flex-col items-center justify-center">
-                        <!-- Player Container -->
-                        <div class="relative w-full max-w-sm md:max-w-lg flex items-center justify-center overflow-visible group my-2 mx-auto">
-                            <!-- Sleeve (Track Image) -->
-                            <div class="w-full z-10 relative">
-                                <img id="track-image" src="assets/01.png?v=3" class="w-full aspect-[3/2] object-cover shadow-2xl rounded-sm" alt="Faixa"/>
-                                
-                                <!-- Vinyl Record Overlaid -->
-                                <div class="absolute z-20 transition-all duration-700 ease-in-out flex items-center justify-center" id="vinyl-record" style="top: 63%; left: 20%; transform: translate(-50%, -50%); width: 22%;">
-                                    <img src="assets/bolacha-marrom.png" class="w-full h-full object-contain drop-shadow-2xl" id="vinyl-img" alt="Disco de Vinil"/>
-                                    <!-- Play Button Overlay -->
-                                    <div class="absolute inset-0 flex items-center justify-center">
-                                        <button onclick="togglePlay()" class="bg-primary/90 text-on-primary rounded-full w-10 h-10 md:w-14 md:h-14 flex items-center justify-center hover:scale-110 transition-transform shadow-xl z-30" id="play-btn">
-                                            <span class="material-symbols-outlined text-2xl md:text-4xl" id="play-icon">play_arrow</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Navigation Arrows -->
-                            <button onclick="prevTrack()" class="absolute left-[-40px] top-[65%] -translate-y-1/2 z-40 bg-background/80 text-primary p-2 rounded-full hover:bg-surface-variant transition-colors backdrop-blur-sm border border-surface-variant shadow-lg">
-                                <span class="material-symbols-outlined">chevron_left</span>
-                            </button>
-                            <button onclick="nextTrack()" class="absolute right-[-40px] top-[65%] -translate-y-1/2 z-40 bg-background/80 text-primary p-2 rounded-full hover:bg-surface-variant transition-colors backdrop-blur-sm border border-surface-variant shadow-lg">
-                                <span class="material-symbols-outlined">chevron_right</span>
-                            </button>
-                        </div>
-                        
-                        <!-- Audio Element -->
-                        <audio id="audio-player"></audio>
-                    </div>
-                    
-                    <script>
-                        const tracks = [
-                            { img: 'assets/01.png?v=3', audio: 'assets/1. INTRO (MASTER).wav', title: '01. INTRO' },
-                            { img: 'assets/02.png', audio: 'assets/2. SABOR MC (MASTER).wav', title: '02. SABOR MC' },
-                            { img: 'assets/03.png', audio: 'assets/3. THIAGO, TIAGO (MASTER).wav', title: '03. THIAGO, TIAGO' },
-                            { img: 'assets/04.png', audio: 'assets/4. SER OU NÃO SER (MASTER).wav', title: '04. SER OU NÃO SER' },
-                            { img: 'assets/05.png', audio: 'assets/5. CORPOS VAZIOS (MASTER).wav', title: '05. CORPOS VAZIOS' },
-                            { img: 'assets/06.png', audio: 'assets/6. PELAS RUAS (MASTER).wav', title: '06. PELAS RUAS' },
-                            { img: 'assets/07.png', audio: 'assets/7. BOOMBAP KING (MASTER).wav', title: '07. BOOMBAP KING' },
-                            { img: 'assets/08.png', audio: 'assets/8. LIXOS (MASTER).wav', title: '08. LIXOS' },
-                            { img: 'assets/09.png', audio: 'assets/9. 20 MIL MOTIVOS (MASTER).wav', title: '09. 20 MIL MOTIVOS' }
-                        ];
-
-                        let currentTrackIdx = 0;
-                        let isPlaying = false;
-                        const player = document.getElementById('audio-player');
-                        const vinylImg = document.getElementById('vinyl-img');
-                        const playIcon = document.getElementById('play-icon');
-                        const vinylContainer = document.getElementById('vinyl-record');
-
-                        // Aqui configuramos onde a bolacha fica quando não está tocando
-                        let defaultVinylStyle = "top: 63%; left: 20%; transform: translate(-50%, -50%); width: 22%;";
-                        
-                        function updateTrackUI() {
-                            document.getElementById('track-image').src = tracks[currentTrackIdx].img;
-                            player.src = tracks[currentTrackIdx].audio;
-                            resetPlayer();
-                        }
-
-                        function resetPlayer() {
-                            player.pause();
-                            player.currentTime = 0;
-                            isPlaying = false;
-                            playIcon.innerText = 'play_arrow';
-                            vinylImg.classList.remove('animate-[spin_3s_linear_infinite]');
-                            
-                            // Reseta para a posição inicial
-                            vinylContainer.style.cssText = defaultVinylStyle;
-                        }
-
-                        function nextTrack() {
-                            currentTrackIdx = (currentTrackIdx + 1) % tracks.length;
-                            updateTrackUI();
-                        }
-
-                        function prevTrack() {
-                            currentTrackIdx = (currentTrackIdx - 1 + tracks.length) % tracks.length;
-                            updateTrackUI();
-                        }
-
-                        function togglePlay() {
-                            if (isPlaying) {
-                                resetPlayer();
-                            } else {
-                                player.play().catch(e => console.log(e));
-                                isPlaying = true;
-                                playIcon.innerText = 'stop';
-                                vinylImg.classList.add('animate-[spin_3s_linear_infinite]');
-                            }
-                        }
-                        
-                        player.addEventListener('ended', () => {
-                            nextTrack();
-                        });
-
-                        // Initialize
-                        updateTrackUI();
-                    </script>
-                </div>
+            </div>
+            
+            <!-- Coluna 2 (Direita): Spotify Player -->
+            <div class="flex flex-col justify-start h-full w-full">
+                <iframe data-testid="embed-iframe" style="border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/album/443kRoL7N0zM8otsdM0iMW?utm_source=generator&si=db88355225284f2d&theme=0" width="100%" height="750" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
         </div>
     </div>
