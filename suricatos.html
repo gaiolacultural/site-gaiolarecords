@@ -1,489 +1,435 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
+<html class="dark scroll-smooth" lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suricatos - Media Kit Oficial 2026</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Manrope:wght@400&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#FFD700",
-                        "secondary": "#008000",
-                        "inverse-on-surface": "#303030",
-                        "surface-variant": "#353535",
-                        "surface-container-low": "#1b1b1b",
-                        "surface-container-highest": "#353535",
-                        "on-surface": "#e2e2e2",
-                        "error": "#ffb4ab",
-                        "on-background": "#e2e2e2",
-                        "surface-container-high": "#2a2a2a",
-                        "on-primary": "#2f3131",
-                        "inverse-surface": "#e2e2e2",
-                        "outline-variant": "#444748",
-                        "surface-container": "#1f1f1f",
-                        "surface": "#131313",
-                        "background": "#131313",
-                        "surface-container-lowest": "#0e0e0e",
-                        "brand": "#b0b0b0"
-                    },
-                    "spacing": {
-                        "margin-desktop": "64px",
-                        "margin-mobile": "20px",
-                        "container-max": "1440px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Manrope"],
-                        "headline-lg-mobile": ["Hanken Grotesk"],
-                        "headline-lg": ["Hanken Grotesk"],
-                        "label-sm": ["JetBrains Mono"],
-                        "label-md": ["JetBrains Mono"],
-                        "headline-md": ["Hanken Grotesk"],
-                        "body-lg": ["Manrope"],
-                        "sans": ["Hanken Grotesk", "sans-serif"]
-                    }
-                }
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SURICATOS - Oficial</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from system -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "verde-cru": "#2C3714",
+                "oliva": "#55672B",
+                "oliva-claro": "#7E8A3C",
+                "trigo": "#EAD894",
+                "trigo-escuro": "#C9803F",
+                "torra": "#A8482A",
+                "torra-escura": "#8E3524",
+                "grao": "#17110D",
+                "creme": "#F4EADB",
+                
+                // Mapeamento semântico
+                "surface": "#17110D", // Grão
+                "on-surface": "#F4EADB", // Creme
+                "primary": "#EAD894", // Trigo
+                "secondary": "#55672B", // Oliva
+                "error": "#A8482A", // Torra para erro/alerta
+                "outline-variant": "#C9803F", // Trigo-escuro para linhas fracas
+                "surface-container-low": "#1f1813" // Um tom sutil acima do grão
+            },
+            "fontFamily": {
+                "figtree": ["Figtree", "sans-serif"],
+                "tribal": ["TribalPlay", "sans-serif"]
+            },
+            "borderRadius": {
+                "capsula": "999px",
+                "bloco": "44px",
+                "painel": "28px",
+                "interno": "16px" // 2xl
             }
+          }
         }
+      }
     </script>
-    <style>
-        @font-face {
-            font-family: 'TribalPlay';
-            src: url('./assets/Fonte_tribal_play%20(1).ttf') format('truetype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        
-        .font-tribal { font-family: 'TribalPlay', sans-serif !important; }
+<style>
+@font-face {
+    font-family: 'TribalPlay';
+    src: url('./assets/Fonte_tribal_play%20(1).ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.font-tribal { font-family: 'TribalPlay', sans-serif !important; }
 
-        .text-glow { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
-        .glow-hover:hover { box-shadow: 0 0 20px 0 rgba(255, 215, 0, 0.15); }
+body { background-color: #17110D; color: #F4EADB; font-family: 'Figtree', sans-serif; }
 
-        /* ---------- ESTILOS DA INTRO (HERDADOS) ---------- */
-        .intro-layer {
-            font-family: 'TribalPlay', 'Montserrat', sans-serif;
-        }
-        
-        .bg-intro {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('./assets/suricatos-bg.jpg'); 
-            background-size: cover; background-position: center; background-repeat: no-repeat;
-            filter: blur(2px) brightness(0.6); z-index: 0; transform: scale(1.05);
-            animation: pulseBackground 15s infinite alternate ease-in-out;
-        }
+.grunge-overlay { position: relative; }
+.grunge-overlay::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuDpDbJJb3cYq_UGvFTRCJNPhR18XvVEqecDe6qxUnqyWdlaO95g6IvbvjfeFflNloKtKFV7tSXM_o7Q7SjVViMsTXjOAQU9OQbdOY0hmRphSGowGLkYswFintEpx3vlmIWrTwWaRi520Z4MrkKojT3qVVt7aeg4RZclYMYyN26vwlTiy_5iijNGs3D_WvcUP92rlGkMkzxKZpBTM54z3pQsydiccqET-QDxypN6vUUYFsuqeHU9Cj1l);
+    background-size: cover; background-position: center; opacity: 0.15; mix-blend-mode: multiply; pointer-events: none; z-index: 1;
+}
 
-        @keyframes pulseBackground { 0% { transform: scale(1.05); } 100% { transform: scale(1.1); } }
+/* O Gradiente da Torra - Direção Horizontal 90deg */
+.bg-torra { 
+    background: linear-gradient(90deg, #8E3524 0%, #C9803F 22%, #EAD894 40%, #7E8A3C 62%, #55672B 82%, #2C3714 100%); 
+}
 
-        .logo-suricato { animation: lookAround 6s infinite ease-in-out; transform-origin: center center; }
-        @keyframes lookAround {
-            0% { transform: translateY(0) scaleX(1); } 15% { transform: translateY(-15px) scaleX(1); }
-            30% { transform: translateY(-15px) scaleX(-1); } 60% { transform: translateY(-15px) scaleX(-1); }
-            75% { transform: translateY(-15px) scaleX(1); } 100% { transform: translateY(0) scaleX(1); }
-        }
+/* Animação orgânica de movimento conforme manual (cubic-bezier) */
+.transition-torra {
+    transition: all 900ms cubic-bezier(.22, .9, .3, 1);
+}
 
-        .logo-container { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
+.hover-respiro:hover {
+    transform: scale(1.035);
+    transition: transform 6s cubic-bezier(.22, .9, .3, 1);
+}
 
-        .audio-hint { animation: pulseText 2s infinite; }
-        @keyframes pulseText {
-            0% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
-            50% { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
-            100% { color: #ff0000; text-shadow: 0 0 10px #ff0000; }
-        }
-
-        .screen-intro {
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            transition: opacity 1s ease-in-out; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-        }
-
-        @keyframes forestGradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        
-        #screen-forest {
-            background: linear-gradient(270deg, #1f421b, #0f3011, #2d5a27, #0a1f0b);
-            background-size: 800% 800%; animation: forestGradient 10s ease infinite;
-        }
-
-        .forest-bird { position: absolute; color: #051406; opacity: 0.8; animation: flyRight 6s linear infinite; }
-        .bird1 { top: 20%; left: -10%; animation-duration: 8s; animation-delay: 1s; }
-        .bird2 { top: 35%; left: -10%; animation-duration: 6s; animation-delay: 3s; font-size: 1.5rem; }
-        .bird3 { top: 15%; left: -10%; animation-duration: 9s; animation-delay: 0s; font-size: 1.2rem; }
-
-        @keyframes flyRight {
-            0% { transform: translateX(0) translateY(0) scaleX(-1); }
-            50% { transform: translateX(50vw) translateY(-20px) scaleX(-1); }
-            100% { transform: translateX(110vw) translateY(10px) scaleX(-1); }
-        }
-
-        .band-reveal-container { opacity: 0; transform: scale(0.8) translateY(50px); transition: all 2s ease-out; }
-        .band-reveal-container.show { opacity: 1; transform: scale(1) translateY(0); }
-        .band-overlay-logo { margin-bottom: -50px; filter: drop-shadow(0 0 20px rgba(0,0,0,0.8)); animation: float 5s ease-in-out infinite; }
-
-        /* ---------- YOUTUBE ANIMATION CLASSES ---------- */
-        .youtube-wrapper {
-            position: absolute; z-index: 50; border-radius: 0.75rem; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5); pointer-events: auto;
-            overflow: hidden; opacity: 0; transition: opacity 1s;
-        }
-        .youtube-container { width: 100%; height: 100%; pointer-events: none; }
-
-    </style>
+.hover-sob:hover {
+    transform: translateY(-4px);
+    transition: transform 350ms cubic-bezier(.22, .9, .3, 1);
+}
+</style>
 </head>
-<body class="bg-black text-on-background font-body-md antialiased min-h-screen flex flex-col overflow-hidden" id="main-body">
+<body class="font-figtree text-[15px] font-light leading-[26px] text-creme bg-grao antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-grao/90 backdrop-blur-md text-primary docked full-width top-0 sticky z-50 border-b border-trigo-escuro/30 flex justify-center items-center w-full px-4 py-3 h-16 transition-torra">
+<nav class="flex gap-6 font-figtree font-medium text-[12px] tracking-widest text-creme uppercase items-center">
+<a href="#hero" class="hover-sob flex items-center justify-center mr-4"><img src="assets/icone-suricatos-creme.png" class="h-8" alt="Símbolo Suricatos" /></a>
+<a class="hover:text-primary transition-torra" href="#historia">A BANDA</a>
+<span class="text-trigo-escuro/50">/</span>
+<a class="hover:text-primary transition-torra" href="#videos">VÍDEOS</a>
+<span class="text-trigo-escuro/50">/</span>
+<a class="hover:text-primary transition-torra" href="#eps">DISCOGRAFIA</a>
+<span class="text-trigo-escuro/50">/</span>
+<a class="hover:text-primary transition-torra" href="#crew">EQUIPE</a>
+<span class="text-trigo-escuro/50">/</span>
+<a class="hover:text-primary transition-torra" href="#contato">CONTATO</a>
+</nav>
+</header>
 
-    <!-- Background da Página Principal -->
-    <div class="fixed inset-0 z-0 pointer-events-none hidden" id="main-bg-layer">
-        <div class="absolute inset-0 bg-black/80 z-10"></div>
-        <img alt="Fundo Suricatos" class="w-full h-full object-cover object-[center_30%]" src="assets/suricatos-bg.jpg"/>
+<main class="w-full h-full flex flex-col relative z-0">
+<!-- 1. Hero Section -->
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-grao py-20" id="hero">
+<div class="absolute inset-0 opacity-100 z-0 hover-respiro">
+    <!-- Video background -->
+    <video src="assets/suricatos-bg.mp4" autoplay loop muted playsinline class="object-cover w-full h-full opacity-60"></video>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-grao via-grao/40 to-transparent z-10 pointer-events-none"></div>
+<div class="relative z-20 w-full max-w-7xl mx-auto px-4 flex flex-col items-center justify-center text-center h-full min-h-[60vh]">
+    <div class="max-w-[600px] mb-12 hover-sob">
+        <img src="assets/logo-suricatos-creme.png" alt="Suricatos" class="w-full drop-shadow-[0_4px_24px_rgba(234,216,148,0.2)]" />
+    </div>
+    <button class="bg-oliva text-creme font-figtree font-medium text-[16px] tracking-widest px-10 py-4 rounded-capsula uppercase hover-sob shadow-[0_0_20px_rgba(234,216,148,0.2)] border-none cursor-pointer">
+        Ouvir Agora
+    </button>
+</div>
+</section>
+
+<!-- 2. History Section -->
+<section class="pt-24 pb-20 px-4 bg-grao relative z-10 overflow-hidden min-h-screen flex flex-col justify-center" id="historia">
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-30 hover-respiro" style="background-image: url('assets/suricatos-historia-bg.jpg')"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-grao via-grao/90 to-grao z-0 pointer-events-none"></div>
+
+<div class="w-full max-w-[1400px] mx-auto relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-start">
+    
+    <!-- Col 1: Duo Photo (Span 4 rows) -->
+    <div class="md:col-start-1 md:row-start-1 md:row-span-4 relative rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob group">
+        <img class="object-cover object-center w-full h-full transition-torra" src="assets/suricatos-duo-frente.jpg" onerror="this.src='assets/artist3.png'"/>
+        <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-grao via-grao/60 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex items-end justify-center h-full">
+            <p class="font-figtree font-medium text-[16px] text-creme uppercase tracking-widest text-center drop-shadow-md">Enzo e João Pelegrini</p>
+        </div>
     </div>
 
-    <!-- INTRO LAYER -->
-    <div id="intro-layer" class="fixed inset-0 z-[100] transition-opacity duration-1000 intro-layer text-white">
-        <!-- Tela Inicial -->
-        <div id="screen-landing" class="screen-intro z-10 bg-black">
-            <div class="bg-intro"></div>
-            <div class="relative z-10 flex flex-col items-center justify-center h-full p-8 text-center">
-                <div class="logo-container max-w-[450px] w-full mb-[-1.5rem] relative z-[2]">
-                    <img src="assets/suricatos-logo-suricatos.png" alt="Base Logo" class="w-full block drop-shadow-2xl">
-                    <img src="assets/suricatos-logo-suricato.png" alt="Suricato Meio" class="logo-suricato absolute top-0 left-0 w-full">
+    <!-- Col 2: Text Box (Span 3 rows, h-fit) -->
+    <div class="md:col-start-2 md:row-start-1 md:row-span-3 flex flex-col gap-6 items-start bg-trigo p-8 lg:p-10 rounded-bloco border border-trigo-escuro/20 shadow-xl h-fit">
+        <h3 class="font-tribal text-[40px] md:text-[50px] text-torra-escura uppercase text-left leading-none w-full tracking-wider whitespace-nowrap">SURISTÓRIA</h3>
+        <div class="flex flex-col gap-4 text-justify font-figtree font-medium text-[14px] lg:text-[15px] text-grao leading-[28px] w-full">
+            <p>Criada em 2019, a Banda Suricatos nasceu do encontro de universitários ansiosos por mostrar a música de qualidade no cenário uberabense.</p>
+            <p>De lá pra cá, o amadurecimento e a evolução foram naturais, conforme nossa participação em eventos culturais da cidade.</p>
+            <p>Com os criadores, compositores e musicistas Enzo e João, nasceram músicas autorais repletas de influências culturais como Jazz, Bossa Nova, Forró e, principalmente, o Reggae.</p>
+            <p>A Banda Suricatos tem ocupado os palcos de Uberaba, sempre levando o amor, a alegria e o regionalismo para todos os públicos.</p>
+        </div>
+    </div>
+
+    <!-- Col 3: 5 Small Medias (1 per row) -->
+    <div class="md:col-start-3 md:row-start-1 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <video class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-video-1.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+    </div>
+    <div class="md:col-start-3 md:row-start-2 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <img class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-foto-1.jpg" onerror="this.src='assets/artist3.png'"/>
+    </div>
+    <div class="md:col-start-3 md:row-start-3 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <video class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-video-2.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+    </div>
+    <div class="md:col-start-3 md:row-start-4 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <img class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-foto-2.jpg" onerror="this.src='assets/artist3.png'"/>
+    </div>
+    <div class="md:col-start-3 md:row-start-5 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <video class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-video-3.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+    </div>
+
+    <!-- Col 2: 2 Small Medias under Text Box (row 4 and 5) -->
+    <div class="md:col-start-2 md:row-start-4 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <img class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-foto-3.jpg" onerror="this.src='assets/artist3.png'"/>
+    </div>
+    <div class="md:col-start-2 md:row-start-5 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <video class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-video-4.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+    </div>
+
+    <!-- Col 1: 1 Small Media under Duo Photo (row 5) -->
+    <div class="md:col-start-1 md:row-start-5 aspect-video rounded-painel overflow-hidden border border-trigo-escuro/20 shadow-xl hover-sob">
+        <img class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-foto-4.jpg" onerror="this.src='assets/artist3.png'"/>
+    </div>
+
+</div>
+</section>
+
+<!-- 3. Videos Section -->
+<section class="pt-24 pb-20 px-4 bg-grao relative z-10 overflow-hidden min-h-screen flex flex-col justify-start" id="videos">
+<div class="absolute inset-0 z-0 hover-respiro">
+    <video autoplay loop muted playsinline class="object-cover w-full h-full opacity-30">
+        <source src="assets/suricatos-videos-bg.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-grao via-grao/70 to-grao z-0 pointer-events-none"></div>
+
+<div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center justify-start h-full">
+    <h3 class="font-tribal text-[50px] md:text-[80px] text-primary uppercase text-center leading-none mb-14 w-full tracking-wider">VÍDEOS</h3>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full max-w-[1400px] items-start justify-center flex-1">
+        
+        <!-- Coluna: Formato Banda -->
+        <div class="flex flex-col gap-5 w-full hover-sob">
+            <h4 class="font-figtree font-medium text-[20px] lg:text-[24px] text-oliva-claro text-center uppercase tracking-widest">FORMATO BANDA</h4>
+            <div class="aspect-video w-full rounded-painel overflow-hidden shadow-2xl border border-trigo-escuro/30 bg-surface-container-low">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PnBNyd0_NFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <!-- Coluna: Formato Duo -->
+        <div class="flex flex-col gap-5 w-full hover-sob">
+            <h4 class="font-figtree font-medium text-[20px] lg:text-[24px] text-oliva-claro text-center uppercase tracking-widest">FORMATO DUO</h4>
+            <div class="aspect-video w-full rounded-painel overflow-hidden shadow-2xl border border-trigo-escuro/30 bg-surface-container-low flex items-center justify-center relative">
+                <img src="assets/suricatos-duo-frente.jpg" alt="Duo Placeholder" class="absolute inset-0 w-full h-full object-cover opacity-50" />
+                <span class="relative z-10 font-figtree font-medium text-[16px] text-creme uppercase bg-grao/80 px-6 py-3 rounded-capsula tracking-widest backdrop-blur-sm border border-trigo/20">Em Breve</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+</section>
+
+<!-- 4. EP Em Construção (Suspense) -->
+<section class="relative pt-24 pb-20 px-4 bg-surface-container-low grunge-overlay border-t-2 border-verde-cru/30 min-h-[70vh] flex flex-col justify-center" id="eps">
+<div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center">
+    
+    <div class="w-full text-center mb-16">
+        <h3 class="font-tribal text-[40px] sm:text-[55px] md:text-[75px] text-creme leading-none uppercase whitespace-nowrap opacity-50 tracking-wider">
+            EP EM <span class="text-trigo animate-pulse">CONSTRUÇÃO...</span>
+        </h3>
+    </div>
+    
+    <div class="w-full flex items-center justify-center hover-sob">
+        <div class="max-w-md aspect-square bg-grao rounded-bloco border border-torra/20 overflow-hidden shadow-[0_10px_30px_rgba(168,72,42,0.1)] mx-auto flex items-center justify-center relative w-[300px] h-[300px]">
+            <span class="material-symbols-outlined text-[100px] text-trigo-escuro opacity-40">lock</span>
+            <div class="absolute inset-0 bg-gradient-to-t from-grao/90 to-transparent flex items-end justify-center pb-8">
+                <span class="font-figtree font-medium text-trigo tracking-widest uppercase text-[14px]">Aguarde</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- 5. Clipe Passarinhos -->
+<section class="relative pt-24 pb-20 px-4 bg-grao overflow-hidden min-h-screen flex flex-col justify-start">
+<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-verde-cru/20 rounded-capsula blur-[150px] opacity-30 pointer-events-none z-0"></div>
+<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-torra-escura/20 rounded-capsula blur-[150px] opacity-30 pointer-events-none z-0"></div>
+
+<div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center">
+    
+    <div class="w-full text-center mb-16">
+        <h3 class="font-tribal text-[50px] sm:text-[70px] md:text-[90px] text-trigo leading-none uppercase whitespace-nowrap tracking-wider">
+            PASSARINHOS
+        </h3>
+    </div>
+    
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
+        <!-- Esquerda: Clipe no YouTube -->
+        <div class="flex flex-col gap-8 items-center w-full hover-sob">
+            <div class="w-full aspect-video rounded-painel overflow-hidden shadow-2xl border border-oliva/30">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PnBNyd0_NFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <p class="font-figtree font-light text-[18px] text-creme/80 text-center max-w-md leading-[34px]">
+                Assista ao clipe oficial de "Passarinhos". Uma viagem sonora com muita emoção e raiz de reggae.
+            </p>
+        </div>
+        
+        <!-- Direita: Spotify -->
+        <div class="flex flex-col justify-center items-center w-full hover-sob">
+            <iframe data-testid="embed-iframe" style="border-radius:28px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" src="https://open.spotify.com/embed/album/7F7bCGTXbmYALGeg67KIPL?utm_source=generator&theme=0&si=f9a06ef1cff74663" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- 6. The Crew Section -->
+<section class="py-24 px-4 bg-surface-container-low relative overflow-hidden min-h-screen flex flex-col justify-center" id="crew">
+    <div class="absolute inset-0 bg-cover bg-center z-0 opacity-20 hover-respiro" style="background-image: url('assets/suricatos-equipe-bg.jpg');"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-grao via-grao/70 to-grao z-0 pointer-events-none"></div>
+
+    <div class="w-full max-w-6xl mx-auto relative z-10 flex flex-col gap-12">
+        <div class="w-full flex flex-col items-center mb-6">
+            <h3 class="font-tribal text-[50px] md:text-[80px] text-primary uppercase text-center leading-none tracking-wider">EQUIPE</h3>
+            
+            <!-- Formato Filtros -->
+            <div class="flex justify-center gap-6 mt-8">
+                <button id="btn-banda" class="font-figtree font-medium text-[12px] tracking-widest px-8 py-3 border border-trigo bg-trigo text-grao rounded-capsula transition-torra shadow-[0_0_15px_rgba(234,216,148,0.3)]" onclick="setCrewMode('banda')">BANDA</button>
+                <button id="btn-duo" class="font-figtree font-medium text-[12px] tracking-widest px-8 py-3 border border-trigo-escuro/50 text-creme/60 rounded-capsula hover:bg-trigo-escuro/20 transition-torra" onclick="setCrewMode('duo')">DUO</button>
+            </div>
+        </div>
+        
+        <div class="flex flex-col gap-6 w-full items-center">
+            
+            <!-- Linha 1: DUO (João e Enzo) -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full md:w-3/4 lg:w-2/3 mx-auto">
+                
+                <!-- JOAO FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl group transition-torra hover-sob" data-member="joao">
+                    <img alt="João Pelegrini" class="object-cover w-full h-full" src="assets/joao-pelegrini-equipe-foto.jpg" onerror="this.src='assets/suricatos-duo-frente.jpg'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-grao/90 via-grao/20 to-transparent flex flex-col justify-end p-5 text-center">
+                        <p class="font-figtree font-medium text-[18px] text-creme leading-tight">JOÃO PELEGRINI</p>
+                        <p class="font-figtree font-medium text-[10px] text-trigo uppercase mt-2 tracking-widest opacity-80">Voz / Violão</p>
+                    </div>
+                </div>
+                <!-- JOAO VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl transition-torra hover-sob" data-member="joao">
+                    <video src="assets/joao-pelegrini-equipe.mp4" autoplay loop muted playsinline class="object-cover w-full h-full bg-grao"></video>
+                </div>
+
+                <!-- ENZO FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl group transition-torra hover-sob" data-member="enzo">
+                    <img alt="Enzo Poiani" class="object-cover w-full h-full object-top" src="assets/enzo-equipe-foto.jpg" onerror="this.src='assets/suricatos-duo-frente.jpg'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-grao/90 via-grao/20 to-transparent flex flex-col justify-end p-5 text-center">
+                        <p class="font-figtree font-medium text-[18px] text-creme leading-tight">ENZO POIANI</p>
+                        <p class="font-figtree font-medium text-[10px] text-trigo uppercase mt-2 tracking-widest opacity-80">Voz / Percussão</p>
+                    </div>
+                </div>
+                <!-- ENZO VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl transition-torra hover-sob" data-member="enzo">
+                    <video src="assets/enzo-equipe.mp4" autoplay loop muted playsinline class="object-cover w-full h-full bg-grao"></video>
                 </div>
                 
-                <h1 class="text-2xl md:text-3xl font-semibold tracking-widest uppercase mb-12 drop-shadow-lg text-white">Media Kit Oficial 2026</h1>
+            </div>
 
-                <div class="audio-hint flex items-center gap-2 text-lg mb-8 text-[#FFD700]">
-                    <i class="fas fa-volume-up"></i><span>Liga o áudio</span>
+            <!-- Linha 2: BANDA BASE (Jr Godoy, Jeff, Edu) -->
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-6 w-full mt-4">
+                
+                <!-- JR GODOY FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl group transition-torra hover-sob" data-member="jrgodoy">
+                    <img alt="Jr Godoy" class="object-cover w-full h-full" src="assets/jrgodoy-equipe-foto.jpg" onerror="this.src='assets/artist3.png'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-grao/90 via-grao/20 to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-figtree font-medium text-[15px] text-creme leading-tight">JR GODOY</p>
+                        <p class="font-figtree font-medium text-[10px] text-oliva-claro uppercase mt-2 tracking-widest">Guitarra</p>
+                    </div>
+                </div>
+                <!-- JR GODOY VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl transition-torra hover-sob" data-member="jrgodoy">
+                    <video src="assets/jrgodoy-equipe.mp4" autoplay loop muted playsinline class="object-cover w-full h-full bg-grao"></video>
                 </div>
 
-                <a href="#" class="inline-block px-10 py-4 text-xl font-bold text-white uppercase tracking-wider border border-white/30 rounded-full bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all hover:-translate-y-1 mb-8" id="btnEnter">
-                    Entrar na Suri-experiência
-                </a>
-
-                <div class="flex items-center gap-2 text-sm text-gray-300 opacity-80 hover:opacity-100 transition-opacity">
-                    <span>Com fone é melhor</span><i class="fas fa-headphones"></i>
+                <!-- JEFF FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl group transition-torra hover-sob" data-member="jeff">
+                    <img alt="Jeff" class="object-cover w-full h-full object-top" src="assets/jeff-equipe-foto.jpg" onerror="this.src='assets/artist3.png'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-grao/90 via-grao/20 to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-figtree font-medium text-[15px] text-creme leading-tight">JEFF</p>
+                        <p class="font-figtree font-medium text-[10px] text-oliva-claro uppercase mt-2 tracking-widest">Baixo</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+                <!-- JEFF VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl transition-torra hover-sob" data-member="jeff">
+                    <video src="assets/jeff-equipe.mp4" autoplay loop muted playsinline class="object-cover w-full h-full bg-grao"></video>
+                </div>
 
-        <!-- Tela da Floresta -->
-        <div id="screen-forest" class="screen-intro z-[5] opacity-0 pointer-events-none flex-col">
-            <i class="fas fa-crow forest-bird bird1"></i>
-            <i class="fas fa-crow forest-bird bird2"></i>
-            <i class="fas fa-crow forest-bird bird3"></i>
-            <div class="band-reveal-container flex flex-col items-center relative z-10" id="bandImage">
-                <img src="assets/suricatos-logo.png" alt="Logo" class="band-overlay-logo max-w-[300px] z-[2]">
-                <img src="assets/banda-suricatos-front.png" alt="Banda" class="max-w-[80vw] max-h-[60vh] object-contain rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.7)]">
+                <!-- EDU FOTO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl group transition-torra hover-sob" data-member="edu">
+                    <img alt="Edu" class="object-cover w-full h-full object-top" src="assets/edu-equipe-foto.jpg" onerror="this.src='assets/artist3.png'"/>
+                    <div class="absolute inset-0 bg-gradient-to-t from-grao/90 via-grao/20 to-transparent flex flex-col justify-end p-4 text-center">
+                        <p class="font-figtree font-medium text-[15px] text-creme leading-tight">EDU</p>
+                        <p class="font-figtree font-medium text-[10px] text-oliva-claro uppercase mt-2 tracking-widest">Bateria</p>
+                    </div>
+                </div>
+                <!-- EDU VÍDEO -->
+                <div class="crew-item relative aspect-[4/5] rounded-interno overflow-hidden border border-trigo-escuro/20 shadow-xl transition-torra hover-sob" data-member="edu">
+                    <video src="assets/edu-equipe.mp4" autoplay loop muted playsinline class="object-cover w-full h-full bg-grao"></video>
+                </div>
+                
             </div>
+
         </div>
     </div>
+</section>
 
-    <!-- MAIN CONTENT (Tailwind Based) -->
-    <div id="screen-main" class="w-full flex-grow flex-col opacity-0 hidden transition-opacity duration-1000 overflow-y-auto z-10">
+<footer class="py-24 px-4 bg-grao border-t border-trigo-escuro/20 flex flex-col items-center text-center pb-32" id="contato">
+<h4 class="font-tribal text-[50px] text-primary uppercase mb-8 tracking-wider">Contato</h4>
+<div class="flex flex-col gap-4 mb-16 w-full max-w-sm">
+<div class="p-8 border border-oliva/30 rounded-bloco bg-surface-container-low flex flex-col items-center justify-center hover:border-trigo/50 transition-torra cursor-pointer hover-sob">
+<span class="font-figtree font-medium text-[12px] text-trigo-escuro uppercase mb-3 tracking-widest">Shows &amp; Imprensa</span>
+<a class="font-figtree font-medium text-[20px] text-creme hover:text-trigo transition-torra" href="mailto:gaiolarecords@gmail.com">gaiolarecords@gmail.com</a>
+</div>
+</div>
+<div class="flex flex-col items-center gap-6">
+    <img src="assets/icone-suricatos.png" alt="Dois grãos de café" class="w-8 opacity-50 hover:opacity-100 transition-torra cursor-pointer">
+    <p class="font-figtree font-medium text-[12px] text-creme/40 uppercase tracking-widest">
+        © 2026 Banda Suricatos. Gaiola Records.
+    </p>
+</div>
+</footer>
+</main>
+
+<script>
+    // JS de revezamento da história removido pois o layout agora exibe o grid de mídias simultâneas.
+</script>
+<script>
+    // Configurando Filtros da Equipe
+    function setCrewMode(mode) {
+        const btnBanda = document.getElementById('btn-banda');
+        const btnDuo = document.getElementById('btn-duo');
         
-        <!-- TopAppBar -->
-        <header class="bg-background border-b border-surface-variant w-full z-50 sticky top-0 h-14 flex items-center">
-            <div class="max-w-7xl mx-auto flex justify-center md:justify-between items-center px-4 md:px-8 w-full">
-                <div class="flex items-center gap-4">
-                    <img alt="Gaiola Records" class="w-8 h-8 object-contain" src="assets/Favicons.png">
-                    <span class="font-headline-lg text-2xl font-semibold tracking-tighter text-[#FFD700] leading-none">GAIOLA RECORDS</span>
-                </div>
-                <nav class="hidden md:flex gap-8 items-center">
-                    <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-[#FFD700] transition-colors" href="#">ARTISTAS</a>
-                    <a class="font-label-md text-label-md uppercase text-on-surface-variant hover:text-[#FFD700] transition-colors" href="#">SOBRE</a>
-                </nav>
-            </div>
-        </header>
+        const activeClass = "font-figtree font-medium text-[12px] tracking-widest px-8 py-3 border border-trigo bg-trigo text-grao rounded-capsula transition-torra shadow-[0_0_15px_rgba(234,216,148,0.3)]";
+        const inactiveClass = "font-figtree font-medium text-[12px] tracking-widest px-8 py-3 border border-trigo-escuro/50 text-creme/60 rounded-capsula hover:bg-trigo-escuro/20 transition-torra";
 
-        <main class="relative z-10 pt-8 pb-24 flex-grow">
-            <!-- 1. Hero Section (Formato Banda) -->
-            <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
-                <div class="flex flex-col gap-6 items-center w-full">
-                    <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 rounded-2xl shadow-2xl w-full flex flex-col gap-6 md:gap-8">
-                        
-                        <!-- Header Artista -->
-                        <div class="w-full flex flex-col lg:flex-row justify-between items-center lg:items-end gap-6 border-b border-surface-variant/50 pb-6">
-                            <div class="text-center lg:text-left flex flex-col justify-center lg:justify-start shrink-0">
-                                <h1 class="font-tribal text-headline-lg-mobile md:text-[4rem] md:leading-[4rem] text-[#FFD700] text-glow uppercase m-0 tracking-tight">Suricatos</h1>
-                                <div class="font-label-md text-label-md text-white uppercase tracking-widest mt-2 flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-1 sm:gap-2">
-                                    <span>Nova MPB</span><span class="hidden sm:block opacity-50">•</span><span class="text-[11px] opacity-70">Uberaba / MG</span>
-                                </div>
-                            </div>
-                            
-                            <!-- Botão Contratar Show -->
-                            <div class="mt-2 lg:mt-0 flex items-center justify-center lg:justify-end w-full lg:w-auto flex-grow lg:pr-8">
-                                <a href="#" class="bg-[#FFD700] text-black font-bold text-center py-3 px-6 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 shadow-[0_0_15px_rgba(255,215,0,0.3)] flex items-center justify-center gap-2 transition-transform hover:-translate-y-1">
-                                    <span class="material-symbols-outlined text-[18px]">perm_phone_msg</span> Contratar Show
-                                </a>
-                            </div>
-
-                            <!-- Redes Sociais -->
-                            <div class="hidden md:flex justify-center gap-3 items-center shrink-0">
-                                <a class="group flex flex-col items-center gap-1" href="#" target="_blank"><div class="border border-[#FFD700] flex items-center justify-center rounded-full group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300 w-12 h-12"><i class="fab fa-spotify text-xl"></i></div></a>
-                                <a class="group flex flex-col items-center gap-1" href="#" target="_blank"><div class="border border-[#FFD700] flex items-center justify-center rounded-full group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300 w-12 h-12"><i class="fab fa-youtube text-xl"></i></div></a>
-                                <a class="group flex flex-col items-center gap-1" href="#" target="_blank"><div class="border border-[#FFD700] flex items-center justify-center rounded-full group-hover:bg-[#FFD700] group-hover:text-black transition-all duration-300 w-12 h-12"><i class="fab fa-instagram text-xl"></i></div></a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
-                            <!-- Coluna Esquerda: Fotos + Biografia -->
-                            <div class="flex flex-col gap-6 h-full">
-                                <div class="w-full flex-grow min-h-[300px] bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl cursor-pointer" onclick="nextMainPhoto()">
-                                    <img id="main-photo" alt="Suricatos" class="absolute inset-0 w-full h-full object-cover object-[center_25%] transition-all duration-700 hover:scale-105" src="assets/suricatos-duo-frente.jpg"/>
-                                </div>
-                                <div class="w-full shrink-0 space-y-4 text-on-surface-variant font-body-md text-sm md:text-base text-justify leading-relaxed p-6 bg-white/5 rounded-xl border border-white/10 shadow-inner">
-                                    <p>Criada em 2019, a Banda Suricatos nasceu do encontro de universitários ansiosos por mostrar a música de qualidade no cenário uberabense.</p>
-                                    <p>De lá pra cá, o amadurecimento e a evolução foram naturais, conforme nossa participação em eventos culturais da cidade.</p>
-                                    <p>Com os criadores, compositores e musicistas Enzo e João, nasceram músicas autorais repletas de influências culturais como Jazz, Bossa Nova, Forró e, principalmente, o Reggae.</p>
-                                    <p>A Banda Suricatos tem ocupado os palcos de Uberaba, sempre levando o amor, a alegria e o regionalismo para todos os públicos.</p>
-                                </div>
-                            </div>
-
-                            <!-- Coluna Direita: Formatos (Banda e Duo) -->
-                            <div class="flex flex-col gap-10">
-                                
-                                <!-- Bloco Formato Banda -->
-                                <div class="flex flex-col gap-4">
-                                    <div class="flex flex-col gap-2">
-                                        <div class="font-tribal text-2xl text-[#FFD700] font-bold uppercase tracking-tight">Formato Banda</div>
-                                        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-2">
-                                            <div class="font-label-md text-[10px] sm:text-[11px] text-on-surface-variant uppercase flex flex-wrap items-center gap-1">
-                                                <span>5 PESSOAS (VOZES / VIOLÃO / GUITARRA / BAIXO / BATERIA)</span>
-                                                <span class="text-[#FFD700] font-bold bg-[#FFD700]/10 border border-[#FFD700]/20 px-1 py-0.5 rounded text-[10px] whitespace-nowrap">2 HORAS</span>
-                                            </div>
-                                            <a href="#" class="border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-[#FFD700] px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-1 shrink-0 w-fit">
-                                                <span class="material-symbols-outlined text-[14px]">download</span> Rider
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl" id="band-video-slot">
-                                        <!-- O yt-wrapper será posicionado aqui em cima -->
-                                    </div>
-                                </div>
-
-                                <div class="w-full border-t border-surface-variant/30"></div>
-
-                                <!-- Bloco Formato Duo -->
-                                <div class="flex flex-col gap-4">
-                                    <div class="flex flex-col gap-2">
-                                        <div class="font-tribal text-2xl text-[#FFD700] font-bold uppercase tracking-tight">Formato Duo</div>
-                                        <div class="flex flex-col xl:flex-row xl:items-center justify-between gap-2">
-                                            <div class="font-label-md text-[10px] sm:text-[11px] text-on-surface-variant uppercase flex flex-wrap items-center gap-1">
-                                                <span>2 PESSOAS (VOZ & VIOLÃO / VOZ & PERCUSSÃO)</span>
-                                                <span class="text-[#FFD700] font-bold bg-[#FFD700]/10 border border-[#FFD700]/20 px-1 py-0.5 rounded text-[10px] whitespace-nowrap">2 HORAS</span>
-                                            </div>
-                                            <a href="#" class="border border-outline text-on-surface-variant hover:bg-surface-variant hover:text-[#FFD700] px-2 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest transition-colors flex items-center justify-center gap-1 shrink-0 w-fit">
-                                                <span class="material-symbols-outlined text-[14px]">download</span> Rider
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="w-full aspect-video bg-surface-container-low border border-surface-variant relative overflow-hidden shadow-2xl rounded-xl">
-                                        <img src="assets/poesia-de-boteco-capa.jpg" alt="Formato Duo" class="w-full h-full object-cover">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 3. Suri-Experiencia -->
-            <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
-                <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-4 md:p-8 md:px-12 rounded-2xl shadow-2xl w-full flex flex-col items-center">
-                    <h2 class="font-tribal text-[2.5rem] text-[#FFD700] text-glow uppercase text-center w-full m-0 mb-4 border-b border-surface-variant/30 pb-3">Suri-Experiência</h2>
-                    
-                    <div class="w-full flex flex-col items-center">
-                        <h3 class="font-tribal text-2xl text-[#008000] uppercase mb-6 tracking-widest">Apresentação Ao Vivo</h3>
-                        
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
-                            <div class="w-full aspect-[4/3] bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-2xl">
-                                <img src="assets/FEED-CHORÃO-1.jpg" alt="Apresentação" class="w-full h-full object-cover">
-                            </div>
-                            <div class="w-full aspect-video lg:aspect-[4/3] bg-surface-container-low border border-surface-variant rounded-xl overflow-hidden shadow-2xl flex items-center justify-center">
-                                <img src="assets/FEED-CHORÃO-3.jpg" alt="Video Placeholder" class="w-full h-full object-cover opacity-50">
-                                <span class="material-symbols-outlined absolute text-6xl text-white opacity-80">play_circle</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 4. Palcos e Festivais -->
-            <section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-16">
-                <div class="w-full mb-4">
-                    <h3 class="font-tribal text-2xl md:text-3xl text-[#FFD700] text-center w-full m-0 mb-8 uppercase tracking-widest">PALCOS E FESTIVAIS</h3>
-                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-12 opacity-80 hover:opacity-100 transition-opacity">
-                        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"><img src="assets/logo-marca-1.png" class="w-full h-full object-contain hover:scale-105 transition-transform drop-shadow-md" /></div>
-                        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"><img src="assets/logo-marca-2.png" class="w-full h-full object-contain hover:scale-105 transition-transform drop-shadow-md" /></div>
-                        <div class="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center"><img src="assets/logo-marca-3.png" class="w-full h-full object-contain hover:scale-105 transition-transform drop-shadow-md" /></div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 5. Booking & Contato -->
-            <section class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto mb-16 text-center">
-                <div class="bg-[#0A0A0A]/85 backdrop-blur-sm border border-surface-variant p-6 md:p-10 rounded-2xl shadow-2xl flex flex-col items-center gap-6">
-                    <h3 class="font-tribal text-[2rem] text-[#FFD700] uppercase m-0 text-glow">Booking & Informações</h3>
-                    <div class="text-on-surface-variant font-body-md text-sm md:text-base max-w-3xl mx-auto space-y-4">
-                        <p>Suricatos está disponível para apresentações em todo o território nacional.</p>
-                        <p>Entre em contato com a Gaiola Records para discutir propostas e disponibilidade de agenda.</p>
-                    </div>
-                    <div class="flex flex-col sm:flex-row gap-4 w-full max-w-2xl mt-4 mb-2">
-                        <a href="#" class="w-full bg-[#FFD700] text-black font-bold text-center py-4 px-4 rounded-xl uppercase tracking-wider text-sm hover:opacity-90 shadow-lg flex items-center justify-center gap-2">
-                            <span class="material-symbols-outlined text-xl">perm_phone_msg</span> Contratar Show
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-    <!-- O Player de Vídeo do YouTube (Sempre na raiz) -->
-    <div class="youtube-wrapper" id="yt-wrapper">
-        <div class="youtube-container" id="player"></div>
-        <div id="yt-click-overlay" class="absolute inset-0 z-20 cursor-pointer pointer-events-auto" onclick="this.classList.add('hidden'); document.getElementById('player').classList.remove('pointer-events-none');"></div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://www.youtube.com/iframe_api"></script>
-    <script>
-        // Photo Switcher Script
-        const mainPhotos = ['assets/suricatos-duo-frente.jpg', 'assets/artist3.png'];
-        let currentMainPhoto = 0;
-        function nextMainPhoto() {
-            currentMainPhoto = (currentMainPhoto + 1) % mainPhotos.length;
-            const img = document.getElementById('main-photo');
-            if(img) img.src = mainPhotos[currentMainPhoto];
-        }
-        setInterval(nextMainPhoto, 4000);
-
-        // YouTube Logic
-        let player;
-        let hasShrunk = false;
-
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '100%',
-                width: '100%',
-                videoId: 'PnBNyd0_NFU',
-                playerVars: {
-                    'controls': 0, 'start': 20, 'autoplay': 0, 'rel': 0,
-                    'modestbranding': 1, 'showinfo': 0, 'disablekb': 1, 'iv_load_policy': 3, 'fs': 0,
-                    'cc_load_policy': 0, 'cc_lang_pref': 'xyz'
-                },
-                events: {
-                    'onStateChange': onPlayerStateChange
-                }
-            });
+        if(mode === 'banda') {
+            btnBanda.className = activeClass;
+            btnDuo.className = inactiveClass;
+        } else {
+            btnDuo.className = activeClass;
+            btnBanda.className = inactiveClass;
         }
 
-        function onPlayerStateChange(event) {
-            if (event.data == YT.PlayerState.PLAYING && !hasShrunk) {
-                hasShrunk = true;
+        let activeMembers = [];
+        if (mode === 'banda') activeMembers = ['joao', 'enzo', 'jrgodoy', 'jeff', 'edu'];
+        if (mode === 'duo') activeMembers = ['joao', 'enzo'];
 
-                try {
-                    player.unloadModule("captions");
-                    player.unloadModule("cc");
-                } catch(e) {}
-
-                // Espera 4s escondido para dar tempo total das informações do YT sumirem.
-                // O vídeo começa aos 20s, então aos 4000ms ele estará exatamente no 24s.
-                setTimeout(() => {
-                    // Revela fundo e tira a intro
-                    const introLayer = document.getElementById('intro-layer');
-                    introLayer.style.opacity = '0';
-                    setTimeout(() => { introLayer.classList.add('hidden'); }, 1000);
-                    
-                    document.getElementById('main-bg-layer').classList.remove('hidden');
-
-                    // Revela a grade temporariamente invisível para calcular a posição
-                    const screenMain = document.getElementById('screen-main');
-                    screenMain.classList.remove('hidden');
-                    screenMain.style.display = 'flex';
-                    
-                    // Posiciona o yt-wrapper
-                    const placeholder = document.getElementById('band-video-slot');
-                    const rect = placeholder.getBoundingClientRect();
-                    const ytWrapper = document.getElementById('yt-wrapper');
-                    
-                    ytWrapper.style.width = rect.width + 'px';
-                    ytWrapper.style.height = rect.height + 'px';
-                    ytWrapper.style.top = rect.top + 'px'; 
-                    ytWrapper.style.left = rect.left + 'px';
-                    
-                    // Revela o vídeo (limpo, sem UI e já nos 24s)
-                    ytWrapper.style.opacity = '1';
-
-                    // O resto da página só aparece após 2s (ou seja, quando o vídeo bate no 26s)
-                    setTimeout(() => {
-                        screenMain.style.opacity = '1';
-                        document.getElementById('main-body').classList.remove('overflow-hidden');
-                    }, 2000);
-                }, 4000);
-            }
-        }
-
-        // Resize event for video positioning
-        window.addEventListener('resize', () => {
-            const ytWrapper = document.getElementById('yt-wrapper');
-            if(ytWrapper.style.opacity === '1') {
-                const placeholder = document.getElementById('band-video-slot');
-                if(placeholder) {
-                    const rect = placeholder.getBoundingClientRect();
-                    ytWrapper.style.width = rect.width + 'px';
-                    ytWrapper.style.height = rect.height + 'px';
-                    ytWrapper.style.top = rect.top + 'px';
-                    ytWrapper.style.left = rect.left + 'px';
-                }
-            }
-        });
-
-        document.getElementById('btnEnter').addEventListener('click', function(e) {
-            e.preventDefault();
+        document.querySelectorAll('.crew-item').forEach(item => {
+            const member = item.getAttribute('data-member');
+            const video = item.querySelector('video');
             
-            if (player && typeof player.playVideo === 'function') {
-                this.innerHTML = "CARREGANDO...";
-                this.style.opacity = "0.5";
-                this.style.pointerEvents = "none";
-
-                // O vídeo começa do segundo 22 conforme playerVars
-                player.playVideo();
-
-                // Mostramos o vídeo imediatamente, porém escondido ATRÁS do z-index 100 da intro!
-                const ytWrapper = document.getElementById('yt-wrapper');
-                ytWrapper.classList.remove('hidden');
-                ytWrapper.style.opacity = '1';
-
-                const screenForest = document.getElementById('screen-forest');
-                screenForest.style.display = 'none';
-
-                // A revelação do clipe agora é feita suavemente no onPlayerStateChange!
-
+            if (activeMembers.includes(member)) {
+                item.classList.remove('grayscale', 'opacity-30', 'hidden');
+                item.classList.add('opacity-100');
+                if (video) video.play().catch(e => console.log(e));
             } else {
-                alert("O vídeo ainda está carregando, aguarde um segundo e tente novamente.");
+                item.classList.add('grayscale', 'opacity-30');
+                item.classList.remove('opacity-100');
+                if (video) video.pause();
             }
         });
-
-        // Toggle Play/Pause ao clicar no vídeo quando no grid
-        document.getElementById('yt-click-overlay').addEventListener('click', function() {
-            if (player && typeof player.getPlayerState === 'function') {
-                const state = player.getPlayerState();
-                if (state === YT.PlayerState.PLAYING) {
-                    player.pauseVideo();
-                } else {
-                    player.playVideo();
-                }
-            }
-        });
-    </script>
+    }
+    
+    // Inicia no modo banda
+    setCrewMode('banda');
+</script>
 </body>
 </html>
