@@ -145,7 +145,7 @@ body { background-color: #17110D; color: #F4EADB; font-family: 'Figtree', sans-s
         </div>
 
         <!-- Centro: Texto -->
-        <div class="w-full md:w-[40%] flex flex-col justify-center items-center gap-6 bg-verde-cru p-8 lg:p-12 rounded-bloco border border-oliva/40 shadow-[0_15px_40px_rgba(44,55,20,0.6)]">
+        <div class="w-full md:w-[40%] flex flex-col justify-center items-center gap-6 bg-verde-cru/80 backdrop-blur-md p-8 lg:p-12 rounded-bloco border border-oliva/40 shadow-[0_15px_40px_rgba(44,55,20,0.6)]">
             <h3 class="font-tribal text-[40px] md:text-[50px] text-trigo uppercase text-center leading-none w-full tracking-wider whitespace-nowrap">SURISTÓRIA</h3>
             <div class="flex flex-col gap-4 text-justify font-figtree font-medium text-[14px] lg:text-[15px] text-creme leading-[26px] w-full">
                 <p>Criada em 2019, a Banda Suricatos nasceu do encontro de universitários ansiosos por mostrar a música de qualidade no cenário uberabense.</p>
@@ -241,9 +241,13 @@ body { background-color: #17110D; color: #F4EADB; font-family: 'Figtree', sans-s
 </section>
 
 <!-- 5. Clipe Passarinhos -->
-<section class="relative pt-24 pb-20 px-4 bg-grao overflow-hidden min-h-screen flex flex-col justify-start">
-<div class="absolute top-0 right-0 w-[500px] h-[500px] bg-verde-cru/20 rounded-capsula blur-[150px] opacity-30 pointer-events-none z-0"></div>
-<div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-torra-escura/20 rounded-capsula blur-[150px] opacity-30 pointer-events-none z-0"></div>
+<section class="relative pt-24 pb-20 px-4 bg-grao overflow-hidden min-h-screen flex flex-col justify-start" id="passarinhos">
+<div class="absolute inset-0 z-0 hover-respiro">
+    <video autoplay loop muted playsinline class="object-cover w-full h-full opacity-60">
+        <source src="assets/suricatos-passarinhos-bg.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-grao via-grao/50 to-grao z-0 pointer-events-none"></div>
 
 <div class="w-full max-w-7xl mx-auto relative z-10 flex flex-col items-center">
     
@@ -253,21 +257,34 @@ body { background-color: #17110D; color: #F4EADB; font-family: 'Figtree', sans-s
         </h3>
     </div>
     
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
-        <!-- Esquerda: Clipe no YouTube -->
-        <div class="flex flex-col gap-8 items-center w-full hover-sob">
-            <div class="w-full aspect-video rounded-painel overflow-hidden shadow-2xl border border-oliva/30">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PnBNyd0_NFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 w-full items-stretch">
+        
+        <!-- Esquerda: Capa + Texto -->
+        <div class="flex flex-col h-full w-full">
+            <!-- Capa -->
+            <div class="w-full aspect-square rounded-painel overflow-hidden border border-oliva/30 shadow-2xl shrink-0 hover-sob">
+                <img src="assets/capa-passarinhos.jpg" alt="Capa Passarinhos" onerror="this.src='assets/artist3.png'" class="w-full h-full object-cover">
             </div>
-            <p class="font-figtree font-light text-[18px] text-creme/80 text-center max-w-md leading-[34px]">
-                Assista ao clipe oficial de "Passarinhos". Uma viagem sonora com muita emoção e raiz de reggae.
-            </p>
+            <!-- Texto (Cresce para preencher e alinha no final) -->
+            <div class="flex-1 flex items-end mt-8 hover-sob">
+                <p class="font-figtree font-light text-[18px] text-creme/80 leading-[34px] w-full bg-surface-container-low/80 backdrop-blur-md p-8 rounded-bloco border border-oliva/30">
+                    Assista ao clipe oficial de "Passarinhos". Uma viagem sonora com muita emoção e raiz de reggae.
+                </p>
+            </div>
         </div>
         
-        <!-- Direita: Spotify -->
-        <div class="flex flex-col justify-center items-center w-full hover-sob">
-            <iframe data-testid="embed-iframe" style="border-radius:28px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" src="https://open.spotify.com/embed/album/7F7bCGTXbmYALGeg67KIPL?utm_source=generator&theme=0&si=f9a06ef1cff74663" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <!-- Direita: Clipe + Spotify -->
+        <div class="flex flex-col h-full justify-between w-full">
+            <!-- Clipe -->
+            <div class="w-full aspect-video rounded-painel overflow-hidden border border-oliva/30 shadow-2xl shrink-0 hover-sob">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/PnBNyd0_NFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <!-- Spotify (Fixado embaixo) -->
+            <div class="mt-8 flex items-end justify-center w-full hover-sob">
+                <iframe data-testid="embed-iframe" style="border-radius:28px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);" src="https://open.spotify.com/embed/album/7F7bCGTXbmYALGeg67KIPL?utm_source=generator&theme=0&si=f9a06ef1cff74663" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
         </div>
+        
     </div>
 
 </div>
