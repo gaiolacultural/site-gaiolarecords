@@ -128,43 +128,42 @@ body { background-color: #17110D; color: #F4EADB; font-family: 'Figtree', sans-s
 
 <!-- 2. History Section -->
 <section class="md:h-[100dvh] md:max-h-[100dvh] md:overflow-hidden pt-24 pb-20 px-4 bg-grao relative z-10 overflow-hidden min-h-screen flex flex-col justify-center" id="historia">
-<div class="absolute inset-0 bg-cover bg-center z-0 opacity-60 hover-respiro" style="background-image: url('assets/suricatos-historia-bg.jpg')"></div>
+<div class="absolute inset-0 z-0 hover-respiro">
+    <video autoplay loop muted playsinline class="object-cover w-full h-full opacity-60">
+        <source src="assets/suricatos-historia.mp4" type="video/mp4">
+    </video>
+</div>
 <div class="absolute inset-0 bg-gradient-to-b from-grao via-grao/60 to-grao z-0 pointer-events-none"></div>
 
 <div class="w-full max-w-[1400px] mx-auto relative z-10 flex flex-col gap-6 items-center">
     
     <h3 class="font-tribal text-[50px] md:text-[80px] text-primary uppercase text-center leading-none mb-10 w-full tracking-wider">SURISTÓRIA</h3>
 
-    <!-- Linha 1: 30 / 40 / 30 -->
+    <!-- Linha 1: 50 / 50 -->
     <div class="flex flex-col md:flex-row w-full gap-6 items-stretch justify-center">
         
         <!-- Esquerda: Foto Duo -->
-        <div class="w-full md:w-[30%] aspect-[5/4] relative rounded-painel overflow-hidden border border-oliva/30 shadow-[0_8px_30px_rgba(85,103,43,0.3)] hover-sob group">
+        <div class="w-full md:w-1/2 aspect-[5/4] relative rounded-painel overflow-hidden border border-oliva/30 shadow-[0_8px_30px_rgba(85,103,43,0.3)] hover-sob group">
             <img class="object-cover object-center w-full h-full transition-torra" src="assets/suricatos-duo-frente.jpg" onerror="this.src='assets/artist3.png'"/>
             <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-grao via-grao/60 to-transparent p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-500 flex items-end justify-center h-full">
                 <p class="font-figtree font-medium text-[16px] text-creme uppercase tracking-widest text-center drop-shadow-md">Enzo e João Pelegrini</p>
             </div>
         </div>
 
-        <!-- Centro: Texto -->
-        <div class="w-full md:w-[40%] flex flex-col justify-center items-center gap-6 bg-verde-cru/80 backdrop-blur-md p-8 lg:p-12 rounded-bloco border border-oliva/40 shadow-[0_15px_40px_rgba(44,55,20,0.6)]">
-            <div class="flex flex-col gap-4 text-justify font-figtree font-medium text-[14px] lg:text-[15px] text-creme leading-[26px] w-full">
+        <!-- Direita: Texto -->
+        <div class="w-full md:w-1/2 flex flex-col justify-center items-center gap-6 bg-verde-cru px-8 lg:px-12 py-6 rounded-bloco border border-oliva/40 shadow-[0_15px_40px_rgba(44,55,20,0.6)]">
+            <div class="flex flex-col gap-4 text-justify font-figtree font-medium text-[14px] lg:text-[16px] text-creme leading-[26px] w-full">
                 <p>Criada em 2019, a Banda Suricatos nasceu do encontro de universitários ansiosos por mostrar a música de qualidade no cenário uberabense.</p>
                 <p>De lá pra cá, o amadurecimento e a evolução foram naturais, conforme nossa participação em eventos culturais da cidade.</p>
                 <p>Com os criadores, compositores e musicistas Enzo e João, nasceram músicas autorais repletas de influências culturais como Jazz, Bossa Nova, Forró e, principalmente, o Reggae.</p>
                 <p>A Banda Suricatos tem ocupado os palcos de Uberaba, sempre levando o amor, a alegria e o regionalismo para todos os públicos.</p>
             </div>
         </div>
-
-        <!-- Direita: Videos Revezando -->
-        <div class="w-full md:w-[30%] aspect-[5/4] rounded-painel overflow-hidden border border-oliva/30 shadow-[0_8px_30px_rgba(85,103,43,0.3)] hover-sob">
-            <video id="hist-video-rotator" class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-video-1.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
-        </div>
         
     </div>
 
-    <!-- Linha 2: 5 Blocos Base -->
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-6 w-full">
+    <!-- Linha 2: 4 Fotos -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full">
         <div class="aspect-[4/3] rounded-painel overflow-hidden border border-oliva/30 shadow-[0_8px_30px_rgba(85,103,43,0.3)] hover-sob">
             <img class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-foto-1.jpg" onerror="this.src='assets/artist3.png'"/>
         </div>
@@ -176,9 +175,6 @@ body { background-color: #17110D; color: #F4EADB; font-family: 'Figtree', sans-s
         </div>
         <div class="aspect-[4/3] rounded-painel overflow-hidden border border-oliva/30 shadow-[0_8px_30px_rgba(85,103,43,0.3)] hover-sob">
             <img class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-foto-4.jpg" onerror="this.src='assets/artist3.png'"/>
-        </div>
-        <div class="aspect-[4/3] rounded-painel overflow-hidden border border-oliva/30 shadow-[0_8px_30px_rgba(85,103,43,0.3)] hover-sob">
-            <video class="object-cover object-center w-full h-full transition-torra" src="assets/suristoria-video-4.mp4" autoplay loop muted playsinline disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
         </div>
     </div>
 
