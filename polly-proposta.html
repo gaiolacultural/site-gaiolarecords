@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Parceria | Ouro Pras Nega x Nathalia Cosméticos</title>
+    <meta name="description" content="Proposta de patrocínio e parceria musical entre Polly Magalhães e Nathalia Cosméticos.">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #09090b;
+            --bg-panel: rgba(24, 24, 27, 0.6);
+            --text-main: #f8fafc;
+            --text-muted: #a1a1aa;
+            --brand-pink: #ec4899; 
+            --brand-gold: #fbbf24;
+            --sidebar-w: 280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.1;
+        }
+
+        /* Sidebar Menu */
+        .sidebar {
+            width: var(--sidebar-w);
+            background: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 50;
+            box-shadow: 10px 0 30px rgba(0,0,0,0.5);
+        }
+
+        .sidebar-brand {
+            margin-bottom: 3rem;
+        }
+
+        .sidebar-brand h2 {
+            font-family: 'Anton', sans-serif;
+            font-weight: 400;
+            color: #f2ca50;
+            text-shadow: 0 4px 15px rgba(242,202,80,0.3);
+            text-transform: uppercase;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nav-menu li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            display: block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-menu li a:hover {
+            color: var(--text-main);
+            background: rgba(255, 255, 255, 0.03);
+            transform: translateX(5px);
+        }
+
+        .nav-menu li a.active {
+            color: #fff;
+            background: linear-gradient(90deg, rgba(251, 191, 36, 0.15) 0%, rgba(212, 175, 55, 0.05) 100%);
+            border-color: rgba(251, 191, 36, 0.3);
+            font-weight: 600;
+            transform: translateX(5px);
+        }
+
+        .nav-menu li a.active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--brand-gold);
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            height: 100vh;
+            overflow-y: scroll;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+            position: relative;
+        }
+
+        .main-content::-webkit-scrollbar { width: 0px; background: transparent; }
+
+        .slide {
+            min-height: 100vh;
+            width: 100%;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+            padding: 4rem 6rem;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Decorative Backgrounds per slide */
+        .bg-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(236,72,153,0.15) 0%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        .video-bg-container {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .video-bg-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+        
+        .video-bg-container::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, var(--bg-dark), rgba(9,9,11,0.4) 50%, var(--bg-dark));
+        }
+
+        /* Typography */
+        .tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 1.5rem;
+            color: var(--brand-gold);
+        }
+
+        .title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .title-gold {
+            font-family: 'Anton', sans-serif;
+            color: #f2ca50;
+            text-shadow: 0 4px 24px rgba(242,202,80,0.3);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Glassmorphism Cards */
+        .glass-panel {
+            background: var(--bg-panel);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Grids */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+
+        /* Specific Elements */
+        .stat-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .stat-box:hover { transform: translateY(-5px); border-color: rgba(236,72,153,0.3); }
+        .stat-value { font-family: 'Outfit'; font-size: 3rem; font-weight: 800; color: var(--brand-gold); margin-bottom: 0.5rem; }
+        .stat-label { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        .list-items { list-style: none; }
+        .list-items li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            color: #ddd;
+        }
+        .list-items li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--brand-pink);
+            font-size: 1.2rem;
+        }
+
+        .highlight-text { color: var(--brand-gold); font-weight: 600; }
+
+        .price-tag {
+            font-size: 5rem;
+            font-family: 'Outfit';
+            font-weight: 800;
+            background: linear-gradient(to right, var(--brand-gold), #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 2rem 0;
+        }
+
+        /* História Layout */
+        .history-grid {
+            display: grid;
+            grid-template-columns: 270px 1fr 270px;
+            gap: 2rem;
+            align-items: center;
+            width: 100%;
+        }
+        @media (max-width: 1024px) {
+            .history-grid { grid-template-columns: 1fr; }
+            .history-col-side { display: none !important; }
+        }
+        .history-col-side { display: flex; flex-direction: column; gap: 1.5rem; }
+        .history-media-box {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+        .history-media-box:hover { transform: rotate(0) !important; z-index: 10; }
+        .box-square { width: 270px; height: 270px; }
+        .box-tall { width: 270px; height: 480px; }
+        .rotate-left { transform: rotate(-2deg); }
+        .rotate-right { transform: rotate(2deg); }
+        .history-media-box img, .history-media-box video {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: opacity 1s ease;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.5, 0, 0, 1);
+        }
+        
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <div class="sidebar-brand" style="display: flex; justify-content: center;">
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#intro" class="nav-link active">INÍCIO</a></li>
+            <li><a href="#polly-1" class="nav-link">HISTÓRIA</a></li>
+            <li><a href="#polly-3" class="nav-link">POLLY</a></li>
+            <li><a href="#plano-2027" class="nav-link">POLLY 2027</a></li>
+            <li><a href="#gaiola" class="nav-link">GAIOLA RECORDS</a></li>
+            <li><a href="#o-projeto" class="nav-link">PROJETO</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Presentation -->
+    <main class="main-content">
+
+        <!-- 1. Intro -->
+        <section id="intro" class="slide" style="align-items: flex-start; padding-top: 5vh; padding-bottom: 5vh;">
+            <div class="video-bg-container">
+                <video src="assets/OURO-VIDEO.mp4" autoplay loop muted playsinline style="opacity: 0.85;"></video>
+                <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(45,22,0,0.4), rgba(10,10,10,0.8)); z-index: 1;"></div>
+            </div>
+            <div class="container reveal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; max-width: 100%; padding: 8vh 4vw 4vh 4vw;">
+                <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start; height: 100%;">
+                    <div style="display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
+                        <div style="margin-top: -3vh; margin-left: -2vw;">
+                            <div class="animate-pulse" style="font-family: 'Anton', sans-serif; color: #f2ca50; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 5rem; text-align: left;">
+                                POLLY<br/>MAGALHÃES
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. POLLY (Bio + Resultados) -->
+        <!-- 2. POLLY PÁGINA 1 -->
+        <section id="polly-1" class="slide" style="height: 100vh; overflow: hidden; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/bg-polly-1.jpeg?v=2') center/cover; z-index: 0; opacity: 1;"></div>
+            
+            <div class="container reveal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; max-width: 100%; padding: 8vh 4vw 4vh 4vw;">
+                
+                <div style="display: flex; justify-content: space-between; width: 100%; align-items: flex-start; height: 100%;">
+                    
+                    <!-- Left Col: Text Info -->
+                    <div style="display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
+                        
+                        <!-- Top Part: Titles -->
+                        <div style="margin-top: -3vh; margin-left: -2vw;">
+                            <div style="font-family: 'Anton', sans-serif; color: #f2ca50; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 5rem; margin-bottom: 0.5rem;">
+                                POLLY<br/>MAGALHÃES
+                            </div>
+                            <div style="display: flex; flex-direction: column; margin-left: 0.2rem;">
+                                <span style="color: var(--brand-pink); font-size: 2.2rem; font-family: 'Anton', sans-serif; text-transform: uppercase; text-shadow: 0 4px 15px rgba(0,0,0,1); line-height: 1;">RAPPER & POETISA</span>
+                                <span style="color: #000; font-size: 1rem; font-weight: 800; text-transform: uppercase; text-shadow: 0 1px 5px rgba(255,255,255,1), 0 0 10px rgba(255,255,255,0.8); letter-spacing: 2px; margin-top: 0.2rem;">UBERABA - MG</span>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Part: Festivals (Timbre & Sofá na Rua) -->
+                        <div style="margin-top: auto; margin-left: calc(-2vw + 0.2rem); display: flex; flex-direction: column; gap: 1.5rem;">
+                            <!-- Carousel 1: FESTIVAL TIMBRE -->
+                            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="font-family: 'Anton', sans-serif; color: #fdfbf7; font-size: 1.5rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 0.3rem; letter-spacing: 1px; text-align: left;">
+                                    FESTIVAL TIMBRE
+                                </div>
+                                <img class="carousel-timbre" src="assets/polly-timbre.jpg" style="width: 18vw; min-width: 260px; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000; transition: opacity 0.3s ease;">
+                            </div>
+
+                            <!-- Carousel 2: FESTIVAL SOFÁ NA RUA -->
+                            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="font-family: 'Anton', sans-serif; color: #f2ca50; font-size: 1.5rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 0.3rem; letter-spacing: 1px; text-align: left;">
+                                    FESTIVAL SOFÁ NA RUA
+                                </div>
+                                <img class="carousel-sofa" src="assets/show-polly-sofa-1.JPG" style="width: 18vw; min-width: 260px; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000; transition: opacity 0.3s ease;">
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Col: YouTube Format Videos -->
+                    <div style="display: flex; flex-direction: column; gap: 2.5rem; align-items: flex-end; justify-content: center; height: 100%;">
+                        
+                        <!-- Video 1: Clipe -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="font-family: 'Anton', sans-serif; color: #f2ca50; font-size: 2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 0.5rem; letter-spacing: 1px; text-align: center;">
+                                CLIPE OURO - 130K VIEW
+                            </div>
+                            <video id="clipe-ouro-vid" src="assets/clipe-polly-1.mp4" autoplay muted playsinline onended="this.src = this.src.includes('1.mp4') ? 'assets/clipe-polly-2.mp4' : 'assets/clipe-polly-1.mp4'; this.play();" style="width: 25vw; min-width: 400px; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000;"></video>
+                        </div>
+
+                        <!-- Video 2: Mini-doc -->
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <div style="font-family: 'Anton', sans-serif; color: #fdfbf7; font-size: 2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 0.5rem; letter-spacing: 1px; text-align: center;">
+                                MINI-DOC OURO - 20K VIEW
+                            </div>
+                            <img src="assets/THUMBNAIL MINIDOC.png" style="width: 25vw; min-width: 400px; aspect-ratio: 16/9; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000;">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Setup dos Carrosseis -->
+                <script>
+                    function initCarousel(className, imagesArray) {
+                        const el = document.querySelector('.' + className);
+                        if (!el || imagesArray.length === 0) return;
+                        let idx = 0;
+                        el.src = imagesArray[0];
+                        setInterval(() => {
+                            if(imagesArray.length <= 1) return;
+                            idx = (idx + 1) % imagesArray.length;
+                            el.style.opacity = 0;
+                            setTimeout(() => {
+                                el.src = imagesArray[idx];
+                                el.style.opacity = 1;
+                            }, 300);
+                        }, 3000); // Troca a cada 3 segundos
+                    }
+                    
+                    // Arrays das imagens de cada carrossel (basta o usuário adicionar mais nomes aqui depois)
+                    setTimeout(() => {
+                        initCarousel('carousel-timbre', ['assets/polly-timbre.jpg']);
+                        initCarousel('carousel-sofa', ['assets/show-polly-sofa-1.JPG']);
+                    }, 500);
+                </script>
+
+            </div>
+        </section>
+
+        <!-- 3B. POLLY PÁGINA 3 -->
+        <section id="polly-3" class="slide" style="height: 100vh; overflow: hidden; position: relative;">
+            <video src="assets/clipe-polly-1.mp4" autoplay loop muted playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 1;"></video>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1;"></div>
+            
+            <div class="container reveal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; max-width: 100%; padding: 8vh 4vw 4vh 4vw;">
+                
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%; height: 100%;">
+                    
+                    <!-- Left Side: Title + Social Media -->
+                    <div style="display: flex; flex-direction: column; justify-content: flex-start; gap: 3rem;">
+                        
+                        <!-- Title -->
+                        <div style="margin-top: -3vh; margin-left: -2vw;">
+                            <div style="font-family: 'Anton', sans-serif; color: #f2ca50; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 5rem;">
+                                POLLY<br/>MAGALHÃES
+                            </div>
+                        </div>
+
+                        <!-- Instagram & TikTok (Joined closely) -->
+                        <div style="display: flex; gap: 2.5rem; margin-top: 4vh;">
+                            
+                            <!-- Instagram Block -->
+                            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="font-family: 'Anton', sans-serif; color: #fdfbf7; font-size: 2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 0.5rem; letter-spacing: 1px;">
+                                    INSTAGRAM <span style="color: #f2ca50;">+700</span> VÍDEOS
+                                </div>
+                                <div style="display: flex; gap: 1rem;">
+                                    <!-- Foto -->
+                                    <img src="assets/ouro-pras-nega-insta-foto.PNG" style="width: 180px; height: 320px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000;">
+                                    <!-- Video -->
+                                    <video src="assets/ouro-pras-nega-insta.mp4" autoplay loop muted playsinline style="width: 180px; height: 320px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000;"></video>
+                                </div>
+                            </div>
+
+                            <!-- TikTok Block -->
+                            <div style="display: flex; flex-direction: column; align-items: flex-start;">
+                                <div style="font-family: 'Anton', sans-serif; color: #fdfbf7; font-size: 2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); margin-bottom: 0.5rem; letter-spacing: 1px;">
+                                    TIKTOK <span style="color: #f2ca50;">+300</span> VÍDEOS
+                                </div>
+                                <div style="display: flex; gap: 1rem;">
+                                    <!-- Foto -->
+                                    <img src="assets/ouro-pras-nega-tiktok-foto.PNG" style="width: 180px; height: 320px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000;">
+                                    <!-- Video -->
+                                    <video src="assets/ouro-pras-nega-tiktok.mp4" autoplay loop muted playsinline style="width: 180px; height: 320px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover; background: #000;"></video>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Right Side: 2 Stacked Photos -->
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem; justify-content: center; align-items: flex-end;">
+                        <img src="assets/show-polly-sofia-2.jpg" style="width: 18vw; min-width: 180px; aspect-ratio: 1/1; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover;">
+                        <img src="assets/polly-soffia-1.jpg" style="width: 18vw; min-width: 180px; aspect-ratio: 1/1; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7; object-fit: cover;">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Plano 2027 -->
+        <section id="plano-2027" class="slide" style="height: 100vh; overflow: hidden; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/bg-polly2027.jpeg') center/cover; background-position: center top; z-index: 0;"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.35); z-index: 1;"></div>
+            
+            <div class="container reveal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; max-width: 100%; padding: 8vh 4vw 4vh 4vw;">
+                
+                <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 100%; height: 100%;">
+                    
+                    <!-- Title -->
+                    <div style="margin-top: -3vh; margin-left: -2vw; display: flex; flex-direction: column; align-items: flex-end; width: fit-content; margin-bottom: 12vh;">
+                        <div style="font-family: 'Anton', sans-serif; color: #f2ca50; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 5rem; text-align: left;">
+                            POLLY<br/>MAGALHÃES
+                        </div>
+                        <div style="font-family: 'Anton', sans-serif; color: #fff; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 4rem; margin-top: 0.5rem;">
+                            2027
+                        </div>
+                    </div>
+
+                    <!-- Goals List -->
+                    <div style="display: flex; flex-direction: column; gap: 2.5rem; justify-content: flex-start; align-items: flex-start; max-width: 800px; margin-left: -2vw;">
+                        
+                        <div style="border-left: 4px solid #f2ca50; padding-left: 1.5rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-family: 'Anton', sans-serif; font-size: 2.2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); letter-spacing: 1px; line-height: 1.1;">
+                                <span style="color: #ffffff;">MEU NEGÓCIO É MÚSICA</span> <span style="color: #b0b0b0;">-</span> <span style="color: #f2ca50;">SEBRAE E FCU</span>
+                            </div>
+                        </div>
+
+                        <div style="border-left: 4px solid #f2ca50; padding-left: 1.5rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-family: 'Anton', sans-serif; font-size: 2.2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); letter-spacing: 1px; line-height: 1.1;">
+                                <span style="color: #ffffff;">CIRCULAÇÃO DE SHOWS</span> <span style="color: #b0b0b0;">-</span> <span style="color: #f2ca50;">100K EDITAL FEC</span>
+                            </div>
+                        </div>
+
+                        <div style="border-left: 4px solid #f2ca50; padding-left: 1.5rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-family: 'Anton', sans-serif; font-size: 2.2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); letter-spacing: 1px; line-height: 1.1;">
+                                <span style="color: #ffffff;">PRODUZIR 1 ÁLBUM</span> <span style="color: #b0b0b0;">-</span> <span style="color: #f2ca50;">NÍVEL GRAMMY</span>
+                            </div>
+                        </div>
+
+                        <div style="border-left: 4px solid #f2ca50; padding-left: 1.5rem; display: flex; flex-direction: column; justify-content: center;">
+                            <div style="font-family: 'Anton', sans-serif; font-size: 2.2rem; text-transform: uppercase; text-shadow: 0 2px 10px rgba(0,0,0,0.8); letter-spacing: 1px; line-height: 1.1;">
+                                <span style="color: #ffffff;">EQUIPE E NOVAS PARCERIAS</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Gaiola Records -->
+        <section id="gaiola" class="slide" style="position: relative; overflow: hidden;">
+            
+            <!-- Background Image & Overlay -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/bg-gaiola-records.JPG') center/cover; z-index: 0;"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.65); z-index: 1;"></div>
+
+            <div class="bg-glow" style="left: 80%; top: 20%; z-index: 2;"></div>
+            
+            <!-- Logo no canto superior esquerdo -->
+            <img src="assets/logo.png" style="position: absolute; top: 6vh; left: 4vw; width: 120px; height: auto; z-index: 10;">
+
+            <div class="container reveal" style="position: relative; z-index: 3; padding: 4vh 4vw; display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
+                
+                <!-- TOP HEADER: Title + Subtitle -->
+                <div style="display: flex; justify-content: flex-start; align-items: flex-start; width: 100%; padding-left: 6vw;">
+                    <!-- Title and Subtitle -->
+                    <div style="display: flex; flex-direction: column; align-items: flex-start; text-align: left;">
+                        <h2 class="title" style="font-size: 4.5rem; margin-bottom: 0; color: #fff;">Gaiola Records</h2>
+                        <p class="subtitle" style="text-transform: uppercase; letter-spacing: 2px; color: #fff; font-weight: bold; margin-top: 0.5rem; margin-bottom: 0; font-size: 1.3rem; text-shadow: 0 0 12px rgba(255, 255, 255, 0.4), 0 0 24px rgba(255, 255, 255, 0.2);">SELO &bull; PRODUTORA &bull; AGÊNCIA</p>
+                    </div>
+                </div>
+
+                <!-- BOTTOM CONTENT: Left (Stats + Feed) / Right (YouTube) -->
+                <div style="display: flex; justify-content: flex-start; align-items: flex-end; width: 100%; flex: 1; padding-bottom: 24vh; margin-top: -12vh; gap: 4vw;">
+                    
+                    <!-- LEFT COLUMN -->
+                    <div style="display: flex; flex-direction: column; justify-content: flex-end; gap: 2rem; height: 100%; padding-left: 0;">
+                        
+                        <!-- Stats Row -->
+                        <div style="display: flex; gap: 4rem; justify-content: center; align-items: flex-end; width: 100%; margin-top: auto;" class="delay-1 reveal">
+                            <div style="text-align: center;">
+                                <div style="font-family: 'Anton', sans-serif; font-size: 4rem; color: #f2ca50; text-shadow: 0 4px 10px rgba(0,0,0,0.5); line-height: 1;">+20</div>
+                                <div style="font-size: 1.1rem; font-weight: bold; color: #fdfbf7; text-transform: uppercase; line-height: 1.2; margin-top: 0.5rem;">LANÇAMENTOS<br/>MUSICAIS</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-family: 'Anton', sans-serif; font-size: 4rem; color: #f2ca50; text-shadow: 0 4px 10px rgba(0,0,0,0.5); line-height: 1;">+30</div>
+                                <div style="font-size: 1.1rem; font-weight: bold; color: #fdfbf7; text-transform: uppercase; line-height: 1.2; margin-top: 0.5rem;">PROJETOS<br/>CULTURAIS</div>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-family: 'Anton', sans-serif; font-size: 4rem; color: #f2ca50; text-shadow: 0 4px 10px rgba(0,0,0,0.5); line-height: 1;">+870K</div>
+                                <div style="font-size: 1.1rem; font-weight: bold; color: #fdfbf7; text-transform: uppercase; line-height: 1.2; margin-top: 0.5rem;">EDITAIS<br/>CULTURAIS</div>
+                            </div>
+                        </div>
+
+                        <!-- 3 Feed Photos -->
+                        <div style="display: flex; gap: 1.5rem;">
+                            <img id="feed-img-1" src="assets/flyer-gaiola-10.png" style="width: 200px; aspect-ratio: 4/5; border-radius: 8px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0,0,0,0.5);">
+                            <img id="feed-img-2" src="assets/flyer-gaiola-11.jpeg" style="width: 200px; aspect-ratio: 4/5; border-radius: 8px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0,0,0,0.5);">
+                            <img id="feed-img-3" src="assets/flyer-gaiola-1.png" style="width: 200px; aspect-ratio: 4/5; border-radius: 8px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0,0,0,0.5);">
+                        </div>
+                        <script>
+                            (function(){
+                                const feedImages = [
+                                    'flyer-gaiola-10.png',
+                                    'flyer-gaiola-11.jpeg',
+                                    'flyer-gaiola-1.png',
+                                    'flyer-gaiola-2.jpg',
+                                    'flyer-gaiola-4.jpg',
+                                    'flyer-gaiola-5.jpg',
+                                    'flyer-gaiola-6.png',
+                                    'flyer-gaiola-7.png',
+                                    'flyer-gaiola-8.jpg'
+                                ];
+                                function rotateFeed(imgId, offset) {
+                                    const img = document.getElementById(imgId);
+                                    let currentIndex = offset;
+                                    setInterval(() => {
+                                        currentIndex = (currentIndex + 3) % feedImages.length;
+                                        img.src = 'assets/' + feedImages[currentIndex];
+                                    }, 4000);
+                                }
+                                rotateFeed('feed-img-1', 0);
+                                rotateFeed('feed-img-2', 1);
+                                rotateFeed('feed-img-3', 2);
+                            })();
+                        </script>
+                    </div>
+
+                    <!-- RIGHT COLUMN: YouTube Videos -->
+                    <div style="display: flex; flex-direction: column; gap: 1.2rem; align-items: center; align-self: center; margin-top: -5vh;">
+                        <video id="yt-vid-1" src="assets/suricatos-passarinhos-bg.mp4" autoplay loop muted playsinline style="width: 320px; aspect-ratio: 16/9; border-radius: 8px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0,0,0,0.5);"></video>
+                        <video id="yt-vid-2" src="assets/clipe-polly-2.mp4" autoplay loop muted playsinline style="width: 320px; aspect-ratio: 16/9; border-radius: 8px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0,0,0,0.5);"></video>
+                        <video id="yt-vid-3" src="assets/youtube-polly-1.mp4" autoplay loop muted playsinline style="width: 320px; aspect-ratio: 16/9; border-radius: 8px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 4px 15px rgba(0,0,0,0.5);"></video>
+                    </div>
+                    <script>
+                        (function(){
+                            const ytVideos = [
+                                'suricatos-passarinhos-bg.mp4',
+                                'clipe-polly-2.mp4',
+                                'youtube-polly-1.mp4',
+                                'youtube-polly-2.mp4',
+                                'youtube-polly-3.mp4',
+                                'youtube-polly-4.mp4'
+                            ];
+                            function setupVidRotate(vidId, offset) {
+                                const vid = document.getElementById(vidId);
+                                let currentIndex = offset;
+                                setInterval(() => {
+                                    currentIndex = (currentIndex + 3) % ytVideos.length;
+                                    vid.src = 'assets/' + ytVideos[currentIndex];
+                                    vid.play();
+                                }, 10000);
+                            }
+                            setupVidRotate('yt-vid-1', 0);
+                            setupVidRotate('yt-vid-2', 1);
+                            setupVidRotate('yt-vid-3', 2);
+                        })();
+                    </script>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. O Projeto -->
+        <!-- 6. O Projeto -->
+        <section id="o-projeto" class="slide" style="height: 100vh; overflow: hidden; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/polly-luiz.jpeg') center/cover; background-position: center 35%; z-index: 0;"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1;"></div>
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+                <div class="bg-glow" style="background: radial-gradient(circle, rgba(251,191,36,0.15) 0%, rgba(0,0,0,0) 70%); top: 50%; left: 50%; transform: translate(-50%, -50%);"></div>
+            </div>
+
+            <div class="container reveal" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; max-width: 100%; padding: 8vh 4vw 4vh 4vw;">
+                
+                <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; width: 100%; height: 100%;">
+                    
+                    <!-- Title -->
+                    <div style="margin-top: -3vh; margin-left: -2vw; display: flex; flex-direction: column; align-items: flex-end; width: fit-content; margin-bottom: 6vh;">
+                        <div style="font-family: 'Anton', sans-serif; color: #f2ca50; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 5rem; text-align: left;">
+                            POLLY<br/>MAGALHÃES
+                        </div>
+                        <div style="font-family: 'Anton', sans-serif; color: #fff; text-transform: uppercase; line-height: 0.85; text-shadow: 0 4px 15px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.8); letter-spacing: -0.05em; font-size: 4rem; margin-top: 0.5rem;">
+                            PROJETO
+                        </div>
+                    </div>
+
+                    <!-- Content Row -->
+                    <div style="display: flex; align-items: flex-start; width: 100%; justify-content: space-between;">
+                        
+                        <!-- Col 1: Luiz Araujo Producer -->
+                        <div style="display: flex; gap: 4vw; align-items: stretch; height: 100%;">
+                            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.5rem;">
+                                <img src="assets/Luiz-araujo.jpg" style="width: 250px; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #fdfbf7;">
+                                <div style="font-family: 'Anton', sans-serif; font-size: 1.8rem; color: #fdfbf7; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); text-align: center; line-height: 1.1;">
+                                    PRODUTOR MUSICAL<br/><span style="color: #f2ca50;">LUIZ ARAÚJO</span>
+                                </div>
+                            </div>
+
+                            <!-- Divider -->
+                            <div style="width: 2px; height: 350px; background: rgba(255,255,255,0.2); margin: 0 1vw;"></div>
+                        </div>
+
+                        <!-- Col 2: Produção (Middle) -->
+                        <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; max-width: 400px; margin-top: 5vh;">
+                            <div style="font-family: 'Anton', sans-serif; font-size: 5rem; color: #f2ca50; text-transform: uppercase; letter-spacing: 2px; text-shadow: 0 4px 15px rgba(0,0,0,1); line-height: 1.1;">
+                                1 MÚSICA<br/>
+                                <span style="color: #ffffff;">1 CLIPE</span>
+                            </div>
+                        </div>
+
+                        <!-- Col 3: Grammy Text + The 4 Images (Album + 3 Artists) -->
+                        <div style="display: flex; flex-direction: column; justify-content: flex-start; align-items: center; gap: 1.5rem; margin-top: -15vh; margin-right: 2vw;">
+                            
+                            <!-- Grammy Text -->
+                            <div style="font-family: 'Anton', sans-serif; font-size: 2.5rem; color: #fdfbf7; text-transform: uppercase; letter-spacing: 1px; text-shadow: 0 2px 10px rgba(0,0,0,0.8); text-align: center; line-height: 1.1;">
+                                INDICADO AO<br/><span style="color: #f2ca50;">GRAMMY LATINO</span>
+                            </div>
+
+                            <!-- 2x2 Grid -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <!-- Album Cover in place of Jeneci -->
+                                <img src="assets/forro-night.jpg" style="width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 3px solid #f2ca50;">
+                                <img src="assets/joao-gomes.webp" style="width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 2px solid rgba(255,255,255,0.3);">
+                                <img src="assets/chico-cesar.png" style="width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 2px solid rgba(255,255,255,0.3);">
+                                <img src="assets/gaby-amarantos.webp" style="width: 150px; aspect-ratio: 1; object-fit: cover; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.9); border: 2px solid rgba(255,255,255,0.3);">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </main>
+
+    <script>
+        // Intersection Observer for Scroll Animations and Nav Highlighting
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.slide');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const reveals = document.querySelectorAll('.reveal');
+
+            // Animation Observer
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            reveals.forEach(reveal => revealObserver.observe(reveal));
+
+            // Navigation Observer
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        // Add to current
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-menu a[href="#${id}"]`);
+                        if(activeLink) activeLink.classList.add('active');
+                    }
+                });
+            }, { threshold: 0.5 }); 
+
+            sections.forEach(section => navObserver.observe(section));
+            
+            // Smooth scroll click handler
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+
+            // Media Swap para a seção da Polly
+            const hPhoto1 = document.getElementById('hist-photo-1');
+            const hVideo1 = document.getElementById('hist-video-1');
+            const hPhoto2 = document.getElementById('hist-photo-2');
+            const hVideo2 = document.getElementById('hist-video-2');
+
+            const photosLeft = ['assets/historia-foto-1.jpeg', 'assets/historia-foto-2.jpeg'];
+            const videosLeft = ['assets/historia-video-1.mp4', 'assets/historia-video-2.mp4'];
+            
+            const photosRight = ['assets/historia-foto-3.webp', 'assets/historia-foto-4.webp'];
+            const videosRight = ['assets/historia-video-3.mp4', 'assets/historia-video-4.mp4'];
+
+            let pIdx = 0;
+            let vIdx = 0;
+
+            function swapMedia(element, newSrc) {
+                if (!element) return;
+                element.style.opacity = '0.5';
+                setTimeout(() => {
+                    element.src = newSrc;
+                    element.style.opacity = '1';
+                    if (element.tagName === 'VIDEO') {
+                        element.play().catch(e => console.log("Autoplay prevented:", e));
+                    }
+                }, 500);
+            }
+
+            setInterval(() => {
+                pIdx = (pIdx + 1) % 2;
+                swapMedia(hPhoto1, photosLeft[pIdx]);
+                swapMedia(hPhoto2, photosRight[pIdx]);
+            }, 4000);
+
+            setTimeout(() => {
+                setInterval(() => {
+                    vIdx = (vIdx + 1) % 2;
+                    swapMedia(hVideo1, videosLeft[vIdx]);
+                    swapMedia(hVideo2, videosRight[vIdx]);
+                }, 4000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
