@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/Favicons.png?v=4">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
   <style>
     @layer base {
@@ -78,8 +78,8 @@
 
   <!-- MAIN AREA (2 COLUMNS: ~38% / ~62%) -->
   <main class="flex-1 grid grid-cols-12 gap-6 py-4.5 min-h-0 items-stretch overflow-hidden">
-    <!-- LEFT COLUMN: Artist Portrait / Video Reel Card (~38%) -->
-    <div class="col-span-12 md:col-span-5 lg:col-span-5 xl:col-span-4 h-full flex flex-col justify-between bg-surface-container-low/80 rounded-2xl p-4 ring-1 ring-white/5 min-h-0">
+    <!-- LEFT COLUMN: Artist Video Reel / Photo (~38%) -->
+    <div class="col-span-12 md:col-span-5 lg:col-span-5 xl:col-span-4 h-full flex flex-col bg-surface-container-low/80 rounded-2xl p-4 ring-1 ring-white/5 min-h-0">
       <div class="relative flex-1 min-h-0 rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/5 flex items-center justify-center">
         <!-- Vídeo Reels -->
         <video id="pollyVideo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" playsinline muted autoplay preload="auto">
@@ -90,68 +90,86 @@
         <img id="pollyPhoto" alt="Polly Magalhães" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" src="../assets/Polly-1-inicial.jpg">
 
         <!-- Gradiente sutil inferior -->
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none z-20"></div>
-
-        <!-- Indicador de formato Reels / Status -->
-        <div class="absolute top-3 left-3 z-30 flex items-center gap-2 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-label text-outline uppercase tracking-wider">
-          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-          <span id="reelsIndicatorText">REEL • VÍDEO</span>
-        </div>
-      </div>
-
-      <!-- Redes Sociais -->
-      <div class="pt-3 shrink-0 flex items-center justify-between border-t border-surface-variant/35 mt-3 px-1">
-        <span class="font-label text-xs uppercase tracking-widest text-outline">Redes Oficiais</span>
-        <div class="flex items-center gap-2">
-          <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="https://www.instagram.com/pollymagalhaesoficial/" target="_blank" title="Instagram">
-            <span class="material-symbols-outlined text-[17px]">photo_camera</span>
-          </a>
-          <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="https://open.spotify.com/artist/4XgN0F0XgC8J04f0V4z5iW" target="_blank" title="Spotify">
-            <span class="material-symbols-outlined text-[17px]">graphic_eq</span>
-          </a>
-          <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="https://www.youtube.com/@pollymagalhaes" target="_blank" title="YouTube">
-            <span class="material-symbols-outlined text-[17px]">smart_display</span>
-          </a>
-          <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="../polly-magalhaes.html" target="_blank" title="Site Oficial Completo">
-            <span class="material-symbols-outlined text-[17px]">public</span>
-          </a>
-        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none z-20"></div>
       </div>
     </div>
 
     <!-- RIGHT COLUMN: Bio + Format/Repertoire + Video (~62%) -->
-    <div class="col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-8 h-full flex flex-col justify-between gap-3.5 min-h-0">
+    <div class="col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-8 h-full flex flex-col justify-between gap-3 min-h-0">
       <!-- UPPER SECTION: Informações escritas -->
-      <div class="bg-surface-container-low/80 rounded-2xl p-4 lg:p-5 ring-1 ring-white/5 flex flex-col gap-2 shrink-0">
-        <div class="space-y-0.5">
-          <span class="font-label text-[11px] uppercase tracking-[0.16em] text-primary font-semibold block">Rap • Boombap • Trap</span>
-          <h1 class="font-headline text-2xl xl:text-3xl text-on-surface tracking-tight uppercase leading-tight font-extrabold">
-            Polly <span class="text-primary italic font-normal">Magalhães</span>
-          </h1>
+      <div class="bg-surface-container-low/80 rounded-2xl p-4 lg:p-5 ring-1 ring-white/5 flex flex-col gap-2.5 shrink-0">
+        
+        <!-- Header da Polly: Estilo, Nome + Ícones Oficiais + Botão Contratar Show -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-surface-variant/35 pb-2.5">
+          <div class="space-y-1">
+            <span class="font-label text-[11px] uppercase tracking-[0.16em] text-primary font-semibold block">Rap • Boombap • Trap</span>
+            
+            <div class="flex flex-wrap items-center gap-3">
+              <h1 class="font-headline text-2xl xl:text-3xl text-on-surface tracking-tight uppercase leading-tight font-extrabold">
+                Polly <span class="text-primary italic font-normal">Magalhães</span>
+              </h1>
+
+              <!-- Ícones Oficiais das Redes Sociais -->
+              <div class="flex items-center gap-1.5 pl-1 border-l border-surface-variant/60 ml-0.5">
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/pollymagalhaesoficial/" target="_blank" title="Instagram" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-[#E1306C] hover:text-white text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+
+                <!-- Spotify -->
+                <a href="https://open.spotify.com/artist/4XgN0F0XgC8J04f0V4z5iW" target="_blank" title="Spotify" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-[#1DB954] hover:text-black text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.496 17.306c-.215.353-.674.464-1.027.249-2.815-1.72-6.357-2.11-10.531-1.157-.403.092-.805-.16-.897-.563-.092-.403.16-.805.563-.897 4.571-1.045 8.492-.596 11.643 1.341.353.216.464.674.249 1.027zm1.467-3.262c-.271.441-.849.58-1.29.31-3.222-1.98-8.134-2.553-11.944-1.396-.498.151-1.028-.135-1.179-.633-.151-.498.135-1.028.633-1.179 4.358-1.322 9.776-.682 13.47 1.588.441.27.58.849.31 1.31zm.126-3.411c-3.863-2.294-10.238-2.506-13.935-1.383-.593.18-1.223-.157-1.403-.75-.18-.593.157-1.223.75-1.403 4.247-1.29 11.284-1.041 15.742 1.605.534.317.708 1.011.391 1.545-.317.534-1.011.708-1.545.391z"/>
+                  </svg>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/@pollymagalhaes" target="_blank" title="YouTube" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-[#FF0000] hover:text-white text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                  <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  </svg>
+                </a>
+
+                <!-- Site Oficial -->
+                <a href="../polly-magalhaes.html" target="_blank" title="Site Oficial Completo" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                  <span class="material-symbols-outlined text-[17px]">public</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botão CONTRATAR SHOW (WhatsApp) -->
+          <a href="https://wa.me/553498724992?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20de%20show%20da%20Polly%20Magalhães." target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-bright via-primary to-primary text-on-primary font-label text-xs uppercase tracking-wider font-bold px-4 py-2 rounded-xl shadow-lg shadow-primary/20 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0">
+            <span class="material-symbols-outlined text-base">chat</span>
+            <span>Contratar Show</span>
+          </a>
         </div>
+
         <p class="font-body text-xs leading-relaxed text-on-surface-variant max-w-3xl">Polly Magalhães é rapper, poetisa e produtora cultural nascida em Uberaba/MG. Iniciando sua trajetória em 2015, consolidou sua voz no rap nacional com uma obra visceral que transita entre o amor, a saúde mental e as vivências de ser uma mulher preta no Brasil. Com lançamentos marcantes como o EP "Ouro" (2025) e o EP "Tudo Sobre Desamor, Nem Tudo!" (2026), a artista une força lírica e identidade para construir um legado de cura, resistência e verdade.</p>
 
         <!-- Formatos de Show e Repertório -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-1">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-0.5">
           <!-- Duo -->
-          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+          <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
             <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Duo</span>
-            <p class="font-body text-[11px] text-on-surface font-medium leading-snug">Ela e DJ</p>
+            <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly e DJ</p>
           </div>
           <!-- Trio -->
-          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+          <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
             <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
-            <p class="font-body text-[11px] text-on-surface font-medium leading-snug">Ela, DJ e Backing Vocal</p>
+            <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ e Backing Vocal</p>
           </div>
           <!-- Completo -->
-          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+          <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
             <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Completo (5 Pessoas)</span>
-            <p class="font-body text-[11px] text-on-surface font-medium leading-snug">Ela, DJ, Backing Vocal e 2 Dançarinas</p>
+            <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ, Backing Vocal e 2 Dançarinas</p>
           </div>
           <!-- Repertório -->
-          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-tertiary space-y-0.5">
+          <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-tertiary space-y-0.5">
             <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold block">Repertório</span>
-            <p class="font-body text-[11px] text-on-surface font-medium leading-snug uppercase tracking-wider">Autoral</p>
+            <p class="font-body text-xs text-on-surface font-medium leading-snug uppercase tracking-wider">Autoral</p>
           </div>
         </div>
       </div>
@@ -162,10 +180,6 @@
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-[#ff0000] text-lg">smart_display</span>
             <span class="font-headline text-xs lg:text-sm uppercase tracking-widest text-on-surface font-bold">VÍDEO CLIPE OURO</span>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="font-label text-[10px] text-[#ff0000] uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container font-semibold border border-[#ff0000]/30">YOUTUBE OFICIAL</span>
-            <span class="font-label text-[10px] text-primary uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container font-medium border border-primary/20">16:9 HD</span>
           </div>
         </div>
 
@@ -195,9 +209,8 @@
     document.addEventListener('DOMContentLoaded', () => {
       const video = document.getElementById('pollyVideo');
       const photo = document.getElementById('pollyPhoto');
-      const indicator = document.getElementById('reelsIndicatorText');
 
-      let videoDuration = 10; // fallback padrão em segundos caso não carregue metadata
+      let videoDuration = 10;
 
       video.addEventListener('loadedmetadata', () => {
         if (video.duration && !isNaN(video.duration)) {
@@ -205,7 +218,6 @@
         }
       });
 
-      // Quando o vídeo terminar, transiciona para a foto
       video.addEventListener('ended', () => {
         showPhoto();
       });
@@ -213,9 +225,7 @@
       function showPhoto() {
         video.classList.replace('opacity-100', 'opacity-0');
         photo.classList.replace('opacity-0', 'opacity-100');
-        if (indicator) indicator.textContent = 'REEL • FOTO';
 
-        // Fica na foto pelo mesmo tempo de duração do vídeo
         setTimeout(() => {
           showVideo();
         }, (videoDuration || 10) * 1000);
@@ -224,7 +234,6 @@
       function showVideo() {
         photo.classList.replace('opacity-100', 'opacity-0');
         video.classList.replace('opacity-0', 'opacity-100');
-        if (indicator) indicator.textContent = 'REEL • VÍDEO';
         video.currentTime = 0;
         video.play().catch(() => {});
       }
