@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>Edson Santana — Gaiola Records</title>
+  <link rel="icon" type="image/png" href="../assets/Favicons.png?v=4">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Syne:wght@600;700;800&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        overflow: hidden;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#121316",
+            "surface-dim": "#121316",
+            "surface-container-lowest": "#0a0b0d",
+            "surface-container-low": "#16171b",
+            "surface-container": "#1d1e23",
+            "surface-container-high": "#26272d",
+            "surface-container-highest": "#31333a",
+            "surface-variant": "#2b2c32",
+            "primary": "#d4af37",
+            "primary-bright": "#f2ca50",
+            "on-primary": "#241a00",
+            "on-surface": "#e3e2e6",
+            "on-surface-variant": "#b8b4a8",
+            "outline": "#8a8475",
+            "outline-variant": "#3f3b30",
+            "tertiary": "#eac99f",
+          },
+          fontFamily: {
+            "headline": ["Syne", "sans-serif"],
+            "label": ["Space Grotesk", "sans-serif"],
+            "body": ["Manrope", "sans-serif"],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased h-screen w-screen overflow-hidden flex flex-col justify-between selection:bg-primary selection:text-on-primary px-8 lg:px-12 py-5">
+  <!-- TOP BAR -->
+  <header class="w-full flex items-center justify-between pb-3.5 border-b border-surface-variant/40 shrink-0">
+    <div class="flex items-center gap-4">
+      <img alt="Gaiola Records Logo" class="h-8 w-auto object-contain brightness-125" src="../assets/logo-gaiola-records.png">
+      <div class="flex items-center gap-3">
+        <span class="font-headline text-base tracking-[0.2em] uppercase font-bold text-on-surface">GAIOLA <span class="text-primary font-bold">RECORDS</span></span>
+        <span class="text-[11px] text-outline uppercase tracking-[0.2em] font-label border-l border-surface-variant/70 pl-3 hidden sm:inline-block">Casting Oficial</span>
+      </div>
+    </div>
+    <a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors font-label text-xs uppercase tracking-widest group" href="../agencia">
+      <span class="material-symbols-outlined text-sm transition-transform group-hover:-translate-x-1">arrow_back</span>
+      Voltar ao Catálogo
+    </a>
+  </header>
+
+  <!-- MAIN AREA (2 COLUMNS: ~38% / ~62%) -->
+  <main class="flex-1 grid grid-cols-12 gap-6 py-4.5 min-h-0 items-stretch overflow-hidden">
+    <!-- LEFT COLUMN: Artist Video Reel / Photo (~38%) -->
+    <div class="col-span-12 md:col-span-5 lg:col-span-5 xl:col-span-4 h-full flex flex-col bg-surface-container-low/80 rounded-2xl p-4 ring-1 ring-white/5 min-h-0">
+      <div class="relative flex-1 min-h-0 rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/5 flex items-center justify-center">
+        <!-- Vídeo Reels -->
+        <video id="artistVideo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" playsinline muted autoplay preload="auto" src="../assets/Edson-1-inicial.mp4">
+          <source src="../assets/Edson-1-inicial.mp4" type="video/mp4">
+        </video>
+
+        <!-- Foto Reels -->
+        <img id="artistPhoto" alt="Edson Santana" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" src="../assets/Edson-1-inicial.jpg">
+
+        <!-- Gradiente sutil inferior -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none z-20"></div>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: Único Bloco Unificado (~62%) -->
+    <div class="col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-8 h-full bg-surface-container-low/80 rounded-2xl p-5 ring-1 ring-white/5 flex flex-col justify-between gap-4 min-h-0">
+      
+      <!-- PARTE SUPERIOR: Título, Ícones e Botão Contratar Show -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-surface-variant/35 pb-3.5 shrink-0">
+        <div class="space-y-1">
+          <span class="font-label text-[11px] uppercase tracking-[0.16em] text-primary font-semibold block">Rock • Pop Rock</span>
+          
+          <div class="flex flex-wrap items-center gap-3">
+            <h1 class="font-headline text-2xl xl:text-3xl text-white tracking-tight uppercase leading-tight font-extrabold">
+              Edson <span class="text-primary italic font-normal">Santana</span>
+            </h1>
+
+            <!-- Ícones Oficiais das Redes Sociais -->
+            <div class="flex items-center gap-1.5 pl-1.5 border-l border-surface-variant/60 ml-0.5">
+              <!-- Instagram -->
+              <a href="https://www.instagram.com/edsonsantanaoficial/" target="_blank" title="Instagram (@edsonsantanaoficial)" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-[#E1306C] hover:text-white text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </a>
+
+              <!-- Spotify -->
+              <a href="https://open.spotify.com/artist/0HuTW5cnhTIzHTKBeeB2n7?si=A3f5Y9isRaOq7qtKcNOw0w" target="_blank" title="Spotify" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-[#1DB954] hover:text-black text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.496 17.306c-.215.353-.674.464-1.027.249-2.815-1.72-6.357-2.11-10.531-1.157-.403.092-.805-.16-.897-.563-.092-.403.16-.805.563-.897 4.571-1.045 8.492-.596 11.643 1.341.353.216.464.674.249 1.027zm1.467-3.262c-.271.441-.849.58-1.29.31-3.222-1.98-8.134-2.553-11.944-1.396-.498.151-1.028-.135-1.179-.633-.151-.498.135-1.028.633-1.179 4.358-1.322 9.776-.682 13.47 1.588.441.27.58.849.31 1.31zm.126-3.411c-3.863-2.294-10.238-2.506-13.935-1.383-.593.18-1.223-.157-1.403-.75-.18-.593.157-1.223.75-1.403 4.247-1.29 11.284-1.041 15.742 1.605.534.317.708 1.011.391 1.545-.317.534-1.011.708-1.545.391z"/>
+                </svg>
+              </a>
+
+              <!-- YouTube -->
+              <a href="https://www.youtube.com/@edsonsantana" target="_blank" title="YouTube (@edsonsantana)" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-[#FF0000] hover:text-white text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+              </a>
+
+              <!-- Site Oficial -->
+              <a href="../edson-santana.html" target="_blank" title="Site Oficial Completo (gaiolarecords.com.br/edson-santana.html)" class="w-7 h-7 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface-variant flex items-center justify-center transition-all duration-200">
+                <span class="material-symbols-outlined text-[17px]">public</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botão CONTRATAR SHOW (WhatsApp) -->
+        <a href="https://wa.me/553498724992?text=Olá!%20Gostaria%20de%20solicitar%20uma%20proposta%20de%20show%20do%20Edson%20Santana." target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary-bright via-primary to-primary text-on-primary font-label text-xs uppercase tracking-wider font-bold px-4 py-2 rounded-xl shadow-lg shadow-primary/20 hover:brightness-110 hover:scale-[1.02] active:scale-[0.98] transition-all shrink-0">
+          <span class="material-symbols-outlined text-base">chat</span>
+          <span>Contratar Show</span>
+        </a>
+      </div>
+
+      <!-- PARTE INFERIOR: Dividida em Minibio (full width) + Área inferior (Vídeo Local Clean 16:9 + Formatos de Show) -->
+      <div class="flex-1 flex flex-col justify-between gap-3 min-h-0">
+        
+        <!-- Minibio: se estende por toda a largura horizontal -->
+        <div class="shrink-0 w-full">
+          <p class="font-body text-[13px] lg:text-[13.5px] leading-relaxed text-on-surface-variant font-normal">
+            Com mais de 20 anos de estrada, o cantor e compositor Edson Santana apresenta uma trajetória marcada por passagens por festas, casas noturnas e grandes públicos, unindo canções autorais consagradas nas plataformas digitais e releituras vibrantes de clássicos do rock e pop. Atualmente, o artista está circulando com dois formatos de shows diferentes para os palcos: o show "Clássicos do Rock", que mistura seus sucessos autorais com hinos do rock nacional e do pop, e o "Especial Raul Seixas", um tributo dedicado à obra do "Maluco Beleza", celebrando toda a bagagem de quem foi cover da lenda por 15 anos.
+          </p>
+        </div>
+
+        <!-- Linha do Vídeo e Formatos de Show -->
+        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
+          
+          <!-- COLUNA ESQUERDA: Vídeo Nativo 16:9 Clean (EDSON SHOW CURTO.mp4) -->
+          <div class="col-span-12 lg:col-span-8 flex flex-col justify-between min-h-0 h-full gap-2">
+            
+            <!-- Barra de Título do Vídeo -->
+            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">SHOW AO VIVO</span>
+              </div>
+            </div>
+
+            <!-- Player 16:9 Nativo Clean sem logos de terceiros -->
+            <div class="flex-1 min-h-0 flex items-center justify-center">
+              <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 370px) * (16 / 9));">
+                <video 
+                  class="w-full h-full object-cover" 
+                  controls 
+                  playsinline 
+                  preload="metadata">
+                  <source src="../assets/EDSON%20SHOW%20CURTO.mp4" type="video/mp4">
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUNA DIREITA: Alinhada com a altura do player (3 Formatos de Show) -->
+          <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
+            <div id="formatsWrapper" class="w-full flex flex-col justify-between py-0.5">
+              
+              <!-- Título da Seção -->
+              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40 shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+              </div>
+
+              <!-- Formato 1: Trio -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-1">
+                <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
+                <p class="font-body text-xs text-on-surface font-medium leading-snug">Voz &amp; Guitarra, Baixo e Bateria</p>
+                <div class="pt-1 flex items-baseline gap-1.5 border-t border-surface-variant/40 mt-1">
+                  <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                  <span class="font-body text-xs text-on-surface font-medium leading-none">Clássicos do pop rock nacional</span>
+                </div>
+              </div>
+
+              <!-- Formato 2: Especial Raul Seixas (Trio) -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-1">
+                <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold block">Especial Raul Seixas (Trio)</span>
+                <p class="font-body text-xs text-on-surface font-medium leading-snug">Voz &amp; Guitarra, Baixo e Bateria</p>
+                <div class="pt-1 flex items-baseline gap-1.5 border-t border-surface-variant/40 mt-1">
+                  <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                  <span class="font-body text-xs text-on-surface font-medium leading-none">Raul Seixas</span>
+                </div>
+              </div>
+
+              <!-- Formato 3: Especial Raul Seixas (4 Integrantes) -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-1">
+                <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold block">Especial Raul Seixas (4 Integrantes)</span>
+                <p class="font-body text-xs text-on-surface font-medium leading-snug">Voz &amp; Guitarra, Baixo, Teclado e Bateria</p>
+                <div class="pt-1 flex items-baseline gap-1.5 border-t border-surface-variant/40 mt-1">
+                  <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                  <span class="font-body text-xs text-on-surface font-medium leading-none">Raul Seixas</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER BAR -->
+  <footer class="w-full pt-3 flex items-center justify-between text-outline font-label text-xs uppercase tracking-wider border-t border-surface-variant/35 shrink-0">
+    <span>Gaiola Records © 2026</span>
+    <a href="mailto:recordsgaiola@gmail.com" class="text-primary font-medium hover:underline">recordsgaiola@gmail.com</a>
+  </footer>
+
+  <!-- Script para sincronização de altura e revezamento Reels -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sincronizar altura exata do bloco de formatos com o clipe
+      const videoContainer = document.getElementById('videoContainer');
+      const formatsWrapper = document.getElementById('formatsWrapper');
+
+      function syncHeight() {
+        if (videoContainer && formatsWrapper && window.innerWidth >= 1024) {
+          const videoHeight = videoContainer.getBoundingClientRect().height;
+          if (videoHeight > 0) {
+            formatsWrapper.style.height = `${videoHeight + 32}px`;
+          }
+        } else if (formatsWrapper) {
+          formatsWrapper.style.height = 'auto';
+        }
+      }
+
+      window.addEventListener('resize', syncHeight);
+      setTimeout(syncHeight, 150);
+      setTimeout(syncHeight, 450);
+
+      // Revezamento Reels (Vídeo <-> Foto)
+      const video = document.getElementById('artistVideo');
+      const photo = document.getElementById('artistPhoto');
+
+      let videoDuration = 10;
+
+      video.addEventListener('loadedmetadata', () => {
+        if (video.duration && !isNaN(video.duration)) {
+          videoDuration = video.duration;
+        }
+      });
+
+      video.addEventListener('ended', () => {
+        showPhoto();
+      });
+
+      function showPhoto() {
+        video.classList.replace('opacity-100', 'opacity-0');
+        photo.classList.replace('opacity-0', 'opacity-100');
+
+        setTimeout(() => {
+          showVideo();
+        }, (videoDuration || 10) * 1000);
+      }
+
+      function showVideo() {
+        photo.classList.replace('opacity-100', 'opacity-0');
+        video.classList.replace('opacity-0', 'opacity-100');
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    });
+  </script>
+</body>
+</html>
