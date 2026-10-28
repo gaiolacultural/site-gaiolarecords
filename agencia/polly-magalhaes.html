@@ -78,11 +78,28 @@
 
   <!-- MAIN AREA (2 COLUMNS: ~38% / ~62%) -->
   <main class="flex-1 grid grid-cols-12 gap-6 py-4.5 min-h-0 items-stretch overflow-hidden">
-    <!-- LEFT COLUMN: Artist Portrait + Social Icons Card (~38%) -->
+    <!-- LEFT COLUMN: Artist Portrait / Video Reel Card (~38%) -->
     <div class="col-span-12 md:col-span-5 lg:col-span-5 xl:col-span-4 h-full flex flex-col justify-between bg-surface-container-low/80 rounded-2xl p-4 ring-1 ring-white/5 min-h-0">
-      <div class="relative flex-1 min-h-0 rounded-xl overflow-hidden bg-surface-container shadow-2xl ring-1 ring-white/5">
-        <img alt="Polly Magalhães" class="w-full h-full object-cover object-[65%_center] scale-110" src="../assets/polly-magalhaes.jpeg">
+      <div class="relative flex-1 min-h-0 rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/5 flex items-center justify-center">
+        <!-- Vídeo Reels -->
+        <video id="pollyVideo" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 z-10" playsinline muted autoplay preload="auto">
+          <source src="../assets/Polly-1-inicial.mp4" type="video/mp4">
+        </video>
+
+        <!-- Foto Reels -->
+        <img id="pollyPhoto" alt="Polly Magalhães" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 z-10" src="../assets/Polly-1-inicial.jpg">
+
+        <!-- Gradiente sutil inferior -->
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none z-20"></div>
+
+        <!-- Indicador de formato Reels / Status -->
+        <div class="absolute top-3 left-3 z-30 flex items-center gap-2 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full border border-white/10 text-[10px] font-label text-outline uppercase tracking-wider">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span id="reelsIndicatorText">REEL • VÍDEO</span>
+        </div>
       </div>
+
+      <!-- Redes Sociais -->
       <div class="pt-3 shrink-0 flex items-center justify-between border-t border-surface-variant/35 mt-3 px-1">
         <span class="font-label text-xs uppercase tracking-widest text-outline">Redes Oficiais</span>
         <div class="flex items-center gap-2">
@@ -92,7 +109,7 @@
           <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="https://open.spotify.com/artist/4XgN0F0XgC8J04f0V4z5iW" target="_blank" title="Spotify">
             <span class="material-symbols-outlined text-[17px]">graphic_eq</span>
           </a>
-          <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="https://youtube.com" target="_blank" title="YouTube">
+          <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="https://www.youtube.com/@pollymagalhaes" target="_blank" title="YouTube">
             <span class="material-symbols-outlined text-[17px]">smart_display</span>
           </a>
           <a class="w-8 h-8 rounded-lg bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface flex items-center justify-center transition-all duration-200" href="../polly-magalhaes.html" target="_blank" title="Site Oficial Completo">
@@ -103,73 +120,64 @@
     </div>
 
     <!-- RIGHT COLUMN: Bio + Format/Repertoire + Video (~62%) -->
-    <div class="col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-8 h-full flex flex-col justify-between gap-4 min-h-0">
+    <div class="col-span-12 md:col-span-7 lg:col-span-7 xl:col-span-8 h-full flex flex-col justify-between gap-3.5 min-h-0">
       <!-- UPPER SECTION: Informações escritas -->
-      <div class="bg-surface-container-low/80 rounded-2xl p-4 lg:p-5 ring-1 ring-white/5 flex flex-col gap-2.5 shrink-0">
+      <div class="bg-surface-container-low/80 rounded-2xl p-4 lg:p-5 ring-1 ring-white/5 flex flex-col gap-2 shrink-0">
         <div class="space-y-0.5">
-          <span class="font-label text-[11px] uppercase tracking-[0.16em] text-primary font-semibold block">Pop • Rap • Trap</span>
+          <span class="font-label text-[11px] uppercase tracking-[0.16em] text-primary font-semibold block">Rap • Boombap • Trap</span>
           <h1 class="font-headline text-2xl xl:text-3xl text-on-surface tracking-tight uppercase leading-tight font-extrabold">
             Polly <span class="text-primary italic font-normal">Magalhães</span>
           </h1>
         </div>
-        <p class="font-body text-xs leading-relaxed text-on-surface-variant max-w-3xl">Com mais de uma década de vivência nos palcos, Lucas Venturini apresenta uma identidade sofisticada e vibrante, unindo a força do cancioneiro nacional ao dinamismo de arranjos modernos de alta performance. Sua sonoridade transita com naturalidade entre releituras enérgicas e nuances intimistas, consolidando uma presença magnética que conquista plateias em festivais e conceituadas casas de espetáculo pelo país.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-0.5">
-          <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-            <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Formato de Show</span>
-            <p class="font-body text-xs text-on-surface font-medium leading-snug">TRIO (voz e guitarra, baixo, bateria)</p>
+        <p class="font-body text-xs leading-relaxed text-on-surface-variant max-w-3xl">Polly Magalhães é rapper, poetisa e produtora cultural nascida em Uberaba/MG. Iniciando sua trajetória em 2015, consolidou sua voz no rap nacional com uma obra visceral que transita entre o amor, a saúde mental e as vivências de ser uma mulher preta no Brasil. Com lançamentos marcantes como o EP "Ouro" (2025) e o EP "Tudo Sobre Desamor, Nem Tudo!" (2026), a artista une força lírica e identidade para construir um legado de cura, resistência e verdade.</p>
+
+        <!-- Formatos de Show e Repertório -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 pt-1">
+          <!-- Duo -->
+          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+            <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Duo</span>
+            <p class="font-body text-[11px] text-on-surface font-medium leading-snug">Ela e DJ</p>
           </div>
-          <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-tertiary space-y-0.5">
+          <!-- Trio -->
+          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+            <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
+            <p class="font-body text-[11px] text-on-surface font-medium leading-snug">Ela, DJ e Backing Vocal</p>
+          </div>
+          <!-- Completo -->
+          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+            <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Completo (5 Pessoas)</span>
+            <p class="font-body text-[11px] text-on-surface font-medium leading-snug">Ela, DJ, Backing Vocal e 2 Dançarinas</p>
+          </div>
+          <!-- Repertório -->
+          <div class="p-2 bg-surface-container/90 rounded-xl border-l-2 border-tertiary space-y-0.5">
             <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold block">Repertório</span>
-            <p class="font-body text-xs text-on-surface font-medium leading-snug">Raul Seixas, Lulu Santos, Legião Urbana e afins.</p>
+            <p class="font-body text-[11px] text-on-surface font-medium leading-snug uppercase tracking-wider">Autoral</p>
           </div>
         </div>
       </div>
 
-      <!-- LOWER SECTION: Vídeo Show ao Vivo (16:9 card) -->
+      <!-- LOWER SECTION: Vídeo Clipe Ouro (16:9 card com iframe do YouTube) -->
       <div class="bg-surface-container-low/80 rounded-2xl p-4 lg:p-5 ring-1 ring-white/5 flex flex-col flex-1 min-h-0 justify-between">
         <div class="flex items-center justify-between border-b border-surface-variant/35 pb-2 mb-2 shrink-0">
           <div class="flex items-center gap-2">
             <span class="material-symbols-outlined text-[#ff0000] text-lg">smart_display</span>
-            <span class="font-headline text-xs lg:text-sm uppercase tracking-widest text-on-surface font-bold">SHOW AO VIVO</span>
+            <span class="font-headline text-xs lg:text-sm uppercase tracking-widest text-on-surface font-bold">VÍDEO CLIPE OURO</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="font-label text-[10px] text-[#ff0000] uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container font-semibold border border-[#ff0000]/30">YOUTUBE HD</span>
-            <span class="font-label text-[10px] text-primary uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container font-medium border border-primary/20">16:9 PROPORTION</span>
+            <span class="font-label text-[10px] text-[#ff0000] uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container font-semibold border border-[#ff0000]/30">YOUTUBE OFICIAL</span>
+            <span class="font-label text-[10px] text-primary uppercase tracking-wider px-2 py-0.5 rounded bg-surface-container font-medium border border-primary/20">16:9 HD</span>
           </div>
         </div>
+
         <div class="flex-1 min-h-0 flex items-center justify-center">
-          <div class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl group cursor-pointer ring-1 ring-white/10" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 340px) * (16 / 9));">
-            <img alt="Show ao Vivo - Polly Magalhães" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmmi7ZuA4ikA1n8ZurxdOVS90PlKMA9MoXXOAKeE8qw_IHtkow3jOTv4yRorDOpdsk4noTgvxSRyNxbQy-s_dXimusltoFLaeYai6egQB4OvrpBHPWOTbBZoDXHhiygrUkrJHVpruc2ObmkscazsAKefd61X7S80HeXIIkdP37bfXz0w7IUtSrvIzX3hnjrSyvJabfuyENKZtNyv1TZVauPCNtrs-YMXigcXxN2kMX">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-black/40 group-hover:from-black/95 transition-all flex items-center justify-center">
-              <div class="w-14 h-10 rounded-xl bg-[#ff0000] text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
-                <span class="material-symbols-outlined text-2xl ml-0.5">play_arrow</span>
-              </div>
-            </div>
-            <div class="absolute top-2.5 inset-x-3 flex items-center justify-between text-white/90 drop-shadow-md">
-              <span class="font-headline text-xs font-semibold tracking-wide truncate">Polly Magalhães — Show Ao Vivo</span>
-              <div class="flex items-center gap-2">
-                <span class="text-[10px] font-label px-1.5 py-0.5 rounded bg-black/60 font-semibold tracking-wider text-red-500">4K 60FPS</span>
-              </div>
-            </div>
-            <div class="absolute bottom-0 inset-x-0 p-2.5 bg-gradient-to-t from-black via-black/80 to-transparent flex flex-col gap-1.5">
-              <div class="w-full h-1 bg-white/25 rounded-full overflow-hidden relative cursor-pointer">
-                <div class="absolute left-0 top-0 bottom-0 w-[42%] bg-[#ff0000]"></div>
-                <div class="absolute left-[42%] top-1/2 -translate-y-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#ff0000] shadow-sm"></div>
-              </div>
-              <div class="flex items-center justify-between text-white/80 font-label text-[10px]">
-                <div class="flex items-center gap-2.5">
-                  <span class="material-symbols-outlined text-sm hover:text-white">play_arrow</span>
-                  <span class="material-symbols-outlined text-sm hover:text-white">volume_up</span>
-                  <span class="tracking-wider">03:24 / 05:48</span>
-                </div>
-                <div class="flex items-center gap-2.5">
-                  <span class="text-primary font-medium tracking-wider hidden sm:inline">• GRAVAÇÃO OFICIAL</span>
-                  <span class="material-symbols-outlined text-sm hover:text-white">subtitles</span>
-                  <span class="material-symbols-outlined text-sm hover:text-white">settings</span>
-                  <span class="material-symbols-outlined text-sm hover:text-white">fullscreen</span>
-                </div>
-              </div>
-            </div>
+          <div class="relative w-full h-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 350px) * (16 / 9));">
+            <iframe 
+              class="w-full h-full border-0" 
+              src="https://www.youtube-nocookie.com/embed/honiVz34344?rel=0&modestbranding=1" 
+              title="Ouro Pras Nega - Polly Magalhães" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
@@ -181,5 +189,46 @@
     <span>Gaiola Records © 2026</span>
     <a href="mailto:recordsgaiola@gmail.com" class="text-primary font-medium hover:underline">recordsgaiola@gmail.com</a>
   </footer>
+
+  <!-- Script para revezamento automático Vídeo <-> Foto Reels -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const video = document.getElementById('pollyVideo');
+      const photo = document.getElementById('pollyPhoto');
+      const indicator = document.getElementById('reelsIndicatorText');
+
+      let videoDuration = 10; // fallback padrão em segundos caso não carregue metadata
+
+      video.addEventListener('loadedmetadata', () => {
+        if (video.duration && !isNaN(video.duration)) {
+          videoDuration = video.duration;
+        }
+      });
+
+      // Quando o vídeo terminar, transiciona para a foto
+      video.addEventListener('ended', () => {
+        showPhoto();
+      });
+
+      function showPhoto() {
+        video.classList.replace('opacity-100', 'opacity-0');
+        photo.classList.replace('opacity-0', 'opacity-100');
+        if (indicator) indicator.textContent = 'REEL • FOTO';
+
+        // Fica na foto pelo mesmo tempo de duração do vídeo
+        setTimeout(() => {
+          showVideo();
+        }, (videoDuration || 10) * 1000);
+      }
+
+      function showVideo() {
+        photo.classList.replace('opacity-100', 'opacity-0');
+        video.classList.replace('opacity-0', 'opacity-100');
+        if (indicator) indicator.textContent = 'REEL • VÍDEO';
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      }
+    });
+  </script>
 </body>
 </html>
