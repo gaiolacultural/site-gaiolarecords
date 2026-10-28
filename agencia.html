@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="web_standard" name="shell-type">
+  <title>Gaiola Records — Agência &amp; Roster</title>
+  <link rel="icon" type="image/png" href="assets/Favicons.png?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;family=Syne:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-lowest": "#0d0e11",
+            "on-error-container": "#ffdad6",
+            "surface-dim": "#121316",
+            "on-error": "#690005",
+            "on-primary-fixed": "#241a00",
+            "on-surface-variant": "#d0c5af",
+            "on-tertiary-fixed-variant": "#594323",
+            "tertiary-fixed": "#ffddb2",
+            "primary-fixed-dim": "#e9c349",
+            "secondary-fixed-dim": "#c6c6c8",
+            "error": "#ffb4ab",
+            "surface-container-low": "#1b1b1f",
+            "tertiary": "#eac99f",
+            "tertiary-container": "#cdae86",
+            "secondary-container": "#454749",
+            "outline-variant": "#4d4635",
+            "on-background": "#e3e2e6",
+            "surface-variant": "#343538",
+            "surface-container": "#1f1f23",
+            "primary-container": "#d4af37",
+            "surface-container-high": "#292a2d",
+            "on-surface": "#e3e2e6",
+            "on-secondary-container": "#b4b5b7",
+            "on-primary": "#3c2f00",
+            "on-tertiary-container": "#574121",
+            "background": "#121316",
+            "on-secondary-fixed-variant": "#454749",
+            "surface-tint": "#e9c349",
+            "on-secondary-fixed": "#1a1c1d",
+            "on-secondary": "#2f3132",
+            "secondary": "#c6c6c8",
+            "on-tertiary": "#402d0f",
+            "surface-bright": "#38393c",
+            "primary-fixed": "#ffe088",
+            "secondary-fixed": "#e2e2e4",
+            "on-tertiary-fixed": "#291800",
+            "inverse-primary": "#735c00",
+            "on-primary-fixed-variant": "#574500",
+            "tertiary-fixed-dim": "#e1c198",
+            "on-primary-container": "#554300",
+            "surface": "#121316",
+            "primary": "#f2ca50",
+            "inverse-surface": "#e3e2e6",
+            "inverse-on-surface": "#303034",
+            "error-container": "#93000a",
+            "surface-container-highest": "#343538",
+            "outline": "#99907c"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          spacing: {
+            "gutter": "1.5rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter-mobile": "1rem",
+            "space-lg": "2rem",
+            "margin": "4rem",
+            "space-xl": "3.5rem",
+            "space-sm": "0.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          fontFamily: {
+            "label-sm": ["Space Grotesk"],
+            "label-lg": ["Space Grotesk"],
+            "label-md": ["Space Grotesk"],
+            "headline-sm": ["Syne"],
+            "body-sm": ["Manrope"],
+            "headline-xl": ["Syne"],
+            "headline-md": ["Syne"],
+            "body-md": ["Manrope"],
+            "body-lg": ["Manrope"],
+            "headline-lg-mobile": ["Syne"],
+            "headline-lg": ["Syne"],
+            "headline-xl-mobile": ["Syne"]
+          },
+          fontSize: {
+            "label-sm": ["10px", { lineHeight: "14px", letterSpacing: "0.1em", fontWeight: "500" }],
+            "label-lg": ["14px", { lineHeight: "20px", letterSpacing: "0.06em", fontWeight: "600" }],
+            "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "headline-sm": ["24px", { lineHeight: "32px", fontWeight: "500" }],
+            "body-sm": ["13px", { lineHeight: "20px", fontWeight: "400" }],
+            "headline-xl": ["64px", { lineHeight: "72px", letterSpacing: "-0.03em", fontWeight: "700" }],
+            "headline-md": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-md": ["15px", { lineHeight: "24px", fontWeight: "400" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "headline-lg-mobile": ["30px", { lineHeight: "36px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "headline-lg": ["44px", { lineHeight: "52px", letterSpacing: "-0.02em", fontWeight: "600" }],
+            "headline-xl-mobile": ["38px", { lineHeight: "44px", letterSpacing: "-0.02em", fontWeight: "700" }]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased h-screen overflow-hidden flex flex-col">
+  <main class="flex-1 flex flex-col w-full h-screen overflow-hidden px-8 py-5 justify-between">
+    <!-- Header -->
+    <header class="flex items-center justify-between w-full pb-3 border-b border-surface-variant/40">
+      <div class="flex items-center gap-3">
+        <img alt="Gaiola Records Logo" class="h-10 w-auto object-contain brightness-125" src="assets/logo-gaiola-records.png">
+        <div class="flex items-center gap-2">
+          <span class="font-headline-sm text-xl uppercase tracking-widest text-on-surface font-bold">GAIOLA <span class="text-primary">RECORDS</span></span>
+          <span class="text-xs text-outline uppercase tracking-widest font-label-sm border-l border-surface-variant/60 pl-3 ml-1 hidden sm:inline-block">Casting Oficial</span>
+        </div>
+      </div>
+      <div class="flex items-center gap-6 font-label-sm text-xs tracking-wider uppercase text-outline">
+        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span> 6 Artistas</span>
+        <span>Booking 2026/2027</span>
+      </div>
+    </header>
+
+    <!-- Roster Grid -->
+    <section class="flex-1 grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4 py-4 w-full h-full min-h-0">
+      <!-- 1. DIEGO CHORÃO -->
+      <a href="diego-chorao.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+        <div class="relative flex-1 w-full h-full overflow-hidden">
+          <img alt="Diego Chorão" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="assets/diego-chorao.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Diego Chorão</h2>
+            <p class="font-label-sm text-sm uppercase tracking-wider text-primary font-medium mt-1">Samba Rock • Rap</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 2. EDSON SANTANA -->
+      <a href="edson-santana.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+        <div class="relative flex-1 w-full h-full overflow-hidden">
+          <img alt="Edson Santana" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="assets/edson-santana.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Edson Santana</h2>
+            <p class="font-label-sm text-sm uppercase tracking-wider text-primary font-medium mt-1">MPB • Regional</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 3. JOÃO PELEGRINI -->
+      <div class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5">
+        <div class="relative flex-1 w-full h-full overflow-hidden">
+          <img alt="João Pelegrini" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="assets/joao-pelegrini.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">João Pelegrini</h2>
+            <p class="font-label-sm text-sm uppercase tracking-wider text-primary font-medium mt-1">Música Instrumental</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. MARIANA RIBEIRO -->
+      <div class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5">
+        <div class="relative flex-1 w-full h-full overflow-hidden">
+          <img alt="Mariana Ribeiro" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="assets/mariana-ribeiro.png">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Mariana Ribeiro</h2>
+            <p class="font-label-sm text-sm uppercase tracking-wider text-primary font-medium mt-1">Pop • MPB</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. POLLY MAGALHÃES -->
+      <a href="polly-magalhaes.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+        <div class="relative flex-1 w-full h-full overflow-hidden">
+          <img alt="Polly Magalhães" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="assets/polly-magalhaes.jpeg">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Polly Magalhães</h2>
+            <p class="font-label-sm text-sm uppercase tracking-wider text-primary font-medium mt-1">Trap • Funk • Hip-Hop</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- 6. SURICATOS -->
+      <a href="suricatos.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+        <div class="relative flex-1 w-full h-full overflow-hidden">
+          <img alt="Suricatos" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="assets/suricatos.jpg">
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Suricatos</h2>
+            <p class="font-label-sm text-sm uppercase tracking-wider text-primary font-medium mt-1">Rock • Alternativo</p>
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full pt-2 flex items-center justify-between text-outline font-label-sm text-xs uppercase tracking-wider border-t border-surface-variant/30">
+      <span>Gaiola Records © 2026</span>
+      <a href="mailto:recordsgaiola@gmail.com" class="text-primary hover:underline">recordsgaiola@gmail.com</a>
+    </footer>
+  </main>
+</body>
+</html>
