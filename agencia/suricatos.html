@@ -165,7 +165,9 @@
             <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span id="videoTitleLabel" class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO • DUO</span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
+                <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
+                <span id="videoTitleMode" class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">DUO</span>
               </div>
 
               <!-- Alternador DUO / BANDA -->
@@ -256,19 +258,19 @@
     const videos = {
       duo: {
         url: "https://www.youtube-nocookie.com/embed/JA3oRX74h9o?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white",
-        title: "VÍDEO AO VIVO • DUO",
+        modeLabel: "DUO",
         frameTitle: "SuriSession - Especial Djavan (Duo)"
       },
       banda: {
         url: "https://www.youtube-nocookie.com/embed/PnBNyd0_NFU?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white",
-        title: "VÍDEO AO VIVO • BANDA COMPLETA",
+        modeLabel: "BANDA COMPLETA",
         frameTitle: "Passarinhos (Live Session) - Banda Suricatos"
       }
     };
 
     function setVideoMode(mode) {
       const iframe = document.getElementById('suricatosIframe');
-      const titleLabel = document.getElementById('videoTitleLabel');
+      const titleMode = document.getElementById('videoTitleMode');
       const btnDuo = document.getElementById('btnDuo');
       const btnBanda = document.getElementById('btnBanda');
 
@@ -276,7 +278,7 @@
 
       iframe.src = videos[mode].url;
       iframe.title = videos[mode].frameTitle;
-      titleLabel.textContent = videos[mode].title;
+      if (titleMode) titleMode.textContent = videos[mode].modeLabel;
 
       if (mode === 'duo') {
         btnDuo.className = "px-3 py-1 rounded-md font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm";
