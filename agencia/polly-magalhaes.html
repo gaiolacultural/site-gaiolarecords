@@ -145,21 +145,21 @@
         </a>
       </div>
 
-      <!-- PARTE INFERIOR: Dividida em 2 (Meio: Minibio + Vídeo 1920x1080 | Direita: Formatos e Repertório alinhados ao topo do vídeo) -->
-      <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
+      <!-- PARTE INFERIOR: Dividida em Minibio (full width) + Área inferior (Vídeo 1920x1080 + Formatos de Show alinhados) -->
+      <div class="flex-1 flex flex-col justify-between gap-3 min-h-0">
         
-        <!-- COLUNA MEIO (Minibio + Vídeo YouTube Clean 1920x1080) -->
-        <div class="col-span-12 lg:col-span-8 flex flex-col justify-between gap-3 min-h-0 h-full">
-          <!-- Minibio -->
-          <div class="shrink-0">
-            <p class="font-body text-xs leading-relaxed text-on-surface-variant">
-              Polly Magalhães é rapper, poetisa e produtora cultural nascida em Uberaba/MG. Iniciando sua trajetória em 2015, consolidou sua voz no rap nacional com uma obra visceral que transita entre o amor, a saúde mental e as vivências de ser uma mulher preta no Brasil. Com lançamentos marcantes como o EP "Ouro" (2025) e o EP "Tudo Sobre Desamor, Nem Tudo!" (2026), a artista une força lírica e identidade para construir um legado de cura, resistência e verdade.
-            </p>
-          </div>
+        <!-- Minibio: se estende por toda a largura horizontal e com fonte maior -->
+        <div class="shrink-0 w-full">
+          <p class="font-body text-[13.5px] lg:text-[14px] leading-relaxed text-on-surface-variant font-normal">
+            Polly Magalhães é rapper, poetisa e produtora cultural nascida em Uberaba/MG. Iniciando sua trajetória em 2015, consolidou sua voz no rap nacional com uma obra visceral que transita entre o amor, a saúde mental e as vivências de ser uma mulher preta no Brasil. Com lançamentos marcantes como o EP "Ouro" (2025) e o EP "Tudo Sobre Desamor, Nem Tudo!" (2026), a artista une força lírica e identidade para construir um legado de cura, resistência e verdade.
+          </p>
+        </div>
 
-          <!-- Vídeo YouTube 16:9 (1920x1080) Clean Player -->
-          <div class="flex-1 min-h-0 flex items-center justify-center">
-            <div class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 330px) * (16 / 9));">
+        <!-- Linha do Vídeo e Formatos de Show -->
+        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
+          <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 (1920x1080) Clean Player -->
+          <div class="col-span-12 lg:col-span-8 flex items-center justify-center min-h-0 h-full">
+            <div class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 350px) * (16 / 9));">
               <iframe 
                 class="w-full h-full border-0" 
                 src="https://www.youtube-nocookie.com/embed/honiVz34344?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
@@ -169,39 +169,39 @@
               </iframe>
             </div>
           </div>
-        </div>
 
-        <!-- COLUNA DIREITA: Alinhada exatamente onde começa o vídeo -->
-        <div class="col-span-12 lg:col-span-4 flex flex-col justify-end h-full min-h-0">
-          <div class="flex flex-col gap-2">
-            <!-- Título da Seção -->
-            <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-              <span class="font-label text-[11px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
-            </div>
+          <!-- COLUNA DIREITA: Alinhada exatamente com a altura do vídeo -->
+          <div class="col-span-12 lg:col-span-4 flex flex-col justify-between h-full min-h-0">
+            <div class="flex flex-col gap-2">
+              <!-- Título da Seção -->
+              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-[11px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+              </div>
 
-            <!-- Duo -->
-            <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-              <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Duo</span>
-              <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly e DJ</p>
-            </div>
-            
-            <!-- Trio -->
-            <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-              <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
-              <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ e Backing Vocal</p>
-            </div>
-            
-            <!-- Completo -->
-            <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-              <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Completo (5 Pessoas)</span>
-              <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ, Backing Vocal e 2 Dançarinas</p>
-            </div>
-            
-            <!-- Repertório em linha (em frente) -->
-            <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-tertiary flex items-center justify-between gap-2">
-              <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
-              <span class="font-body text-xs text-on-surface font-medium leading-snug uppercase tracking-wider text-right">Autoral e Não Autoral</span>
+              <!-- Duo -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+                <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Duo</span>
+                <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly e DJ</p>
+              </div>
+              
+              <!-- Trio -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+                <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
+                <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ e Backing Vocal</p>
+              </div>
+              
+              <!-- Completo -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
+                <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Completo (5 Pessoas)</span>
+                <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ, Backing Vocal e 2 Dançarinas</p>
+              </div>
+              
+              <!-- Repertório em linha (em frente) -->
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-tertiary flex items-center justify-between gap-2">
+                <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                <span class="font-body text-xs text-on-surface font-medium leading-snug uppercase tracking-wider text-right">Autoral e Não Autoral</span>
+              </div>
             </div>
           </div>
         </div>
