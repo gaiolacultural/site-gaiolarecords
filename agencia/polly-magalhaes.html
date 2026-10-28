@@ -159,7 +159,7 @@
         <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
           <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 (1920x1080) Clean Player -->
           <div class="col-span-12 lg:col-span-8 flex items-center justify-center min-h-0 h-full">
-            <div class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 350px) * (16 / 9));">
+            <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 350px) * (16 / 9));">
               <iframe 
                 class="w-full h-full border-0" 
                 src="https://www.youtube-nocookie.com/embed/honiVz34344?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
@@ -171,36 +171,36 @@
           </div>
 
           <!-- COLUNA DIREITA: Alinhada exatamente com a altura do vídeo -->
-          <div class="col-span-12 lg:col-span-4 flex flex-col justify-between h-full min-h-0">
-            <div class="flex flex-col gap-2">
-              <!-- Título da Seção -->
-              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40">
+          <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
+            <div id="formatsWrapper" class="w-full flex flex-col justify-between py-0.5">
+              <!-- Título da Seção (Inicia exatamente no topo do vídeo) -->
+              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40 shrink-0">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span class="font-label text-[11px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
               </div>
 
               <!-- Duo -->
               <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-                <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Duo</span>
-                <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly e DJ</p>
+                <span class="font-label text-[11px] text-primary uppercase tracking-wider font-semibold block">Show Duo</span>
+                <p class="font-body text-sm text-on-surface font-medium leading-snug">Polly e DJ</p>
               </div>
               
               <!-- Trio -->
               <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-                <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
-                <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ e Backing Vocal</p>
+                <span class="font-label text-[11px] text-primary uppercase tracking-wider font-semibold block">Show Trio</span>
+                <p class="font-body text-sm text-on-surface font-medium leading-snug">Polly, DJ e Backing Vocal</p>
               </div>
               
               <!-- Completo -->
               <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-primary space-y-0.5">
-                <span class="font-label text-[10px] text-primary uppercase tracking-wider font-semibold block">Show Completo (5 Pessoas)</span>
-                <p class="font-body text-xs text-on-surface font-medium leading-snug">Polly, DJ, Backing Vocal e 2 Dançarinas</p>
+                <span class="font-label text-[11px] text-primary uppercase tracking-wider font-semibold block">Show Completo (5 Pessoas)</span>
+                <p class="font-body text-sm text-on-surface font-medium leading-snug">Polly, DJ, Backing Vocal e 2 Dançarinas</p>
               </div>
               
               <!-- Repertório em linha (em frente) -->
-              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-tertiary flex items-center justify-between gap-2">
-                <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
-                <span class="font-body text-xs text-on-surface font-medium leading-snug uppercase tracking-wider text-right">Autoral e Não Autoral</span>
+              <div class="p-2.5 bg-surface-container/90 rounded-xl border-l-2 border-tertiary flex items-center justify-between gap-2 shrink-0">
+                <span class="font-label text-[11px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                <span class="font-body text-sm text-on-surface font-semibold leading-snug uppercase tracking-wider text-right">Autoral</span>
               </div>
             </div>
           </div>
@@ -216,9 +216,29 @@
     <a href="mailto:recordsgaiola@gmail.com" class="text-primary font-medium hover:underline">recordsgaiola@gmail.com</a>
   </footer>
 
-  <!-- Script para revezamento automático Vídeo <-> Foto Reels -->
+  <!-- Script para sincronização de altura e revezamento automático Vídeo <-> Foto Reels -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
+      // 1. Sincronizar altura exata do bloco de formatos com o clipe
+      const videoContainer = document.getElementById('videoContainer');
+      const formatsWrapper = document.getElementById('formatsWrapper');
+
+      function syncHeight() {
+        if (videoContainer && formatsWrapper && window.innerWidth >= 1024) {
+          const videoHeight = videoContainer.getBoundingClientRect().height;
+          if (videoHeight > 0) {
+            formatsWrapper.style.height = `${videoHeight}px`;
+          }
+        } else if (formatsWrapper) {
+          formatsWrapper.style.height = 'auto';
+        }
+      }
+
+      window.addEventListener('resize', syncHeight);
+      setTimeout(syncHeight, 100);
+      setTimeout(syncHeight, 400);
+
+      // 2. Revezamento Reels
       const video = document.getElementById('pollyVideo');
       const photo = document.getElementById('pollyPhoto');
 
