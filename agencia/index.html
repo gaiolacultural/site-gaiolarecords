@@ -137,101 +137,101 @@
   </script>
 </head>
 <body class="bg-surface font-body-md text-on-surface antialiased h-screen overflow-hidden flex flex-col">
-  <main class="flex-1 flex flex-col w-full h-screen overflow-hidden px-8 py-5 justify-between">
+  <main class="flex-1 flex flex-col w-full h-screen overflow-hidden px-3 sm:px-8 py-3 sm:py-5 justify-between">
     <!-- Header -->
-    <header class="flex items-center justify-between w-full pb-3 border-b border-surface-variant/40">
-      <div class="flex items-center gap-3">
-        <img alt="Gaiola Records Logo" class="h-10 w-auto object-contain brightness-125" src="../assets/logo-gaiola-records.png">
-        <div class="flex items-center gap-2">
-          <span class="font-headline-sm text-xl uppercase tracking-widest text-on-surface font-bold">GAIOLA <span class="text-primary">RECORDS</span></span>
+    <header class="flex items-center justify-between w-full pb-2 sm:pb-3 border-b border-surface-variant/40 shrink-0">
+      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
+        <img alt="Gaiola Records Logo" class="h-6 sm:h-10 w-auto object-contain brightness-125 shrink-0" src="../assets/logo-gaiola-records.png">
+        <div class="flex items-center gap-1.5 sm:gap-2 min-w-0">
+          <span class="font-headline-sm text-sm sm:text-xl uppercase tracking-wider sm:tracking-widest text-on-surface font-bold whitespace-nowrap">GAIOLA <span class="text-primary">RECORDS</span></span>
           <span class="text-xs text-outline uppercase tracking-widest font-label-sm border-l border-surface-variant/60 pl-3 ml-1 hidden sm:inline-block">Casting Oficial</span>
         </div>
       </div>
-      <div class="flex items-center gap-6 font-label-sm text-xs tracking-wider uppercase text-outline">
-        <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span> 6 Artistas</span>
-        <span>Booking 2026/2027</span>
+      <div class="flex items-center gap-3 sm:gap-6 font-label-sm text-[10px] sm:text-xs tracking-wider uppercase text-outline shrink-0">
+        <span class="hidden sm:flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span> 6 Artistas</span>
+        <span class="whitespace-nowrap">Booking 2026/2027</span>
       </div>
     </header>
 
-    <!-- Roster Grid -->
-    <section class="flex-1 grid grid-cols-2 md:grid-cols-3 grid-rows-2 gap-4 py-4 w-full h-full min-h-0">
+    <!-- Roster Grid (Sem rolagem no celular e desktop) -->
+    <section class="flex-1 grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-2 sm:gap-4 py-2 sm:py-4 w-full h-full min-h-0">
       <!-- 1. DIEGO CHORÃO -->
-      <a href="../diego-chorao.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+      <a href="diego-chorao.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
           <img alt="Diego Chorão" class="w-full h-full object-cover object-[center_27%] grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="../assets/diego-chorao.jpg">
-          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
-            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Diego Chorão</h2>
-            <p class="font-label-sm text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-1">Rap • Boombap</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-2 sm:p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-sm sm:text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight truncate">Diego Chorão</h2>
+            <p class="font-label-sm text-[10px] sm:text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-0.5 sm:mt-1 truncate">Rap • Boombap</p>
           </div>
         </div>
       </a>
 
       <!-- 2. EDSON SANTANA -->
-      <a href="edson-santana.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+      <a href="edson-santana.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
           <img alt="Edson Santana" class="w-full h-full object-cover object-[center_21%] scale-115 grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-120 transition-all duration-500" src="../assets/edson-santana.jpg">
-          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
-            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Edson Santana</h2>
-            <p class="font-label-sm text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-1">Rock • Pop Rock</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-2 sm:p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-sm sm:text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight truncate">Edson Santana</h2>
+            <p class="font-label-sm text-[10px] sm:text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-0.5 sm:mt-1 truncate">Rock • Pop Rock</p>
           </div>
         </div>
       </a>
 
       <!-- 3. JOÃO PELEGRINI -->
-      <a href="joao-pelegrini.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+      <a href="joao-pelegrini.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
           <img alt="João Pelegrini" class="w-full h-full object-cover object-[center_27%] grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="../assets/joao-pelegrini.jpg">
-          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
-            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">João Pelegrini</h2>
-            <p class="font-label-sm text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-1">MPB</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-2 sm:p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-sm sm:text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight truncate">João Pelegrini</h2>
+            <p class="font-label-sm text-[10px] sm:text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-0.5 sm:mt-1 truncate">MPB</p>
           </div>
         </div>
       </a>
 
       <!-- 4. MARIANA RIBEIRO -->
-      <a href="mariana-ribeiro.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+      <a href="mariana-ribeiro.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
           <img alt="Mariana Ribeiro" class="w-full h-full object-cover grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500" src="../assets/mariana-ribeiro.png">
-          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
-            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Mariana Ribeiro</h2>
-            <p class="font-label-sm text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-1">MPB</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-2 sm:p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-sm sm:text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight truncate">Mariana Ribeiro</h2>
+            <p class="font-label-sm text-[10px] sm:text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-0.5 sm:mt-1 truncate">MPB</p>
           </div>
         </div>
       </a>
 
       <!-- 5. POLLY MAGALHÃES -->
-      <a href="polly-magalhaes.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+      <a href="polly-magalhaes.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
           <img alt="Polly Magalhães" class="w-full h-full object-cover object-[65%_center] scale-110 grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-115 transition-all duration-500" src="../assets/polly-magalhaes.jpeg">
-          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
-            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Polly Magalhães</h2>
-            <p class="font-label-sm text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-1">Pop • Rap</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-2 sm:p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-sm sm:text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight truncate">Polly Magalhães</h2>
+            <p class="font-label-sm text-[10px] sm:text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-0.5 sm:mt-1 truncate">Pop • Rap</p>
           </div>
         </div>
       </a>
 
       <!-- 6. SURICATOS -->
-      <a href="suricatos.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block">
+      <a href="suricatos.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
           <img alt="Suricatos" class="w-full h-full object-cover object-[center_65%] scale-160 grayscale contrast-125 brightness-95 group-hover:grayscale-0 group-hover:scale-170 transition-all duration-500" src="../assets/suricatos.jpg">
-          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/30 to-transparent"></div>
-          <div class="absolute bottom-0 inset-x-0 p-4 md:p-5 flex flex-col justify-end">
-            <h2 class="font-headline-sm text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight">Suricatos</h2>
-            <p class="font-label-sm text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-1">MPB • Reggae</p>
+          <div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-surface-container-lowest/40 to-transparent"></div>
+          <div class="absolute bottom-0 inset-x-0 p-2 sm:p-4 md:p-5 flex flex-col justify-end">
+            <h2 class="font-headline-sm text-sm sm:text-xl md:text-2xl uppercase text-on-surface font-bold tracking-tight group-hover:text-primary transition-colors leading-tight truncate">Suricatos</h2>
+            <p class="font-label-sm text-[10px] sm:text-sm uppercase tracking-wider text-primary group-hover:text-white transition-colors font-medium mt-0.5 sm:mt-1 truncate">MPB • Reggae</p>
           </div>
         </div>
       </a>
     </section>
 
     <!-- Footer -->
-    <footer class="w-full pt-2 flex items-center justify-between text-outline font-label-sm text-xs uppercase tracking-wider border-t border-surface-variant/30">
-      <span>Gaiola Records © 2026</span>
-      <a href="mailto:recordsgaiola@gmail.com" class="text-primary hover:underline">recordsgaiola@gmail.com</a>
+    <footer class="w-full pt-1.5 sm:pt-2 flex items-center justify-between text-outline font-label-sm text-[10px] sm:text-xs uppercase tracking-wider border-t border-surface-variant/30 shrink-0">
+      <span class="truncate">Gaiola Records © 2026</span>
+      <a href="mailto:recordsgaiola@gmail.com" class="text-primary hover:underline truncate">recordsgaiola@gmail.com</a>
     </footer>
   </main>
 </body>
