@@ -136,25 +136,25 @@
     };
   </script>
 </head>
-<body class="bg-surface font-body-md text-on-surface antialiased h-screen overflow-hidden flex flex-col">
-  <main class="flex-1 flex flex-col w-full h-full overflow-hidden px-2.5 sm:px-8 pt-2 pb-14 sm:py-5 justify-between">
+<body class="bg-surface font-body-md text-on-surface antialiased h-[100dvh] overflow-hidden flex flex-col">
+  <main class="flex-1 flex flex-col w-full h-full min-h-0 overflow-hidden px-2 sm:px-8 pt-1.5 pb-10 sm:py-5 justify-between">
     <!-- Header -->
-    <header class="flex items-center justify-between w-full pb-1.5 sm:pb-3 border-b border-surface-variant/40 shrink-0">
+    <header class="flex items-center justify-between w-full pb-1 sm:pb-3 border-b border-surface-variant/40 shrink-0">
       <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-        <img alt="Gaiola Records Logo" class="h-5 sm:h-10 w-auto object-contain brightness-125 shrink-0" src="assets/logo-gaiola-records.png">
+        <img alt="Gaiola Records Logo" class="h-4 sm:h-10 w-auto object-contain brightness-125 shrink-0" src="assets/logo-gaiola-records.png">
         <div class="flex items-center gap-1.5 sm:gap-2 min-w-0">
-          <span class="font-headline-sm text-xs sm:text-xl uppercase tracking-wider sm:tracking-widest text-on-surface font-bold whitespace-nowrap">GAIOLA <span class="text-primary">RECORDS</span></span>
+          <span class="font-headline-sm text-[11px] sm:text-xl uppercase tracking-wider sm:tracking-widest text-on-surface font-bold whitespace-nowrap">GAIOLA <span class="text-primary">RECORDS</span></span>
           <span class="text-xs text-outline uppercase tracking-widest font-label-sm border-l border-surface-variant/60 pl-3 ml-1 hidden sm:inline-block">Casting Oficial</span>
         </div>
       </div>
-      <div class="flex items-center gap-3 sm:gap-6 font-label-sm text-[10px] sm:text-xs tracking-wider uppercase text-outline shrink-0">
+      <div class="flex items-center gap-3 sm:gap-6 font-label-sm text-[9px] sm:text-xs tracking-wider uppercase text-outline shrink-0">
         <span class="hidden sm:flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-primary"></span> 6 Artistas</span>
         <span class="whitespace-nowrap">Booking 2026/2027</span>
       </div>
     </header>
 
     <!-- Roster Grid (Sem rolagem no celular e desktop) -->
-    <section class="flex-1 grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-1.5 sm:gap-4 py-1.5 sm:py-4 w-full h-full min-h-0">
+    <section class="flex-1 grid grid-cols-2 md:grid-cols-3 grid-rows-3 md:grid-rows-2 gap-1.5 sm:gap-4 py-1 sm:py-4 w-full h-full min-h-0">
       <!-- 1. DIEGO CHORÃO -->
       <a href="agencia/diego-chorao.html" class="group relative rounded-lg overflow-hidden bg-surface-container-low flex flex-col h-full shadow-lg ring-1 ring-white/5 cursor-pointer block min-h-0">
         <div class="relative flex-1 w-full h-full overflow-hidden">
@@ -229,7 +229,7 @@
     </section>
 
     <!-- Footer Fixo Mobile / Normal Desktop no estilo unificado -->
-    <footer class="fixed lg:static bottom-0 inset-x-0 z-40 bg-surface lg:bg-transparent px-4 sm:px-8 py-2.5 lg:pt-2 flex items-center justify-between text-outline font-label-sm text-[10px] sm:text-xs uppercase tracking-wider border-t border-surface-variant/35 shrink-0">
+    <footer class="fixed lg:static bottom-0 inset-x-0 z-40 bg-surface lg:bg-transparent px-4 sm:px-8 py-1.5 lg:pt-2 flex items-center justify-between text-outline font-label-sm text-[9px] sm:text-xs uppercase tracking-wider border-t border-surface-variant/35 shrink-0">
       <span class="truncate">Gaiola Records © 2026</span>
       <a href="mailto:recordsgaiola@gmail.com" class="text-primary hover:underline truncate">recordsgaiola@gmail.com</a>
     </footer>
