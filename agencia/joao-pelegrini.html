@@ -184,55 +184,61 @@
             </div>
           </div>
 
-          <!-- COLUNA DIREITA: Alinhada com a altura do player (3 Formatos de Show) -->
-          <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
-            <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
-              
-              <!-- Título da Seção (Inicia exatamente no topo do vídeo) -->
-              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40 shrink-0">
+          <!-- COLUNA DIREITA: Alinhada com a coluna esquerda (Título no mesmo nível + 3 Formatos de Show alinhados à altura do player) -->
+          <div class="col-span-12 lg:col-span-4 flex flex-col justify-between min-h-0 h-full gap-2">
+            
+            <!-- Barra de Título Formato Show (exatamente na mesma altura da barra de título do vídeo ao lado) -->
+            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
+              <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                 <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
               </div>
+            </div>
 
-              <!-- Formato 1: Solo -->
-              <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
-                <div class="flex items-center justify-between">
-                  <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">FORMATO SOLO</span>
-                  <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">1 Integrante</span>
+            <!-- Wrapper dos 3 Formatos de Show (altura sincronizada exatamente com a altura do player ao lado) -->
+            <div class="flex-1 min-h-0 flex items-center justify-center">
+              <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
+
+                <!-- Formato 1: Solo -->
+                <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">FORMATO SOLO</span>
+                    <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">1 Integrante</span>
+                  </div>
+                  <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Voz &amp; Violão</p>
+                  <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
+                    <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                    <span class="font-body text-xs text-on-surface font-medium leading-none">Djavan, Gilberto Gil e afins</span>
+                  </div>
                 </div>
-                <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Voz &amp; Violão</p>
-                <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
-                  <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
-                  <span class="font-body text-xs text-on-surface font-medium leading-none">Djavan, Gilberto Gil e afins</span>
+
+                <!-- Formato 2: Trio -->
+                <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">FORMATO TRIO</span>
+                    <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">3 Integrantes</span>
+                  </div>
+                  <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Voz &amp; Violão, Baixo e Bateria</p>
+                  <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
+                    <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                    <span class="font-body text-xs text-on-surface font-medium leading-none">Brasilidades, Funk-Soul</span>
+                  </div>
                 </div>
+
+                <!-- Formato 3: Banda Completa -->
+                <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
+                  <div class="flex items-center justify-between">
+                    <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">BANDA COMPLETA</span>
+                    <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">5 Integrantes</span>
+                  </div>
+                  <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Voz &amp; Violão, Guitarra, Baixo, Piano e Bateria</p>
+                  <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
+                    <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
+                    <span class="font-body text-xs text-on-surface font-medium leading-none">Brasilidades, Funk-Soul</span>
+                  </div>
+                </div>
+
               </div>
-
-              <!-- Formato 2: Trio -->
-              <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
-                <div class="flex items-center justify-between">
-                  <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">FORMATO TRIO</span>
-                  <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">3 Integrantes</span>
-                </div>
-                <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Voz &amp; Violão, Baixo e Bateria</p>
-                <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
-                  <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
-                  <span class="font-body text-xs text-on-surface font-medium leading-none">Brasilidades, Funk-Soul</span>
-                </div>
-              </div>
-
-              <!-- Formato 3: Banda Completa -->
-              <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
-                <div class="flex items-center justify-between">
-                  <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">BANDA COMPLETA</span>
-                  <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">5 Integrantes</span>
-                </div>
-                <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Voz &amp; Violão, Guitarra, Baixo, Piano e Bateria</p>
-                <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
-                  <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
-                  <span class="font-body text-xs text-on-surface font-medium leading-none">Brasilidades, Funk-Soul</span>
-                </div>
-              </div>
-
             </div>
           </div>
         </div>
@@ -258,7 +264,7 @@
         if (videoContainer && formatsWrapper && window.innerWidth >= 1024) {
           const videoHeight = videoContainer.getBoundingClientRect().height;
           if (videoHeight > 0) {
-            formatsWrapper.style.height = `${videoHeight + 32}px`;
+            formatsWrapper.style.height = `${videoHeight}px`;
           }
         } else if (formatsWrapper) {
           formatsWrapper.style.height = 'auto';
