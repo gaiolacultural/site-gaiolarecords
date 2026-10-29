@@ -158,28 +158,52 @@
         <!-- Linha do Vídeo e Formatos de Show -->
         <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
           
-          <!-- COLUNA ESQUERDA: Vídeo Nativo 16:9 Clean (EDSON SHOW CURTO.mp4) -->
+          <!-- COLUNA ESQUERDA: Vídeo Alternável (Autoral / Especial Raul) -->
           <div class="col-span-12 lg:col-span-8 flex flex-col justify-between min-h-0 h-full gap-2">
             
-            <!-- Barra de Título do Vídeo -->
-            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
+            <!-- Barra de Título do Vídeo com Alternador à direita (h-[26px] travada) -->
+            <div class="h-[26px] flex items-center justify-between border-b border-surface-variant/40 pb-1 shrink-0">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                 <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
+                <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
+                <span id="videoTitleMode" class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">SHOW AUTORAL</span>
+              </div>
+
+              <!-- Alternador de Vídeo -->
+              <div class="flex items-center bg-surface-container rounded-md p-0.5 border border-white/5 font-label text-[10px] uppercase tracking-wider leading-none">
+                <button id="btnAutoral" onclick="setEdsonVideo('autoral')" class="px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none">
+                  AUTORAL
+                </button>
+                <button id="btnRaul" onclick="setEdsonVideo('raul')" class="px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none">
+                  ESPECIAL RAUL
+                </button>
               </div>
             </div>
 
-            <!-- Player 16:9 Nativo Clean sem logos de terceiros -->
+            <!-- Player 16:9 Alternável (Vídeo Local mp4 <-> YouTube Iframe) -->
             <div class="flex-1 min-h-0 flex items-center justify-center">
               <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 370px) * (16 / 9));">
+                <!-- Vídeo Local (Show Autoral) -->
                 <video 
-                  class="w-full h-full object-cover" 
+                  id="edsonLocalVideo"
+                  class="w-full h-full object-cover block" 
                   controls 
                   playsinline 
                   preload="metadata">
                   <source src="../assets/EDSON%20SHOW%20CURTO.mp4" type="video/mp4">
                   Seu navegador não suporta a tag de vídeo.
                 </video>
+
+                <!-- YouTube Iframe (Especial Raul Seixas) -->
+                <iframe 
+                  id="edsonYoutubeIframe"
+                  class="w-full h-full border-0 hidden" 
+                  src="https://www.youtube-nocookie.com/embed/XVbf1F5hTE4?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
+                  title="SHOW RAUL SEIXAS por EDSON SANTANA - LIVE IN PEIRÓPOLIS" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen>
+                </iframe>
               </div>
             </div>
           </div>
@@ -187,8 +211,8 @@
           <!-- COLUNA DIREITA: Alinhada com a coluna esquerda (Título no mesmo nível + 3 Formatos de Show alinhados à altura do player) -->
           <div class="col-span-12 lg:col-span-4 flex flex-col justify-between min-h-0 h-full gap-2">
             
-            <!-- Barra de Título Formato Show (exatamente na mesma altura da barra de título do vídeo ao lado) -->
-            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
+            <!-- Barra de Título Formato Show (h-[26px] idêntica para alinhamento horizontal perfeito) -->
+            <div class="h-[26px] flex items-center justify-between border-b border-surface-variant/40 pb-1 shrink-0">
               <div class="flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                 <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
@@ -255,6 +279,32 @@
 
   <!-- Script para sincronização de altura e revezamento Reels -->
   <script>
+    // Alternador dos vídeos do Edson Santana (Show Autoral vs Especial Raul)
+    function setEdsonVideo(mode) {
+      const localVideo = document.getElementById('edsonLocalVideo');
+      const youtubeIframe = document.getElementById('edsonYoutubeIframe');
+      const titleMode = document.getElementById('videoTitleMode');
+      const btnAutoral = document.getElementById('btnAutoral');
+      const btnRaul = document.getElementById('btnRaul');
+
+      if (mode === 'autoral') {
+        youtubeIframe.classList.add('hidden');
+        youtubeIframe.src = "about:blank"; // pausa o youtube
+        localVideo.classList.remove('hidden');
+        titleMode.textContent = "SHOW AUTORAL";
+        btnAutoral.className = "px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none";
+        btnRaul.className = "px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none";
+      } else {
+        localVideo.pause();
+        localVideo.classList.add('hidden');
+        youtubeIframe.src = "https://www.youtube-nocookie.com/embed/XVbf1F5hTE4?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white";
+        youtubeIframe.classList.remove('hidden');
+        titleMode.textContent = "ESPECIAL RAUL";
+        btnRaul.className = "px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none";
+        btnAutoral.className = "px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none";
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
       // Sincronizar altura exata do bloco de formatos com o clipe
       const videoContainer = document.getElementById('videoContainer');
