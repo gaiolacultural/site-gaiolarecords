@@ -167,13 +167,13 @@
                 <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
                 <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
                 <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
-                <span id="videoTitleMode" class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">SHOW AUTORAL</span>
+                <span id="videoTitleMode" class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">CLÁSSICOS POP ROCK</span>
               </div>
 
               <!-- Alternador de Vídeo -->
               <div class="flex items-center bg-surface-container rounded-md p-0.5 border border-white/5 font-label text-[10px] uppercase tracking-wider leading-none">
                 <button id="btnAutoral" onclick="setEdsonVideo('autoral')" class="px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none">
-                  AUTORAL
+                  CLÁSSICOS POP ROCK
                 </button>
                 <button id="btnRaul" onclick="setEdsonVideo('raul')" class="px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none">
                   ESPECIAL RAUL
@@ -291,7 +291,7 @@
         youtubeIframe.classList.add('hidden');
         youtubeIframe.src = "about:blank"; // pausa o youtube
         localVideo.classList.remove('hidden');
-        titleMode.textContent = "SHOW AUTORAL";
+        titleMode.textContent = "CLÁSSICOS POP ROCK";
         btnAutoral.className = "px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none";
         btnRaul.className = "px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none";
       } else {
