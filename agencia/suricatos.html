@@ -145,64 +145,66 @@
         </a>
       </div>
 
-      <!-- PARTE INFERIOR: Dividida em Minibio + Linha Contínua Divisória + Área inferior (Vídeos Alternáveis + Formatos de Show) -->
-      <div class="flex-1 flex flex-col min-h-0">
+      <!-- PARTE INFERIOR: Dividida em Minibio (full width) + Área inferior (Vídeos Alternáveis + Formatos de Show) -->
+      <div class="flex-1 flex flex-col justify-between gap-3 min-h-0">
         
-        <!-- Minibio: sem restrição artificial de overflow para garantir que as 5 linhas apareçam 100% legíveis -->
-        <div class="shrink-0 w-full pb-3">
+        <!-- Minibio: se estende por toda a largura horizontal e com fonte harmoniosa -->
+        <div class="shrink-0 w-full">
           <p class="font-body text-[13px] lg:text-[13.5px] leading-relaxed text-on-surface-variant font-normal">
             O projeto SURICATOS é um convite para vivenciar o "Reggae Cerratense", um encontro orgânico entre a essência pacífica do reggae e as raízes da MPB, da Bossa Nova e do Forró. Movidas pela poesia de Enzo Poiani e pela riqueza dos arranjos de João Pelegrini, as canções criam uma atmosfera imersiva de bem-estar, celebrando o amor, as relações humanas e a conexão com a natureza. Essa experiência ganha vida nos palcos por meio de duas formações, Duo e Banda Completa, proporcionando a melhor experiência para cada momento.
           </p>
         </div>
 
-        <!-- LINHA ÚNICA CONTÍNUA: Barra de títulos integrada horizontalmente de ponta a ponta (Base e Margem Fixa) -->
-        <div class="w-full grid grid-cols-12 gap-5 border-b border-surface-variant/40 pb-1.5 shrink-0">
-          <div class="col-span-12 lg:col-span-8 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-              <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
-              <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
-              <span id="videoTitleMode" class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">DUO</span>
-            </div>
-
-            <!-- Alternador DUO / BANDA compacto -->
-            <div class="flex items-center bg-surface-container rounded-md p-0.5 border border-white/5 font-label text-[10px] uppercase tracking-wider leading-none">
-              <button id="btnDuo" onclick="setVideoMode('duo')" class="px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none">
-                DUO
-              </button>
-              <button id="btnBanda" onclick="setVideoMode('banda')" class="px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none">
-                BANDA
-              </button>
-            </div>
-          </div>
-
-          <div class="col-span-12 lg:col-span-4 flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
-          </div>
-        </div>
-
-        <!-- Linha dos Vídeos e Formatos de Show (logo abaixo da linha contínua) -->
-        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch pt-2.5">
+        <!-- Linha dos Vídeos e Formatos de Show -->
+        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
           
-          <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 Clean -->
-          <div class="col-span-12 lg:col-span-8 flex flex-col justify-center min-h-0 h-full">
+          <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 com Alternador DUO / BANDA no canto superior direito -->
+          <div class="col-span-12 lg:col-span-8 flex flex-col justify-between min-h-0 h-full gap-2">
+            
+            <!-- Barra de Seleção: Título do player e Alternador DUO / BANDA à direita -->
+            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
+                <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
+                <span id="videoTitleMode" class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">DUO</span>
+              </div>
+
+              <!-- Alternador DUO / BANDA compacto -->
+              <div class="flex items-center bg-surface-container rounded-md p-0.5 border border-white/5 font-label text-[10px] uppercase tracking-wider leading-none">
+                <button id="btnDuo" onclick="setVideoMode('duo')" class="px-2 py-0.5 rounded font-bold transition-all duration-200 bg-primary text-on-primary shadow-sm leading-none">
+                  DUO
+                </button>
+                <button id="btnBanda" onclick="setVideoMode('banda')" class="px-2 py-0.5 rounded font-semibold transition-all duration-200 text-outline hover:text-white opacity-70 hover:opacity-100 leading-none">
+                  BANDA
+                </button>
+              </div>
+            </div>
+
             <!-- Player 16:9 (1920x1080) Clean -->
-            <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 390px) * (16 / 9));">
-              <iframe 
-                id="suricatosIframe"
-                class="w-full h-full border-0" 
-                src="https://www.youtube-nocookie.com/embed/JA3oRX74h9o?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
-                title="SuriSession - Especial Djavan (Duo)" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                allowfullscreen>
-              </iframe>
+            <div class="flex-1 min-h-0 flex items-center justify-center">
+              <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 370px) * (16 / 9));">
+                <iframe 
+                  id="suricatosIframe"
+                  class="w-full h-full border-0" 
+                  src="https://www.youtube-nocookie.com/embed/JA3oRX74h9o?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
+                  title="SuriSession - Especial Djavan (Duo)" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  allowfullscreen>
+                </iframe>
+              </div>
             </div>
           </div>
 
           <!-- COLUNA DIREITA: Alinhada exatamente com a altura do player -->
           <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
             <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
+              
+              <!-- Título da Seção (Inicia exatamente no topo do vídeo) -->
+              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40 shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+              </div>
 
               <!-- Formato Duo -->
               <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">

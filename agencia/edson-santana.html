@@ -145,49 +145,54 @@
         </a>
       </div>
 
-      <!-- PARTE INFERIOR: Dividida em Minibio + Linha Contínua Divisória + Área inferior (Vídeo 16:9 + Formatos de Show) -->
-      <div class="flex-1 flex flex-col min-h-0">
+      <!-- PARTE INFERIOR: Dividida em Minibio (full width) + Área inferior (Vídeo 16:9 + Formatos de Show alinhados) -->
+      <div class="flex-1 flex flex-col justify-between gap-3 min-h-0">
         
-        <!-- Minibio: sem restrição artificial de overflow para garantir que a 5ª linha apareça 100% legível com respiro -->
-        <div class="shrink-0 w-full pb-3">
+        <!-- Minibio: 4 linhas limpas com respiro -->
+        <div class="shrink-0 w-full">
           <p class="font-body text-[13px] lg:text-[13.5px] leading-relaxed text-on-surface-variant font-normal">
-            Com mais de 20 anos de estrada, o cantor e compositor Edson Santana apresenta uma trajetória marcada por passagens por festas, casas noturnas e grandes públicos, unindo canções autorais consagradas nas plataformas digitais e releituras vibrantes de clássicos do rock e pop. Atualmente, o artista está circulando com dois formatos de shows diferentes para os palcos: o show "Clássicos do Rock", que mistura seus sucessos autorais com hinos do rock nacional e do pop, e o "Especial Raul Seixas", um tributo dedicado à obra do "Maluco Beleza", celebrando toda a bagagem de quem foi cover da lenda por 15 anos.
+            Com mais de 20 anos de estrada, o cantor e compositor Edson Santana apresenta uma trajetória marcada por passagens por festas, casas noturnas e grandes públicos, unindo canções autorais consagradas nas plataformas digitais e releituras vibrantes de clássicos do rock e pop. Atualmente, o artista está circulando com dois formatos de shows diferentes para os palcos: o show "Clássicos do Rock", que mistura seus sucessos autorais com hinos do rock nacional e do pop, e o "Especial Raul Seixas", um tributo dedicado à obra do "Maluco Beleza".
           </p>
         </div>
 
-        <!-- LINHA ÚNICA CONTÍNUA: Barra de títulos integrada horizontalmente de ponta a ponta (Base e Margem Fixa) -->
-        <div class="w-full grid grid-cols-12 gap-5 border-b border-surface-variant/40 pb-1.5 shrink-0">
-          <div class="col-span-12 lg:col-span-8 flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
-          </div>
-          <div class="col-span-12 lg:col-span-4 flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
-          </div>
-        </div>
-
-        <!-- Linha do Vídeo e Formatos de Show (logo abaixo da linha contínua) -->
-        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch pt-2.5">
+        <!-- Linha do Vídeo e Formatos de Show -->
+        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
           
           <!-- COLUNA ESQUERDA: Vídeo Nativo 16:9 Clean (EDSON SHOW CURTO.mp4) -->
-          <div class="col-span-12 lg:col-span-8 flex flex-col justify-center min-h-0 h-full">
+          <div class="col-span-12 lg:col-span-8 flex flex-col justify-between min-h-0 h-full gap-2">
+            
+            <!-- Barra de Título do Vídeo -->
+            <div class="flex items-center justify-between pb-1 border-b border-surface-variant/40 shrink-0">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
+              </div>
+            </div>
+
             <!-- Player 16:9 Nativo Clean sem logos de terceiros -->
-            <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 390px) * (16 / 9));">
-              <video 
-                class="w-full h-full object-cover" 
-                controls 
-                playsinline 
-                preload="metadata">
-                <source src="../assets/EDSON%20SHOW%20CURTO.mp4" type="video/mp4">
-                Seu navegador não suporta a tag de vídeo.
-              </video>
+            <div class="flex-1 min-h-0 flex items-center justify-center">
+              <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 370px) * (16 / 9));">
+                <video 
+                  class="w-full h-full object-cover" 
+                  controls 
+                  playsinline 
+                  preload="metadata">
+                  <source src="../assets/EDSON%20SHOW%20CURTO.mp4" type="video/mp4">
+                  Seu navegador não suporta a tag de vídeo.
+                </video>
+              </div>
             </div>
           </div>
 
-          <!-- COLUNA DIREITA: Alinhada com a altura do player (3 Formatos de Show) -->
+          <!-- COLUNA DIREITA: Alinhada exatamente com a altura do player (3 Formatos de Show) -->
           <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
             <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
+              
+              <!-- Título da Seção (Inicia exatamente no topo do vídeo) -->
+              <div class="flex items-center gap-2 pb-1 border-b border-surface-variant/40 shrink-0">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+              </div>
 
               <!-- Formato 1: Clássicos Pop Rock -->
               <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
