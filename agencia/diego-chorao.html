@@ -201,12 +201,12 @@
             </div>
           </div>
 
-          <!-- Wrapper do Formato alinhado ao topo com a mesma altura de 1 card caso houvesse 3 -->
-          <div class="flex-1 min-h-0 flex items-start justify-center">
+          <!-- Wrapper alinhado ao topo, mantendo o grid de 3 slots idêntico às outras páginas -->
+          <div class="flex-1 min-h-0 flex items-center justify-center">
             <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
 
-              <!-- Formato: Banda Completa (mesma proporção/altura individual de 1/3 do clipe) -->
-              <div id="singleFormatCard" class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex flex-col justify-between">
+              <!-- Formato: Banda Completa (ocupa 1/3 exato igual a cada formato das outras páginas) -->
+              <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
                 <div class="flex items-center justify-between">
                   <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">BANDA COMPLETA</span>
                   <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">3 Integrantes</span>
@@ -217,6 +217,12 @@
                   <span class="font-body text-xs text-on-surface font-medium leading-none">Autoral</span>
                 </div>
               </div>
+
+              <!-- Espaço invisível de reserva 1 (para manter exatamente 1/3 da altura no desktop) -->
+              <div class="hidden lg:flex flex-1 pointer-events-none opacity-0 select-none"></div>
+
+              <!-- Espaço invisível de reserva 2 (para manter exatamente 1/3 da altura no desktop) -->
+              <div class="hidden lg:flex flex-1 pointer-events-none opacity-0 select-none"></div>
 
             </div>
           </div>
@@ -243,20 +249,18 @@
   <!-- Script para sincronização de altura e revezamento Reels -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      // 1. Sincronizar altura de 1 card correspondente a 1/3 do clipe (como se houvesse 3 caixas)
+      // 1. Sincronizar altura exata do bloco de formatos com o clipe
       const videoContainer = document.getElementById('videoContainer');
-      const singleCard = document.getElementById('singleFormatCard');
+      const formatsWrapper = document.getElementById('formatsWrapper');
 
       function syncHeight() {
-        if (videoContainer && singleCard && window.innerWidth >= 1024) {
+        if (videoContainer && formatsWrapper && window.innerWidth >= 1024) {
           const videoHeight = videoContainer.getBoundingClientRect().height;
           if (videoHeight > 0) {
-            // Se tivessem 3 cards com 2 gaps de 8px (16px no total):
-            const oneThirdHeight = (videoHeight - 16) / 3;
-            singleCard.style.height = `${oneThirdHeight}px`;
+            formatsWrapper.style.height = `${videoHeight}px`;
           }
-        } else if (singleCard) {
-          singleCard.style.height = 'auto';
+        } else if (formatsWrapper) {
+          formatsWrapper.style.height = 'auto';
         }
       }
 
