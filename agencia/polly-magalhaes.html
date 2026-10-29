@@ -145,65 +145,57 @@
         </a>
       </div>
 
-      <!-- PARTE INFERIOR: Dividida em Minibio (full width com altura fixa) + Área inferior (Vídeo 1920x1080 + Formatos de Show alinhados) -->
-      <div class="flex-1 flex flex-col justify-between gap-3 min-h-0">
+      <!-- PARTE INFERIOR: Dividida em Minibio + Linha Contínua Divisória + Área inferior (Vídeo 16:9 + Formatos de Show) -->
+      <div class="flex-1 flex flex-col min-h-0">
         
-        <!-- Minibio: altura fixa padronizada igual a do Edson Santana (5 linhas completas) -->
-        <div class="shrink-0 w-full h-[112px] flex items-start overflow-hidden">
+        <!-- Minibio: sem restrição artificial de overflow para garantir que as 5 linhas apareçam 100% legíveis -->
+        <div class="shrink-0 w-full pb-3">
           <p class="font-body text-[13px] lg:text-[13.5px] leading-relaxed text-on-surface-variant font-normal">
             Polly Magalhães é rapper, poetisa e produtora cultural nascida em Uberaba/MG. Iniciando sua trajetória em 2015, consolidou sua voz no rap nacional com uma obra visceral que transita entre o amor, a saúde mental e as vivências de ser uma mulher preta no Brasil. Com lançamentos marcantes como o EP "Ouro" (2025) e o EP "Tudo Sobre Desamor, Nem Tudo!" (2026), a artista une força lírica e identidade para construir um legado de cura, resistência e verdade.
           </p>
         </div>
 
-        <!-- Linha do Vídeo e Formatos de Show -->
-        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
-          <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 Clean Player -->
-          <div class="col-span-12 lg:col-span-8 flex flex-col justify-between min-h-0 h-full gap-2">
-            
-            <!-- Barra de Título do Vídeo (altura fixa h-[29px] idêntica) -->
-            <div class="h-[29px] flex items-center justify-between border-b border-surface-variant/40 shrink-0">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO CLIPE</span>
-                <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
-                <span class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">OURO</span>
-              </div>
-            </div>
+        <!-- LINHA ÚNICA CONTÍNUA: Barra de títulos integrada horizontalmente de ponta a ponta (Base e Margem Fixa) -->
+        <div class="w-full grid grid-cols-12 gap-5 border-b border-surface-variant/40 pb-1.5 shrink-0">
+          <div class="col-span-12 lg:col-span-8 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO CLIPE</span>
+            <span class="text-white font-bold text-xs lg:text-[13px]">•</span>
+            <span class="font-label text-xs lg:text-[13px] text-white uppercase tracking-[0.16em] font-bold">OURO</span>
+          </div>
 
-            <!-- Player 16:9 -->
-            <div class="flex-1 min-h-0 flex items-center justify-center">
-              <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 370px) * (16 / 9));">
-                <iframe 
-                  class="w-full h-full border-0" 
-                  src="https://www.youtube-nocookie.com/embed/honiVz34344?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
-                  title="Ouro Pras Nega - Polly Magalhães" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen>
-                </iframe>
-              </div>
+          <div class="col-span-12 lg:col-span-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+          </div>
+        </div>
+
+        <!-- Linha do Vídeo e Formatos de Show (logo abaixo da linha contínua) -->
+        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch pt-2.5">
+          <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 Clean Player -->
+          <div class="col-span-12 lg:col-span-8 flex flex-col justify-center min-h-0 h-full">
+            <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 390px) * (16 / 9));">
+              <iframe 
+                class="w-full h-full border-0" 
+                src="https://www.youtube-nocookie.com/embed/honiVz34344?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
+                title="Ouro Pras Nega - Polly Magalhães" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
 
           <!-- COLUNA DIREITA: Alinhada exatamente com a altura do vídeo (3 Formatos de Show) -->
           <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
             <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
-              
-              <!-- Título da Seção (altura fixa h-[29px] idêntica à barra do vídeo) -->
-              <div class="h-[29px] flex items-center gap-2 border-b border-surface-variant/40 shrink-0">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
-              </div>
 
               <!-- Formato Duo -->
               <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
-                <!-- Linha 1: Cabeçalho -->
                 <div class="flex items-center justify-between">
                   <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">FORMATO DUO</span>
                   <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">2 Integrantes</span>
                 </div>
-                <!-- Linha 2: Integrantes -->
                 <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Polly e DJ</p>
-                <!-- Linha 3: Repertório -->
                 <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
                   <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
                   <span class="font-body text-xs text-on-surface font-medium leading-none">Autoral</span>
@@ -212,14 +204,11 @@
               
               <!-- Formato Trio -->
               <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
-                <!-- Linha 1: Cabeçalho -->
                 <div class="flex items-center justify-between">
                   <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">FORMATO TRIO</span>
                   <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">3 Integrantes</span>
                 </div>
-                <!-- Linha 2: Integrantes -->
                 <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Polly, DJ e Backing Vocal</p>
-                <!-- Linha 3: Repertório -->
                 <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
                   <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
                   <span class="font-body text-xs text-on-surface font-medium leading-none">Autoral</span>
@@ -228,14 +217,11 @@
               
               <!-- Banda Completa -->
               <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
-                <!-- Linha 1: Cabeçalho -->
                 <div class="flex items-center justify-between">
                   <span class="font-label text-xs text-primary uppercase tracking-wider font-semibold">BANDA COMPLETA</span>
                   <span class="text-[10px] font-label text-outline uppercase tracking-wider font-medium">5 Integrantes</span>
                 </div>
-                <!-- Linha 2: Integrantes -->
                 <p class="font-body text-xs text-on-surface font-medium leading-snug py-1">Polly, DJ, Backing Vocal e 2 Dançarinas</p>
-                <!-- Linha 3: Repertório -->
                 <div class="pt-1.5 flex items-baseline gap-1.5 border-t border-surface-variant/40">
                   <span class="font-label text-[10px] text-tertiary uppercase tracking-wider font-semibold shrink-0">REPERTÓRIO:</span>
                   <span class="font-body text-xs text-on-surface font-medium leading-none">Autoral</span>

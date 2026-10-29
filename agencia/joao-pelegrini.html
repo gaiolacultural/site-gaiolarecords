@@ -146,53 +146,48 @@
         </a>
       </div>
 
-      <!-- PARTE INFERIOR: Dividida em Minibio (full width com altura fixa) + Área inferior (Vídeo 16:9 + 3 Formatos de Show) -->
-      <div class="flex-1 flex flex-col justify-between gap-3 min-h-0">
+      <!-- PARTE INFERIOR: Dividida em Minibio + Linha Contínua Divisória + Área inferior (Vídeo 16:9 + 3 Formatos de Show) -->
+      <div class="flex-1 flex flex-col min-h-0">
         
-        <!-- Minibio: altura fixa padronizada para manter a mesma linha exata em todas as páginas (5 linhas completas visíveis) -->
-        <div class="shrink-0 w-full h-[112px] flex items-start overflow-hidden">
+        <!-- Minibio: sem restrição artificial de overflow para garantir que as 5 linhas apareçam 100% legíveis -->
+        <div class="shrink-0 w-full pb-3">
           <p class="font-body text-[13px] lg:text-[13.5px] leading-relaxed text-on-surface-variant font-normal">
             A música de João Pelegrini é o reflexo de uma vida inteira dedicada à arte dos sons. Com uma assinatura musical forte, construída através de mais de uma década de composições e pesquisas, ele une a leveza da música popular à sofisticação de arranjos minuciosos. Tendo o violão como extensão de sua própria voz e influenciado pelos grandes pilares da MPB, seu show solo entrega uma experiência musical autêntica e envolvente, capaz de conectar o público através de um repertório poético e cultural brasileiro.
           </p>
         </div>
 
-        <!-- Linha do Vídeo e Formatos de Show -->
-        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch">
+        <!-- LINHA ÚNICA CONTÍNUA: Barra de títulos integrada horizontalmente de ponta a ponta (Base e Margem Fixa) -->
+        <div class="w-full grid grid-cols-12 gap-5 border-b border-surface-variant/40 pb-1.5 shrink-0">
+          <div class="col-span-12 lg:col-span-8 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
+          </div>
+
+          <div class="col-span-12 lg:col-span-4 flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
+          </div>
+        </div>
+
+        <!-- Linha do Vídeo e Formatos de Show (logo abaixo da linha contínua) -->
+        <div class="flex-1 grid grid-cols-12 gap-5 min-h-0 items-stretch pt-2.5">
           
           <!-- COLUNA ESQUERDA: Vídeo YouTube 16:9 (SuriSession Duo temporário) -->
-          <div class="col-span-12 lg:col-span-8 flex flex-col justify-between min-h-0 h-full gap-2">
-            
-            <!-- Barra de Título do Vídeo (altura fixa h-[29px] idêntica) -->
-            <div class="h-[29px] flex items-center justify-between border-b border-surface-variant/40 shrink-0">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">VÍDEO AO VIVO</span>
-              </div>
-            </div>
-
-            <!-- Player 16:9 -->
-            <div class="flex-1 min-h-0 flex items-center justify-center">
-              <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 370px) * (16 / 9));">
-                <iframe 
-                  class="w-full h-full border-0" 
-                  src="https://www.youtube-nocookie.com/embed/JA3oRX74h9o?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
-                  title="João Pelegrini - Vídeo Ao Vivo" 
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                  allowfullscreen>
-                </iframe>
-              </div>
+          <div class="col-span-12 lg:col-span-8 flex flex-col justify-center min-h-0 h-full">
+            <div id="videoContainer" class="relative w-full max-h-full rounded-xl overflow-hidden bg-black shadow-2xl ring-1 ring-white/10 flex items-center justify-center" style="aspect-ratio: 16 / 9; max-width: calc((100vh - 390px) * (16 / 9));">
+              <iframe 
+                class="w-full h-full border-0" 
+                src="https://www.youtube-nocookie.com/embed/JA3oRX74h9o?rel=0&modestbranding=1&showinfo=0&controls=1&iv_load_policy=3&fs=1&disablekb=0&color=white" 
+                title="João Pelegrini - Vídeo Ao Vivo" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
 
           <!-- COLUNA DIREITA: Alinhada com a altura do player (3 Formatos de Show) -->
           <div class="col-span-12 lg:col-span-4 flex items-center justify-center min-h-0 h-full">
             <div id="formatsWrapper" class="w-full flex flex-col gap-2 py-0.5">
-              
-              <!-- Título da Seção (altura fixa h-[29px] idêntica à barra do vídeo) -->
-              <div class="h-[29px] flex items-center gap-2 border-b border-surface-variant/40 shrink-0">
-                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
-                <span class="font-label text-xs lg:text-[13px] text-primary uppercase tracking-[0.16em] font-bold">FORMATO SHOW</span>
-              </div>
 
               <!-- Formato 1: Solo -->
               <div class="p-3 bg-surface-container/90 rounded-xl border-l-2 border-primary flex-1 flex flex-col justify-between">
